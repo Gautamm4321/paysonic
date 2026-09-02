@@ -1127,11 +1127,16 @@ h1,h2,h3,h4{
 <header class="nav" id="nav">
   <div class="nav-in">
     <a href="#top" class="logo" aria-label="Paysonic — home">
-      <img src="PaysonicTech-removebg-preview.png" alt="Paysonic Logo" style="height: 42px; width: auto;">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1" y="4" width="20" height="24" rx="5" fill="#02B54E"/>
+        <rect x="11" y="4" width="20" height="24" rx="5" fill="#2666F9" opacity=".92"/>
+        <path d="M13.5 21.5 21 10.5l1.6 5.4 4.4-1.2-7.4 11-1.6-5.4z" fill="#fff"/>
+      </svg>
+      <span class="logo-word">Pay<span>sonic</span></span>
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <a href="#platform">Platform <svg width="13" height="13" aria-hidden="test"><use href="#i-chev"/></svg></a>
+      <a href="#platform">Platform <svg width="13" height="13" aria-hidden="true"><use href="#i-chev"/></svg></a>
       <a href="#journey">Solutions <svg width="13" height="13" aria-hidden="true"><use href="#i-chev"/></svg></a>
       <a href="#products">Technology</a>
       <a href="#why">Security</a>
@@ -1187,14 +1192,15 @@ h1,h2,h3,h4{
   <div class="scroll-hint" aria-hidden="true"><i></i><span>Scroll for Experience</span></div>
 </section>
 
+<!-- ===================== STATS ===================== -->
 <div class="stats-wrap over">
   <div class="wrap">
     <div class="stats" id="stats">
-      <div class="stat"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-bars"/></svg></span><div><div class="stat-n" data-to="500" data-suffix="M+">0</div><div class="stat-l">One Unified Platform</div></div></div>
-      <div class="stat"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-bank"/></svg></span><div><div class="stat-n" data-to="85" data-suffix="+">0</div><div class="stat-l">24×7 Processing</div></div></div>
-      <div class="stat"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-card"/></svg></span><div><div class="stat-n" data-to="10" data-suffix="M+">0</div><div class="stat-l">API-first Architecture</div></div></div>
-      <div class="stat"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><div><div class="stat-n" data-to="99.99" data-dec="2" data-suffix="%">0</div><div class="stat-l">Multi-bank Ready</div></div></div>
-      <div class="stat"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-net"/></svg></span><div><div class="stat-n" data-to="50" data-suffix="+">0</div><div class="stat-l">Enterprise-grade Security</div></div></div>
+      <div class="stat"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-bars"/></svg></span><div><div class="stat-n" data-to="500" data-suffix="M+">0</div><div class="stat-l">Banks / Partners</div></div></div>
+      <div class="stat"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-bank"/></svg></span><div><div class="stat-n" data-to="85" data-suffix="+">0</div><div class="stat-l">Enterprise integrations</div></div></div>
+      <div class="stat"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-card"/></svg></span><div><div class="stat-n" data-to="10" data-suffix="M+">0</div><div class="stat-l">Platform Availability</div></div></div>
+      <div class="stat"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><div><div class="stat-n" data-to="99.99" data-dec="2" data-suffix="%">0</div><div class="stat-l">Mobility Projects Enabled</div></div></div>
+      <div class="stat"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-net"/></svg></span><div><div class="stat-n" data-to="50" data-suffix="+">0</div><div class="stat-l">Enterprise integrations</div></div></div>
     </div>
   </div>
 </div>
@@ -1206,6 +1212,7 @@ h1,h2,h3,h4{
 
       <div class="jcopy">
         <article class="st" data-st="0">
+          <div class="st-tag"><em>01 / MLFF</em> Multi-lane free flow</div>
           <h3>Free Flow.<br>Frictionless Payments.</h3>
           <p>Intelligent gantries detect vehicles at highway speed, authenticate FASTag transactions and settle tolls seamlessly eliminating barriers, queues and unnecessary stops.</p>
           <div class="st-facts"><span>Barrier-Free Tolling</span><span>High-Speed Detection</span><span>Frictionless Payments</span></div>
@@ -1247,6 +1254,7 @@ h1,h2,h3,h4{
           <li class="lrow" data-row="1"><b>Toll plaza</b><span class="amt">₹120.00</span><span class="meta">NETC · LANE 07 · 310 ms</span><span class="ok">Settled</span></li>
           <li class="lrow" data-row="2"><b>Parking · 2h 14m</b><span class="amt">₹160.00</span><span class="meta"> CSMI T2 Parking P5  · EXIT 03</span><span class="ok">Settled</span></li>
           <li class="lrow" data-row="3"><b>Fuel · 21.3 L</b><span class="amt">₹2,000.00</span><span class="meta">FLEET LIMIT · NOZZLE 02</span><span class="ok">Settled</span></li>
+          <li class="lrow" data-row="4"><b>BBPS · utilities &amp; challan</b><span class="amt">₹1,240.00</span><span class="meta">3 BILLERS · AUTO-PAY</span><span class="ok">Settled</span></li>
           <li class="lrow" data-row="5"><b>EV charging · 22.4 kWh</b><span class="amt">₹410.00</span><span class="meta">CCS2 · 60 kW DC · 34 min</span><span class="ok">Settled</span></li>
         </ul>
         <div class="ledger-foot"><span>Journey total</span><strong id="ledgerTotal">₹0.00</strong></div>
@@ -1279,6 +1287,9 @@ h1,h2,h3,h4{
       <article class="pcard b rv"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-parking"/></svg></span><b>Parking Payments</b><i>Closed loop</i></article>
       <article class="pcard rv"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-ev"/></svg></span><b>EV Charging</b><i>OCPP</i></article>
       <article class="pcard rv"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-fuel"/></svg></span><b>Fuel Payments</b><i>Fleet</i></article>
+      <article class="pcard b rv"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-transit"/></svg></span><b>Public Transport</b><i>NCMC</i></article>
+      <article class="pcard b rv"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-fleet"/></svg></span><b>Fleet Payments</b><i>Corporate</i></article>
+      <article class="pcard rv"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-bbps"/></svg></span><b>BBPS &amp; Bills</b><i>BBPS</i></article>
     </div>
   </div>
 </section>
@@ -1339,6 +1350,7 @@ h1,h2,h3,h4{
       <article class="why-card rv"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-cloud"/></svg></span><b>Cloud-Native. High Availability.</b><span>Built to Scale.</span></article>
       <article class="why-card rv"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-code"/></svg></span><b>Build Faster</b><span>with APIs, SDKs &amp; a Live Integration Environment.</span></article>
       <article class="why-card rv"><span class="ic g-blue"><svg aria-hidden="true"><use href="#i-cpu"/></svg></span><b>AI-Powered</b><span>Fraud &amp; Risk Intelligence</span></article>
+      <article class="why-card rv"><span class="ic g-green"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span><b>Future ready</b><span>Insurance, e-challan and NCMC on the roadmap</span></article>
     </div>
   </div>
 </section>
@@ -1360,13 +1372,18 @@ h1,h2,h3,h4{
 
 <footer class="foot over" id="footer">
   <div class="wrap foot-grid">
-    <div class="foot-brand" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <div class="foot-brand">
       <a href="#top" class="logo">
-        <img src="PaysonicTech_Logo_with_Tagline-removebg-preview.png" alt="Paysonic Logo" style="height: 62px; width: auto;">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="1" y="4" width="20" height="24" rx="5" fill="#02B54E"/>
+          <rect x="11" y="4" width="20" height="24" rx="5" fill="#2666F9" opacity=".92"/>
+          <path d="M13.5 21.5 21 10.5l1.6 5.4 4.4-1.2-7.4 11-1.6-5.4z" fill="#fff"/>
+        </svg>
+        <span class="logo-word">Pay<span>sonic</span></span>
       </a>
       <div class="foot-tag mono">Infrastructure. Intelligence. Impact</div>
-      <p style="margin-inline: auto;">India’s mobility payment infrastructure, engineered for scale, connectivity and seamless transactions.</p>
-      <div class="socials" style="justify-content: center;">
+      <p>India’s mobility payment infrastructure, engineered for scale, connectivity and seamless transactions.</p>
+      <div class="socials">
         <a href="#footer" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-in"/></svg></a>
         <a href="#footer" aria-label="X"><svg aria-hidden="true"><use href="#i-x"/></svg></a>
         <a href="#footer" aria-label="YouTube"><svg aria-hidden="true"><use href="#i-yt"/></svg></a>
