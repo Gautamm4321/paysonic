@@ -2078,7 +2078,7 @@ h1,h2,h3,h4{
      ========================================================================== */
   var car = new THREE.Group();
   (function buildCar() {
-    var bodyMat = std(0x000000, { roughness: .25, metalness: .25 });
+    var bodyMat = std(0x000000, { roughness: .55, metalness: .05 });
 var trimMat = std(0xFFFFFF, { roughness: .3, metalness: .1 });
     var glassMat = std(0x000000, { roughness: .12, metalness: .6 });
 
@@ -2090,7 +2090,7 @@ var trimMat = std(0xFFFFFF, { roughness: .3, metalness: .1 });
     car.add(box(2.32, .2, 3.4, trimMat, 0, .5, 0));
 
     // wheels
-    var wm = std(0x1E2A3D, { roughness: .85 });
+    var wm = std(0x000000, { roughness: .55, metalness: .05 });
     [[-1.06, 1.5], [1.06, 1.5], [-1.06, -1.6], [1.06, -1.6]].forEach(function (p) {
       var w = cyl(.44, .44, .34, wm, p[0], .44, p[1], 14);
       w.rotation.z = Math.PI / 2;
