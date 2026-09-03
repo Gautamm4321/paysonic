@@ -911,6 +911,139 @@
       /* image size */
       object-fit: cover;
     }
+
+
+/* ---------- Know More Button + Expandable Detail ---------- */
+.leader-more-btn {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: transparent;
+  border: 1.5px solid var(--accent, var(--green));
+  border-radius: 999px;
+  color: var(--accent, var(--green-600));
+  font-family: var(--font-m);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+}
+
+.leader-more-btn:hover {
+  background: var(--accent, var(--green));
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.leader-more-btn .btn-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: transform .3s var(--ease);
+}
+
+.leader-more-btn[aria-expanded="true"] .btn-icon {
+  transform: rotate(45deg);
+}
+
+.leader-detail {
+  grid-column: 1 / -1;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: max-height .5s var(--ease), opacity .4s var(--ease), margin-top .4s var(--ease);
+}
+
+.leader-detail.open {
+  opacity: 1;
+  margin-top: 30px;
+}
+
+.leader-detail-inner {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+
+.leader-detail-inner p {
+  color: var(--muted);
+  margin-bottom: 14px;
+  font-size: .96rem;
+  line-height: 1.65;
+}
+
+.mandate-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 22px 0 16px;
+}
+
+.mandate-list {
+  display: grid;
+  gap: 13px;
+  margin-bottom: 6px;
+}
+
+.mandate-list li {
+  position: relative;
+  padding-left: 25px;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.6;
+}
+
+.mandate-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--accent, var(--green));
+}
+
+.mandate-list li strong {
+  color: var(--navy);
+}
+
+.leader-closing {
+  margin-top: 26px;
+  padding: 20px 24px;
+  background: var(--sky);
+  border-left: 4px solid var(--accent, var(--green));
+  border-radius: var(--r-sm);
+}
+
+.leader-closing .tag {
+  display: block;
+  color: var(--navy);
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 8px;
+  font-family: var(--font-m);
+  font-weight: 600;
+}
+
+.leader-closing p {
+  margin: 0;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: .96rem;
+}
+
+@media (max-width: 900px) {
+  .leader-detail {
+    grid-column: auto;
+  }
+}
+
+
   </style>
 </head>
 
@@ -962,7 +1095,10 @@
           <a href="about.html" class="active">About Us</a>
         </nav>
 
-<a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>        
+        <a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us <svg width="15" height="15"
+            aria-hidden="true">
+            <use href="#i-arrow" />
+          </svg></a>
       </div>
     </header>
 
@@ -1255,71 +1391,263 @@
 
           </div>
 
-          <div class="leadership-grid">
+         
+        <div class="leadership-grid">
 
-            <!-- 1st Card: Text Left, Image Right -> anim-left-right -->
-            <article class="leader-row row-right-img anim-left-right" style="border-top: 5px solid var(--green);">
-              <div class="leader-info">
-                <h3 class="leader-name">Swapnil Jambhale</h3>
-                <div class="leader-title">Founder &amp; CEO</div>
-                <div class="leader-bio">
-                  20+ Years in Banking &amp; Payments | Ex-COO, Payment Infra Co. | Ex-GM, Multi-State Scheduled Bank |
-                  Digital Banking &amp; NPCI Products | Doctorate in Digital Financial Technology
-                </div>
-              </div>
-              <div class="leader-avatar">
-                <img src="swapnil (2).jpeg" alt="Swapnil Jambhale">
-              </div>
-            </article>
+  <!-- 1st Card: Swapnil Jambhale -->
+  <article class="leader-row row-right-img anim-left-right" style="border-top: 5px solid var(--green);">
+    <div class="leader-info">
+      <h3 class="leader-name">Swapnil Jambhale</h3>
+      <div class="leader-title">Founder &amp; CEO</div>
+      <div class="leader-bio">
+        20+ Years in Banking &amp; Payments | Ex-COO, Payment Infra Co. | Ex-GM, Multi-State Scheduled Bank |
+        Digital Banking &amp; NPCI Products | Doctorate in Digital Financial Technology
+      </div>
+      <button class="leader-more-btn" type="button" aria-expanded="false">
+        <span class="btn-text">Know More</span>
+        <span class="btn-icon">+</span>
+      </button>
+    </div>
+    <div class="leader-avatar">
+      <img src="swapnil (2).jpeg" alt="Swapnil Jambhale">
+    </div>
 
-            <!-- 2nd Card: Image Left, Text Right -> anim-right-left -->
-            <article class="leader-row row-left-img anim-right-left" style="border-top: 5px solid #00B4D8;">
-              <div class="leader-avatar">
-                <img src="makrand.jpeg" alt="Makarand Agasti">
-              </div>
-              <div class="leader-info">
-                <h3 class="leader-name">Makarand Agasti</h3>
-                <div class="leader-title">Co-Founder &amp; CFO</div>
-                <div class="leader-bio">
-                  15+ Years in BFSI | Ex-Regional Head, Leading Bank | Asset &amp; Liability Management | Advisor to FIs
-                  |
-                  PGCP – IIM Nagpur | Law, PGDM Fin, MPM
-                </div>
-              </div>
-            </article>
+    <div class="leader-detail" style="--accent: var(--green);">
+      <div class="leader-detail-inner">
+        <p>As the Founder &amp; CEO of Paysonic Technologies, Swapnil leads the company's vision, strategic
+          direction, product innovation, and execution, with a focus on transforming the mobility payments
+          ecosystem in India.</p>
+        <p>Under his leadership, Paysonic is building an <strong>enterprise-grade, API-first mobility payments
+          infrastructure</strong> that brings together banks, payment networks, mobility operators, enterprises,
+          government organizations, OEMs, and consumers through a secure, scalable, and interoperable technology
+          platform.</p>
+        <p>Swapnil drives Paysonic's efforts to simplify complex mobility payment journeys and create seamless,
+          connected experiences across tolling, parking, mobility services, and emerging digital payment
+          ecosystems.</p>
 
-            <!-- 3rd Card: Text Left, Image Right -> anim-left-right -->
-            <article class="leader-row row-right-img anim-left-right" style="border-top: 5px solid var(--blue);">
-              <div class="leader-info">
-                <h3 class="leader-name">Rohit Tambe</h3>
-                <div class="leader-title">CTO</div>
-                <div class="leader-bio">
-                  10+ Years in Infra | Network Expert | B.Tech (CS) | CCNA Certified | System Stability | Team
-                  Leadership
-                  &amp; Tech Optimization | Infra-led Innovation
-                </div>
-              </div>
-              <div class="leader-avatar">
-                <img src="rohit.jpeg" alt="Rohit Tambe">
-              </div>
-            </article>
+        <h4 class="mandate-title">Leadership &amp; Strategic Mandate</h4>
+        <ul class="mandate-list">
+          <li><strong>Vision &amp; Strategy:</strong> Define Paysonic's long-term vision, business strategy, growth
+            priorities, and market positioning.</li>
+          <li><strong>Product &amp; Technology:</strong> Lead the evolution of Paysonic's mobility payments
+            platform, technology architecture, product roadmap, and innovation agenda.</li>
+          <li><strong>Strategic Partnerships:</strong> Establish and strengthen relationships with banks, payment
+            networks, mobility operators, OEMs, enterprises, and government institutions.</li>
+          <li><strong>Business Growth:</strong> Drive enterprise business development, strategic alliances, market
+            expansion, and key institutional relationships.</li>
+          <li><strong>Innovation:</strong> Champion innovation across digital payments, mobility technology,
+            payment infrastructure, and connected mobility.</li>
+          <li><strong>Governance &amp; Security:</strong> Ensure a strong focus on regulatory compliance,
+            information security, operational resilience, and industry standards, including applicable RBI, NPCI,
+            and PCI DSS requirements.</li>
+          <li><strong>Leadership &amp; Talent:</strong> Build and mentor high-performing teams across technology,
+            product, operations, business development, and strategic functions.</li>
+        </ul>
 
-            <!-- 4th Card: Image Left, Text Right -> anim-right-left -->
-            <article class="leader-row row-left-img anim-right-left" style="border-top: 5px solid #8338EC;">
-              <div class="leader-avatar">
-                <img src="tejas (2).jpeg" alt="Tejas Kadam">
-              </div>
-              <div class="leader-info">
-                <h3 class="leader-name">Tejas Kadam</h3>
-                <div class="leader-title">CBO</div>
-                <div class="leader-bio">
-                  18+ Years in Payment Technology | Ex-CEO Fintech Startups | Worked with NPCI &amp; Payment Technology
-                  MNCs | Fintech Mentor | Top 50 Startup Fintech Leaders in India
-                </div>
-              </div>
-            </article>
+        <div class="leader-closing">
+          <span class="tag">Building the Future of Mobility Payments</span>
+          <p>Swapnil's leadership is focused on establishing Paysonic as a trusted technology and payments
+            infrastructure partner for India's evolving mobility ecosystem — enabling secure, scalable,
+            interoperable, and frictionless mobility payments at enterprise scale.</p>
+        </div>
+      </div>
+    </div>
+  </article>
 
-          </div>
+  <!-- 2nd Card: Makarand Agasti -->
+  <article class="leader-row row-left-img anim-right-left" style="border-top: 5px solid #00B4D8;">
+    <div class="leader-avatar">
+      <img src="makrand.jpeg" alt="Makarand Agasti">
+    </div>
+    <div class="leader-info">
+      <h3 class="leader-name">Makarand Agasti</h3>
+      <div class="leader-title">Co-Founder &amp; CFO</div>
+      <div class="leader-bio">
+        15+ Years in BFSI | Ex-Regional Head, Leading Bank | Asset &amp; Liability Management | Advisor to FIs |
+        PGCP – IIM Nagpur | Law, PGDM Fin, MPM
+      </div>
+      <button class="leader-more-btn" type="button" aria-expanded="false">
+        <span class="btn-text">Know More</span>
+        <span class="btn-icon">+</span>
+      </button>
+    </div>
+
+    <div class="leader-detail" style="--accent: #00B4D8;">
+      <div class="leader-detail-inner">
+        <p>As the Co-Founder &amp; CFO of Paysonic Technologies, Makarand leads the company's financial strategy,
+          corporate planning, governance, and commercial operations, supporting Paysonic's growth as a technology
+          and payments infrastructure company.</p>
+        <p>Makarand plays a key role in building the financial and operational foundation required to scale
+          Paysonic's mobility payments platform and deepen its engagement with banks, payment networks,
+          enterprises, mobility operators, and institutional partners.</p>
+        <p>His mandate spans financial planning, capital strategy, business performance, commercial structuring,
+          risk management, and corporate governance, ensuring that Paysonic's growth is underpinned by disciplined
+          execution, sustainable economics, and strong financial controls.</p>
+
+        <h4 class="mandate-title">Leadership &amp; Strategic Mandate</h4>
+        <ul class="mandate-list">
+          <li><strong>Financial Strategy:</strong> Define and execute Paysonic's financial strategy, planning
+            framework, budgets, and long-term financial priorities.</li>
+          <li><strong>Business Planning:</strong> Drive financial modelling, business planning, performance
+            measurement, and strategic decision support across the organization.</li>
+          <li><strong>Commercial Strategy:</strong> Lead commercial structuring, pricing frameworks, unit
+            economics, and financial evaluation of strategic opportunities and partnerships.</li>
+          <li><strong>Corporate Governance:</strong> Establish robust financial controls, governance frameworks,
+            reporting systems, and compliance processes aligned with applicable regulatory and industry
+            requirements.</li>
+          <li><strong>Risk &amp; Controls:</strong> Oversee financial risk management, operational controls, audit
+            readiness, and processes supporting a secure and resilient business environment.</li>
+          <li><strong>Strategic Partnerships:</strong> Support institutional relationships with banks, payment
+            networks, enterprises, investors, and strategic partners from a financial and commercial
+            perspective.</li>
+          <li><strong>Scale &amp; Sustainability:</strong> Build the financial infrastructure and operating
+            discipline required to support Paysonic's expansion while maintaining sustainable and scalable
+            business economics.</li>
+          <li><strong>Organizational Leadership:</strong> Partner closely with the leadership team to align
+            financial priorities with product, technology, business development, and overall corporate
+            strategy.</li>
+        </ul>
+
+        <div class="leader-closing">
+          <span class="tag">Building a Scalable Mobility Payments Business</span>
+          <p>Makarand's leadership is focused on strengthening Paysonic's financial foundation, commercial
+            discipline, and corporate governance as the company scales its mobility payments infrastructure —
+            creating a sustainable platform for long-term growth, strategic partnerships, and value creation
+            across India's evolving mobility ecosystem.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3rd Card: Rohit Tambe -->
+  <article class="leader-row row-right-img anim-left-right" style="border-top: 5px solid var(--blue);">
+    <div class="leader-info">
+      <h3 class="leader-name">Rohit Tambe</h3>
+      <div class="leader-title">CTO</div>
+      <div class="leader-bio">
+        10+ Years in Infra | Network Expert | B.Tech (CS) | CCNA Certified | System Stability | Team Leadership
+        &amp; Tech Optimization | Infra-led Innovation
+      </div>
+      <button class="leader-more-btn" type="button" aria-expanded="false">
+        <span class="btn-text">Know More</span>
+        <span class="btn-icon">+</span>
+      </button>
+    </div>
+    <div class="leader-avatar">
+      <img src="rohit.jpeg" alt="Rohit Tambe">
+    </div>
+
+    <div class="leader-detail" style="--accent: var(--blue);">
+      <div class="leader-detail-inner">
+        <p>As the Chief Technology Officer (CTO) of Paysonic Technologies, Rohit leads the company's technology
+          vision, platform architecture, engineering strategy, and digital infrastructure, driving the
+          development of Paysonic's next-generation mobility payments technology.</p>
+        <p>Rohit is responsible for translating Paysonic's business and product vision into <strong>secure,
+          scalable, resilient, and enterprise-ready technology solutions</strong>. His leadership spans platform
+          architecture, product engineering, API infrastructure, systems integration, cybersecurity, data, and
+          technology operations.</p>
+        <p>With a strong focus on engineering excellence and innovation, Rohit plays a critical role in building
+          the technology foundation that enables seamless connectivity between banks, payment networks, mobility
+          operators, enterprises, government organizations, OEMs, and consumers.</p>
+
+        <h4 class="mandate-title">Technology &amp; Leadership Mandate</h4>
+        <ul class="mandate-list">
+          <li><strong>Technology Vision:</strong> Define and execute Paysonic's technology strategy in alignment
+            with the company's business and product roadmap.</li>
+          <li><strong>Platform Architecture:</strong> Lead the architecture and evolution of Paysonic's API-first
+            mobility payments platform, ensuring scalability, reliability, interoperability, and performance.</li>
+          <li><strong>Engineering Leadership:</strong> Build and lead high-performing engineering teams across
+            software development, platform engineering, DevOps, integrations, and technology operations.</li>
+          <li><strong>Product Engineering:</strong> Drive the transformation of product requirements into robust,
+            intuitive, and enterprise-grade technology solutions.</li>
+          <li><strong>API &amp; Systems Integration:</strong> Develop scalable integration frameworks connecting
+            banks, payment networks, mobility platforms, enterprises, OEMs, and other ecosystem participants.</li>
+          <li><strong>Security &amp; Resilience:</strong> Establish strong technology practices for cybersecurity,
+            data protection, system resilience, access controls, monitoring, and business continuity.</li>
+          <li><strong>Innovation:</strong> Evaluate and adopt emerging technologies to enhance mobility payments,
+            automation, interoperability, data intelligence, and digital experiences.</li>
+          <li><strong>Technology Governance:</strong> Establish engineering standards, architecture principles,
+            development methodologies, technology governance, and operational best practices.</li>
+            <li><strong>Scalability & Performance: </strong>Ensure Paysonic’s technology infrastructure is designed to support high transaction volumes, real-time processing, rapid integrations, and future ecosystem expansion.</li>
+        </ul>
+
+        <div class="leader-closing">
+          <span class="tag">Engineering the Future of Mobility Payments</span>
+          <p>Rohit's leadership is focused on building the technology backbone for connected and frictionless
+            mobility payments — combining scalable architecture, intelligent integrations, security, and
+            engineering excellence to enable Paysonic's vision of a seamless mobility payments ecosystem across
+            India.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 4th Card: Tejas Kadam -->
+  <article class="leader-row row-left-img anim-right-left" style="border-top: 5px solid #8338EC;">
+    <div class="leader-avatar">
+      <img src="tejas (2).jpeg" alt="Tejas Kadam">
+    </div>
+    <div class="leader-info">
+      <h3 class="leader-name">Tejas Kadam</h3>
+      <div class="leader-title">CBO</div>
+      <div class="leader-bio">
+        18+ Years in Payment Technology | Ex-CEO Fintech Startups | Worked with NPCI &amp; Payment Technology
+        MNCs | Fintech Mentor | Top 50 Startup Fintech Leaders in India
+      </div>
+      <button class="leader-more-btn" type="button" aria-expanded="false">
+        <span class="btn-text">Know More</span>
+        <span class="btn-icon">+</span>
+      </button>
+    </div>
+
+    <div class="leader-detail" style="--accent: #8338EC;">
+      <div class="leader-detail-inner">
+        <p>As the Chief Business Officer (CBO) of Paysonic Technologies, Tejas Kadam leads the company's business
+          strategy, commercial growth, enterprise development, and strategic partnerships, with a focus on
+          expanding Paysonic's presence across India's rapidly evolving mobility payments ecosystem.</p>
+        <p>Tejas plays a key role in translating Paysonic's technology capabilities into scalable business
+          opportunities by building relationships across banks, payment networks, mobility operators, enterprises,
+          OEMs, government organizations, and strategic ecosystem partners.</p>
+        <p>His mandate spans business development, enterprise sales, strategic alliances, market expansion,
+          commercial strategy, and ecosystem development, helping create sustainable growth opportunities while
+          strengthening Paysonic's position as a technology and payments infrastructure partner.</p>
+
+        <h4 class="mandate-title">Business &amp; Commercial Mandate</h4>
+        <ul class="mandate-list">
+          <li><strong>Business Strategy:</strong> Develop and execute business growth strategies aligned with
+            Paysonic's vision, product capabilities, and market opportunities.</li>
+          <li><strong>Enterprise Business Development:</strong> Drive acquisition and growth of strategic
+            enterprise and institutional customers across mobility and payments segments.</li>
+          <li><strong>Strategic Partnerships:</strong> Build and manage high-value relationships with banks,
+            payment networks, mobility operators, OEMs, enterprises, government institutions, and technology
+            partners.</li>
+          <li><strong>Market Expansion:</strong> Identify new markets, use cases, and mobility payment
+            opportunities to expand Paysonic's ecosystem and business footprint.</li>
+          <li><strong>Commercial Strategy:</strong> Develop commercial models, partnership structures,
+            go-to-market strategies, and growth frameworks that support sustainable business economics.</li>
+          <li><strong>Ecosystem Development:</strong> Create strategic collaborations that connect multiple
+            stakeholders and accelerate adoption of Paysonic's mobility payments infrastructure.</li>
+          <li><strong>Customer Relationships:</strong> Strengthen relationships with key customers and partners,
+            ensuring alignment between business requirements and Paysonic's technology capabilities.</li>
+          <li><strong>Revenue Growth:</strong> Drive revenue generation, strategic account development, pipeline
+            growth, and long-term commercial opportunities.</li>
+           <li><strong>Cross-Functional Leadership: </strong> Work closely with product, technology, finance, and operations teams to convert market opportunities into scalable and successfully executed business initiatives.</li> 
+        </ul>
+
+        <div class="leader-closing">
+          <span class="tag">Expanding the Mobility Payments Ecosystem</span>
+          <p>Tejas's leadership is focused on building strategic relationships, unlocking new business
+            opportunities, and accelerating the adoption of Paysonic's mobility payments infrastructure —
+            connecting technology, payments, and mobility stakeholders to create a more integrated and
+            frictionless mobility ecosystem across India.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+
         </div>
       </section>
 
@@ -1426,16 +1754,20 @@
         </div>
       </div>
 
-      <div class="foot-bar" style="background: #041F49; color: rgba(255,255,255,.7); padding: 24px 0; font-size: .8rem;">
-    <div class="wrap" style="width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-      <span>© 2026 Paysonic Technologies Pvt.Ltd. All rights reserved.</span>
-      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <a href="pp.html" style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Privacy Policy</a>
-        <a href="TC.html" style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Terms &amp; Condition</a>
-        <a href="#" style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Cookies</a>
+      <div class="foot-bar"
+        style="background: #041F49; color: rgba(255,255,255,.7); padding: 24px 0; font-size: .8rem;">
+        <div class="wrap"
+          style="width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <span>© 2026 Paysonic Technologies Pvt.Ltd. All rights reserved.</span>
+          <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <a href="pp.html"
+              style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Privacy Policy</a>
+            <a href="TC.html" style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Terms
+              &amp; Condition</a>
+            <a href="#" style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Cookies</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     </footer>
 
     <script>
@@ -1451,9 +1783,9 @@
             if (total <= 0) return;
             var progress = (-rect.top) / total;
             progress = Math.min(Math.max(progress, 0), 1);
-            
+
             var step = 1 / items.length;
-            
+
             items.forEach(function (el, i) {
               // i === 0 (Yani heading) turant visible ho jayegi jab section aayega
               if (i === 0 || progress >= i * step) {
@@ -1522,21 +1854,60 @@
 
 
     <script>
-      (function () {
-        var leaderRows = document.querySelectorAll('.leader-row');
-        if (!leaderRows.length) return;
-        var observer = new IntersectionObserver(function (entries) {
-          entries.decorators || entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.2 });
-        leaderRows.forEach(function (row) { observer.observe(row); });
-      })();
-    </script>
+  (function () {
+    var buttons = document.querySelectorAll('.leader-more-btn');
+    if (!buttons.length) return;
 
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var row = btn.closest('.leader-row');
+        var detail = row.querySelector('.leader-detail');
+        var isOpen = detail.classList.contains('open');
+
+        // Close any other open card first (only one open at a time)
+        document.querySelectorAll('.leader-detail.open').forEach(function (openDetail) {
+          if (openDetail !== detail) {
+            openDetail.style.maxHeight = null;
+            openDetail.classList.remove('open');
+            var otherBtn = openDetail.closest('.leader-row').querySelector('.leader-more-btn');
+            otherBtn.setAttribute('aria-expanded', 'false');
+            otherBtn.querySelector('.btn-text').textContent = 'Know More';
+          }
+        });
+
+        if (isOpen) {
+          // Same button pressed again -> close it
+          detail.style.maxHeight = null;
+          detail.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.querySelector('.btn-text').textContent = 'Know More';
+        } else {
+          // Open this one
+          detail.classList.add('open');
+          detail.style.maxHeight = detail.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+          btn.querySelector('.btn-text').textContent = 'Show Less';
+        }
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var leaderRows = document.querySelectorAll('.leader-row');
+    if (!leaderRows.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    leaderRows.forEach(function (row) { observer.observe(row); });
+  })();
+</script>
 
   </body>
 
