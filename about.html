@@ -160,7 +160,7 @@
       color: var(--blue);
     }
 
-    .nav-cta {
+    .btn.nav-cta {
       margin-left: 8px;
       padding: .62em 1.15em;
       font-size: .875rem;
@@ -962,8 +962,7 @@
           <a href="about.html" class="active">About Us</a>
         </nav>
 
-        <a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us</a>
-        
+<a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>        
       </div>
     </header>
 
@@ -1407,7 +1406,6 @@
           <h4>Company</h4>
           <a href="about.html">About us</a>
           <a href="leadership.html">Leadership</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
           <a href="careers.html">Careers</a>
           <a href="news-media.html">News &amp; media</a>
         </div>
@@ -1453,9 +1451,12 @@
             if (total <= 0) return;
             var progress = (-rect.top) / total;
             progress = Math.min(Math.max(progress, 0), 1);
+            
             var step = 1 / items.length;
+            
             items.forEach(function (el, i) {
-              if (progress >= i * step) {
+              // i === 0 (Yani heading) turant visible ho jayegi jab section aayega
+              if (i === 0 || progress >= i * step) {
                 el.classList.add('is-visible');
               } else {
                 el.classList.remove('is-visible');
