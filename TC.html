@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unified Mobility Payments Platform for Tolls, MLFF, Parking, EV charging, Fuel, Transit and E-Challan. Paysonic delivers secure, scalable Digital Payment Infrastructure for India.">
+<meta name="keywords" content="">
+<meta name="author" content="uigigs">
+<title>Terms & Conditions — Paysonic</title>
+
+<!-- bootstrap css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --green:      #02B54E;
+    --green-600:  #019C47;
+    --green-700:  #06852F;
+    --green-050:  #E8F8EE;
+    --blue:       #2666F9;
+    --blue-600:   #1B4FD4;
+    --blue-050:   #E8F0FE;
+    --navy:       #041F49;
+    --navy-800:   #0B2E63;
+    --cream:      #FEF0CA;
+    --sky:        #EAF3FE;
+    --ink:        #0A1B34;
+    --muted:      #5B6B84;
+    --faint:      #6D7C92;
+    --line:       rgba(4,31,73,.10);
+    --line-soft:  rgba(4,31,73,.06);
+    --white:      #FFFFFF;
+    --r-sm:       12px;
+    --r:          18px;
+    --r-lg:       24px;
+    --gutter:     clamp(18px, 4vw, 40px);
+    --maxw:       1240px;
+    --nav-h:      74px;
+    --font-d:     "Manrope", ui-sans-serif, system-ui, sans-serif;
+    --font-m:     "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:var(--font-d);
+    font-weight:500;
+    font-size:16px;
+    line-height:1.6;
+    color:var(--ink);
+    background:var(--white);
+  }
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  img{max-width:100%;}
+  h1,h2,h3,h4,h5,h6{font-family:var(--font-d);font-weight:800;color:var(--navy);margin:0;}
+
+  .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+  /* ================= NAV (Exact match from index.html) ================= */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:90;
+    height:var(--nav-h);
+    display:flex; align-items:center;
+    background: rgba(255, 255, 255, .78);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav-in{
+    width:100%; max-width:var(--maxw); margin-inline:auto;
+    padding-inline:var(--gutter);
+    display:flex; align-items:center; gap:24px;
+  }
+  .logo{ display:flex; align-items:center; gap:10px; flex:none; }
+  .nav-links{
+    display:flex; align-items:center; gap:clamp(14px,1.7vw,28px);
+    margin-left:auto;
+  }
+  .nav-links a{
+    font-size:.9rem; font-weight:600; color:var(--navy);
+    display:inline-flex; align-items:center; gap:5px;
+    opacity:.85; transition:opacity .25s;
+  }
+  .nav-links a:hover{ opacity:1; color:var(--blue); }
+  .nav-cta{ margin-left:8px; padding:.62em 1.15em; font-size:.875rem; }
+
+  .btn{
+    position:relative; display:inline-flex; align-items:center; justify-content:center;
+    gap:.65em; padding:.92em 1.6em; border-radius:999px; background:var(--green);
+    color:#fff; font-weight:700; font-size:.95rem; letter-spacing:-.01em;
+    white-space:nowrap; box-shadow:0 10px 24px -10px rgba(2,181,78,.75);
+    transition:transform .45s cubic-bezier(.22,1,.36,1), background .25s;
+  }
+  .btn:hover{ background:var(--green-600); }
+
+  .burger{
+    display:none; margin-left:auto; width:42px; height:42px; border-radius:12px;
+    border:1px solid var(--line); background:rgba(255,255,255,.8); place-items:center; cursor:pointer;
+  }
+  .burger i{
+    display:block; width:17px; height:1.6px; background:var(--navy); border-radius:2px;
+  }
+  .burger i + i{ margin-top:4.5px; }
+
+  @media (max-width:1080px){
+    .nav-links{ display:none; }
+    .burger{ display:grid; }
+    .nav-cta{ display:none; }
+  }
+
+  /* ================= PAGE HERO / TITLE ================= */
+  .pp-hero{
+    background:#EAF3FE;
+    padding:calc(var(--nav-h) + 60px) 0 48px;
+    border-bottom:1px solid var(--line);
+    text-align:center;
+  }
+  .pp-hero p.uppercase{
+    text-transform:uppercase; letter-spacing:.08em;
+    font-size:13px; font-weight:600; color:var(--faint);
+    margin-bottom:14px; font-family:var(--font-m);
+  }
+  .pp-hero h1{ font-size:clamp(2.3rem, 5vw, 4.2rem); font-weight:800; color:var(--navy); }
+
+  /* ================= CONTENT SECTION ================= */
+  .pp-content-section{padding:64px 0 40px;}
+  .content-table-title{
+    display:flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:.06em;
+    color:var(--blue);text-transform:uppercase;margin-bottom:18px;
+    font-family:var(--font-m);
+  }
+  .terms-list{padding-left:0;}
+  .terms-list li{margin-bottom:4px;}
+  .terms-list a{
+    display:block;padding:10px 14px;border-radius:8px;
+    font-size:15px;font-weight:500;color:var(--muted);
+    border-left:2px solid transparent;
+    transition:all .15s ease;
+  }
+  .terms-list a:hover,.terms-list a.active{
+    color:var(--blue); background:var(--blue-050); border-left-color:var(--blue);
+  }
+  .terms-and-service-content h4{
+    font-size:22px; font-weight:800; color:var(--navy); margin-bottom:14px;
+  }
+  .terms-and-service-content > div{margin-bottom:38px;scroll-margin-top:100px;}
+  .terms-and-service-content p{
+    font-size:16px; line-height:1.75; color:var(--muted); margin-bottom:14px;
+  }
+  .terms-and-service-content p strong{color:var(--navy);}
+  .terms-and-service-content ul{margin:14px 0;padding-left:0;}
+  .terms-and-service-content ul li{
+    position:relative; padding-left:20px; font-size:16px; line-height:1.8; color:var(--muted);
+  }
+  .terms-and-service-content a{color:var(--blue);font-weight:600;}
+
+  /* ================= FOOTER (Exact match from index.html) ================= */
+  .foot{ background: var(--white); border-top: 1px solid var(--line-soft); padding-top: clamp(60px, 8vw, 88px); padding-bottom: 0; }
+  .foot-grid{
+    width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(28px, 3vw, 48px);
+    padding-bottom: clamp(20px, 2vw, 28px); justify-items: center; text-align: center;
+  }
+  .foot-brand p{ font-size: .85rem; color: var(--muted); margin: 14px 0 18px; max-width: 30ch; }
+  .socials{ display: flex; gap: 9px; justify-content: center; }
+  .socials a{
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid var(--line); display: grid; place-items: center;
+    color: var(--navy); transition: all .3s;
+  }
+  .socials a:hover{ background: var(--navy); color: #fff; border-color: var(--navy); transform: translateY(-3px); }
+  .socials a svg{ width: 16px; height: 16px; display: block; }
+  .fcol h4{ font-size: .86rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+  .fcol a{ display: block; font-size: .85rem; color: var(--muted); padding: 8px 0; text-decoration: none; transition: color .25s; }
+  .fcol a:hover{ color: var(--blue); }
+  .sub{ background: var(--sky); border-radius: 18px; padding: 20px; text-align: left; width: 100%; }
+  .sub h4{ font-size: .86rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .sub p{ font-size: .79rem; color: var(--muted); margin: 0 0 14px; }
+  .sub-field{ display: flex; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 5px 5px 5px 16px; }
+  .sub-field input{ flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: .85rem; color: var(--navy); }
+  .sub-field button{ width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; border: none; cursor: pointer; }
+  .foot-bar{ background: var(--navy); color: rgba(255,255,255,.7); padding: 24px 0; font-size: .8rem; }
+  .foot-bar .wrap{ width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .foot-bar a{ color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s; }
+  .foot-bar a:hover{ color: #fff; }
+
+  @media (max-width: 1080px){
+    .foot-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== ICON SPRITE ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></g></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M4.6 8.9h3.3V20H4.6zM6.25 3.4a1.94 1.94 0 1 1 0 3.88 1.94 1.94 0 0 1 0-3.88M10.2 8.9h3.16v1.52h.05c.44-.83 1.51-1.71 3.11-1.71 3.33 0 3.94 2.19 3.94 5.04V20h-3.29v-5.55c0-1.32-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93V20H10.2z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M17.3 3.5h3.02l-6.6 7.54L21.5 20.5h-6.08l-4.76-6.22-5.45 6.22H2.18l7.06-8.07L2.34 3.5h6.24l4.3 5.69zm-1.06 15.19h1.67L7.83 5.22H6.03z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.28 5 12 5 12 5s-6.28 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.72 19 12 19 12 19s6.28 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8M10.1 15V9l5.1 3z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.6" width="18.4" height="14.8" rx="2.6"/><path d="m3.6 6.6 8.4 6 8.4-6"/></g></symbol>
+</defs>
+</svg>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo" aria-label="Paysonic — home">
+      <img src="PaysonicTech-removebg-preview.png" alt="Paysonic Logo" style="height: 66px; width: auto;">
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#platform">Platform</a>
+      <a href="index.html#journey">Solutions</a>
+      <a href="index.html#products">Technology</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+  <!-- PAGE HERO / TITLE                                             -->
+  <!-- ============================================================ -->
+  <section class="pp-hero" style="background: #F7F8FA; padding: calc(var(--nav-h) + 40px) 0 40px; border-bottom: 1px solid #E7EAEE; text-align: left;">
+    <div class="container">
+      <p class="uppercase" style="text-transform: uppercase; letter-spacing: .08em; font-size: 13px; font-weight: 600; color: #8A94A6; margin-bottom: 14px; font-family: 'DM Sans', sans-serif;">Last updated: 04 March 2026</p>
+      <h1 style="font-size: 44px; font-weight: 700; color: #111214; font-family: 'Poppins', sans-serif;">Terms of Service</h1>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CONTENT SECTION                                               -->
+  <!-- ============================================================ -->
+  <section class="pp-content-section" style="padding: 64px 0 40px;">
+    <div class="container">
+      <div class="terms-and-service-inner">
+        <div class="row">
+          <!-- Table of contents -->
+          <div class="col-md-4">
+            <div style="position: sticky; top: 100px;">
+              <h6 class="content-table-title" style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .06em; color: #0095FF; text-transform: uppercase; margin-bottom: 18px; font-family: 'Poppins', sans-serif;">
+                <img src="data:image/svg+xml,%3csvg%20width='20'%20height='17'%20viewBox='0%200%2020%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%201H19'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%206H10.47'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%2011H19'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%2016H10.47'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="icon">
+                TABLE OF CONTENTS
+              </h6>
+              <ol class="terms-list" style="list-style: none; padding: 0;">
+                <li><a href="#one" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Use of Service</a></li>
+                <li><a href="#two" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Your account</a></li>
+                <li><a href="#three" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Payment and Subscription</a></li>
+                <li><a href="#four" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Limitation of Liability</a></li>
+                <li><a href="#five" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Changes to Terms</a></li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Article content -->
+          <div class="col-md-8">
+            <div class="terms-and-service-content">
+              <div class="intro-block" style="margin-bottom: 20px;">
+                <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">Welcome to Paysonic ("<strong>Paysonic</strong>", "<strong>us</strong>", "<strong>we</strong>", or "<strong>our</strong>"). These Terms of Service ("<strong>Terms</strong>") govern your use of our website (the "<strong>Service</strong>") and any related products or services provided by us. By using the Service, you agree to be bound by these Terms. Some parts of the Service are billed on a subscription basis ("<strong>Subscription(s)</strong>"). You will be billed in advance on a recurring subscription that you choose.</p>
+              </div>
+              <div class="intro-block" style="margin-bottom: 20px;">
+                <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
+              </div>
+
+              <div id="one" style="margin-bottom: 38px;">
+                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">1. Use of Service</h4>
+                <div>
+                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">By accessing and using our platform, you agree to comply with these Terms and all applicable laws. You must use our services only for lawful purposes and in a manner that does not interfere with the operation or security of the platform.</p>
+                </div>
+              </div>
+
+              <div id="two" style="margin-bottom: 38px;">
+                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">2. Your account</h4>
+                <div>
+                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">You are responsible for maintaining the confidentiality of your account credentials and for all activities conducted through your account. Please notify us immediately if you suspect any unauthorized access or security breach.</p>
+                </div>
+              </div>
+
+              <div id="three" style="margin-bottom: 38px;">
+                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">3. Payment and Subscription</h4>
+                <div>
+                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">Certain services may require payment or an active subscription. By using paid services, you agree to pay all applicable fees. Payments are processed securely, and pricing or subscription plans may be updated with prior notice where applicable.</p>
+                </div>
+              </div>
+
+              <div id="four" style="margin-bottom: 38px;">
+                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">4. Limitation of Liability</h4>
+                <div>
+                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">While we strive to provide reliable and secure services, we do not guarantee uninterrupted or error-free operation. To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages arising from your use of the platform.</p>
+                </div>
+              </div>
+
+              <div id="five" style="margin-bottom: 38px;">
+                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">5. Changes to Terms</h4>
+                <div>
+                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">We may update these Terms and Conditions from time to time to reflect changes in our services or legal requirements. Updated terms will be published on this page, and your continued use of the platform after such changes constitutes acceptance of the revised Terms.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- REACH US CTA (We'd Love to Hear From You!)                    -->
+  <!-- ============================================================ -->
+  <section class="cvlYel" style="padding: 0 0 80px;">
+    <div class="container">
+      <div class="bg-black reach-us" style="background: #0B0B0C; border-radius: 28px; padding: 64px 40px;">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 col-md-8">
+            <div class="building-content text-center">
+              <div class="section-title">
+                <h2 class="title text-white reach-title" style="font-size: 34px; font-weight: 700; margin-bottom: 10px; color: #fff; font-family: 'Poppins', sans-serif;">We'd Love to Hear From You!</h2>
+                <p class="text-white" style="font-size: 16px; color: #c7cbd3; margin-bottom: 0;">Have any questions, feedback, or partnership inquiries?</p>
+              </div>
+              <h4 class="fs-20 text-white" style="font-size: 20px; font-weight: 600; margin-top: 30px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; color: #fff;">
+                Reach us at :
+                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20256%20256'%3e%3crect%20width='256'%20height='256'%20fill='none'/%3e%3cpath%20d='M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z'%20fill='none'%20stroke='%23376BED'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'/%3e%3cpolyline%20points='224%2056%20128%20144%2032%2056'%20fill='none'%20stroke='%23376BED'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'/%3e%3c/svg%3e" alt="mail-icon" class="wd-35" style="width: 26px;">
+                <a href="mailto:connect@paysonictech.com" class="brand-blue" style="color: #7DA9FF; font-weight: 700; text-decoration: none;">connect@paysonictech.com</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot" id="footer">
+  <div class="foot-grid">
+    <div class="foot-brand" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <a href="index.html" class="logo">
+        <img src="PaysonicTech_Logo_with_Tagline-removebg-preview.png" alt="Paysonic Logo" style="height: 84px; width: auto;">
+      </a>
+      <p style="margin-inline: auto;">India’s mobility payment infrastructure, engineered for scale, connectivity and seamless transactions.</p>
+      <div class="socials">
+        <a href="mailto:connect@paysonictech.com" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-in"/></svg></a>
+        <a href="mailto:connect@paysonictech.com" aria-label="X"><svg aria-hidden="true"><use href="#i-x"/></svg></a>
+        <a href="mailto:connect@paysonictech.com" aria-label="YouTube"><svg aria-hidden="true"><use href="#i-yt"/></svg></a>
+        <a href="mailto:connect@paysonictech.com" aria-label="Email"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
+      </div>
+    </div>
+
+    <div class="fcol">
+      <h4>Products</h4>
+      <a href="index.html#products">NETC Acquiring</a>
+      <a href="index.html#products">Mobility Platform</a>
+      <a href="index.html#platform">EV Charging</a>
+      <a href="index.html#platform">Merchant Platform</a>
+    </div>
+
+    <div class="fcol">
+      <h4>Company</h4>
+      <a href="about.html">About us</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="pp.html">Privacy Policy</a>
+      <a href="#">Careers</a>
+      <a href="#">News &amp; media</a>
+    </div>
+
+    <div class="sub">
+      <h4>Stay Connected</h4>
+      <p>Monthly Mobility Intelligence</p>
+      <form class="sub-field" id="subForm" action="mailto:connect@paysonictech.com" method="POST" enctype="text/plain">
+        <label for="subEmail" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+        <input id="subEmail" name="Subscriber Email" type="email" placeholder="Enter Email Address" required>
+        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="foot-bar">
+    <div class="wrap">
+      <span>© 2026 Paysonic Technologies Pvt.Ltd. All rights reserved.</span>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="pp.html">Privacy Policy</a>
+        <a href="TC.html">Terms &amp; Condition</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

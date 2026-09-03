@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="uigigs">
+<title>Staco - Privacy Policy</title>
+
+<!-- bootstrap css (grid + reset only, all visual styling below is custom) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#173F4D;
+    --blue:#0095FF;
+    --blue-dark:#376BED;
+    --text-gray:#5B6470;
+    --label-gray:#8A94A6;
+    --ink:#111214;
+    --border:#E7EAEE;
+    --bg:#ffffff;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'DM Sans', sans-serif;
+    color:var(--text-gray);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  img{max-width:100%;}
+  h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;color:var(--ink);margin:0;}
+
+  .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+  /* ================= HEADER (from index.html) ================= */
+  .header-section{
+    border-bottom:1px solid var(--border);
+    background:#fff;
+    position:relative;
+    z-index:50;
+  }
+  .header-navbar-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+    flex-wrap:wrap;
+  }
+  .header-logo{display:flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;color:var(--ink);}
+  .header-logo .logo-mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:15px;}
+  .header-navbar-content{display:flex;align-items:center;gap:36px;}
+  .main-menu{display:flex;align-items:center;gap:32px;}
+  .main-menu .nav-item{position:relative;}
+  .main-menu .nav-link{
+    font-size:15px;font-weight:500;color:#3a4250;
+    display:flex;align-items:center;gap:6px;
+    padding:8px 0;
+  }
+  .main-menu .nav-link.active,.main-menu .nav-link:hover{color:var(--blue);}
+  .has-submenu:hover .submenu-box{display:block;}
+  .submenu-box{
+    display:none;position:absolute;top:100%;left:0;background:#fff;
+    border:1px solid var(--border);border-radius:10px;min-width:190px;
+    box-shadow:0 12px 30px rgba(20,30,50,.08);padding:8px;margin-top:10px;
+  }
+  .submenu .dropdown-item{display:block;padding:9px 12px;border-radius:6px;font-size:14px;color:#3a4250;}
+  .submenu .dropdown-item:hover{background:#F3F7FF;color:var(--blue);}
+  .header-extra .lets-talks{
+    background:var(--ink);color:#fff;font-weight:600;font-size:14px;
+    padding:11px 22px;border-radius:999px;transition:background .2s ease;
+  }
+  .header-extra .lets-talks:hover{background:var(--blue-dark);}
+  .menu-toggler{display:none;}
+  .menu-toggler .btn{border:1px solid var(--border);border-radius:8px;padding:8px 10px;background:#fff;}
+
+  @media (max-width:991px){
+    .header-navbar-content{display:none;}
+    .menu-toggler{display:block;}
+  }
+
+  /* offcanvas mobile menu keeps bootstrap defaults */
+  .offcanvasStaco-body .nav-menu > li{border-bottom:1px solid var(--border);}
+  .offcanvasStaco-body .dropdown-item,.offcanvasStaco-body .nav-menu > li > a{
+    display:block;padding:14px 4px;font-weight:500;color:#3a4250;background:none;border:none;width:100%;text-align:left;
+  }
+  .offcanvasStaco-body .sub-menu{padding-left:14px;}
+  .offcanvasStaco-body .sub-menu a{padding:10px 4px;color:#5b6470;font-weight:400;}
+
+  /* ================= PAGE HERO / TITLE ================= */
+  .pp-hero{
+    background:#F7F8FA;
+    padding:56px 0 48px;
+    border-bottom:1px solid var(--border);
+  }
+  .pp-hero p.uppercase{
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:13px;
+    font-weight:600;
+    color:var(--label-gray);
+    margin-bottom:14px;
+  }
+  .pp-hero h1{
+    font-size:44px;
+    font-weight:700;
+    color:var(--ink);
+  }
+
+  /* ================= CONTENT SECTION ================= */
+  .pp-content-section{padding:64px 0 40px;}
+  .terms-and-service-inner .row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+  }
+
+  /* Table of contents */
+  .content-table-title{
+    display:flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:700;letter-spacing:.06em;
+    color:var(--blue);text-transform:uppercase;margin-bottom:18px;
+  }
+  .terms-list{padding-left:0;}
+  .terms-list li{margin-bottom:4px;}
+  .terms-list a{
+    display:block;padding:10px 14px;border-radius:8px;
+    font-size:15px;font-weight:500;color:#4c5463;
+    border-left:2px solid transparent;
+    transition:background .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .terms-list a:hover,.terms-list a.active{
+    color:var(--blue);
+    background:#F1F7FF;
+    border-left-color:var(--blue);
+  }
+
+  /* Article content */
+  .terms-and-service-content h4{
+    font-size:22px;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:14px;
+  }
+  .terms-and-service-content > div{margin-bottom:38px;scroll-margin-top:100px;}
+  .terms-and-service-content p{
+    font-size:16px;
+    line-height:1.75;
+    color:var(--text-gray);
+    margin-bottom:14px;
+  }
+  .terms-and-service-content p strong{color:var(--ink);}
+  .terms-and-service-content ul{margin:14px 0;}
+  .terms-and-service-content ul li{
+    position:relative;
+    padding-left:20px;
+    font-size:16px;
+    line-height:1.8;
+    color:var(--text-gray);
+  }
+  .terms-and-service-content ul li::before{
+    content:"";
+    position:absolute;left:2px;top:11px;
+    width:6px;height:6px;border-radius:50%;
+    background:var(--blue-dark);
+  }
+  .terms-and-service-content a{color:var(--blue);font-weight:600;}
+  .terms-and-service-content a:hover{text-decoration:underline;}
+
+  /* ================= CTA / REACH US ================= */
+  .cvlYel{padding:0 0 80px;}
+  .bg-black.reach-us{
+    background:#0B0B0C;
+    border-radius:28px;
+    padding:64px 40px;
+  }
+  .reach-title{font-size:34px;font-weight:700;margin-bottom:10px;}
+  .building-content p{font-size:16px;color:#c7cbd3;margin-bottom:0;}
+  .building-content .fs-20{font-size:20px;font-weight:600;margin-top:30px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;}
+  .building-content .brand-blue{color:#7DA9FF;font-weight:700;}
+  .wd-35{width:26px;}
+
+  /* ================= FOOTER (from index.html) ================= */
+  .footer-section{background:#fff;border-top:1px solid var(--border);}
+  .footer-top{padding:56px 0 30px;}
+  .footer-logo img{height:26px;}
+  .footer-card .footer-info{max-width:300px;}
+  .footer-info p{font-size:14.5px;line-height:1.7;color:#6b7280;margin-top:16px;}
+  .widget-title h6{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:18px;}
+  .widget-list li{margin-bottom:12px;}
+  .widget-list a{font-size:14.5px;color:#6b7280;position:relative;}
+  .widget-list a:hover{color:var(--blue);}
+  .template-badge{
+    display:inline-block;margin-left:8px;font-size:11px;font-weight:700;
+    background:#E7F8EF;color:#17A05C;padding:2px 8px;border-radius:999px;
+  }
+  .footer-bottom{border-top:1px solid var(--border);padding:22px 0;}
+  .footer-copyright p{font-size:13.5px;color:#8a94a6;margin:0;}
+  .footer-copyright a{color:#8a94a6;font-weight:600;}
+  .privacy-menu{display:flex;gap:22px;justify-content:flex-end;flex-wrap:wrap;}
+  .privacy-menu a{font-size:13.5px;color:#8a94a6;}
+  .privacy-menu a:hover{color:var(--blue);}
+  @media (max-width:767px){
+    .privacy-menu{justify-content:flex-start;}
+    .lg-center-text{text-align:left;margin-bottom:10px;}
+  }
+
+  /* ================= SCROLL TO TOP (progress circle + arrow) ================= */
+  .staco-scroll-top{
+    position:fixed;
+    right:26px;
+    bottom:26px;
+    width:54px;
+    height:54px;
+    z-index:999;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(12px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s ease;
+  }
+  .staco-scroll-top.is-visible{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+  .staco-scroll-top svg.progress-circle{
+    position:absolute;inset:0;transform:rotate(-90deg);
+  }
+  .staco-scroll-top svg.progress-circle circle.bg{
+    fill:#fff;
+    stroke:#E7EAEE;
+    stroke-width:5;
+  }
+  .staco-scroll-top svg.progress-circle circle.fg{
+    fill:none;
+    stroke:var(--blue-dark);
+    stroke-width:5;
+    stroke-linecap:round;
+    transition:stroke-dashoffset .1s linear;
+  }
+  .staco-scroll-top-icon{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue-dark);
+    font-size:16px;
+  }
+  .staco-scroll-top:hover .staco-scroll-top-icon{color:var(--ink);}
+</style>
+</head>
+<body>
+<div id="root">
+
+  <!-- ============================================================ -->
+  <!-- HEADER (Exact match from index.html)                         -->
+  <!-- ============================================================ -->
+  <header class="nav" id="nav" style="position:relative; background:rgba(255,255,255,.95); border-bottom:1px solid rgba(4,31,73,.06);">
+    <div class="nav-in" style="width:100%; max-width:1240px; margin-inline:auto; padding-inline:clamp(18px,4vw,40px); height:74px; display:flex; align-items:center; gap:24px;">
+      <a href="index.html" class="logo" aria-label="Paysonic — home" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+        <img src="PaysonicTech-removebg-preview.png" alt="Paysonic Logo" style="height: 66px; width: auto;">
+      </a>
+
+      <nav class="nav-links" aria-label="Primary" style="display:flex; align-items:center; gap:28px; margin-left:auto;">
+        <a href="index.html#platform" style="font-size:.9rem; font-weight:600; color:#041F49; text-decoration:none;">Platform</a>
+        <a href="index.html#journey" style="font-size:.9rem; font-weight:600; color:#041F49; text-decoration:none;">Solutions</a>
+        <a href="index.html#products" style="font-size:.9rem; font-weight:600; color:#041F49; text-decoration:none;">Technology</a>
+        <a href="about.html" style="font-size:.9rem; font-weight:600; color:#041F49; text-decoration:none;">About Us</a>
+      </nav>
+
+      <a href="mailto:connect@paysonictech.com" class="btn nav-cta" style="position:relative; display:inline-flex; align-items:center; justify-content:center; gap:.65em; padding:.62em 1.15em; border-radius:999px; background:#02B54E; color:#fff; font-weight:700; font-size:.875rem; text-decoration:none; white-space:nowrap; box-shadow:0 10px 24px -10px rgba(2,181,78,.75);">Contact us <svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></a>
+
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer" style="display:none; margin-left:auto; width:42px; height:42px; border-radius:12px; border:1px solid rgba(4,31,73,.10); background:rgba(255,255,255,.8); place-items:center;"><i></i><i></i><i></i></button>
+    </div>
+  </header>
+
+  <!-- mobile offcanvas menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasStaco" aria-labelledby="offcanvasStacoLabel">
+    <div class="offcanvas-header">
+      <a class="navbar-brand header-logo" href="/"><span class="logo-mark">P</span>Paysonic</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body offcanvasStaco-body">
+      <ul class="nav-menu">
+        <li class="has-submenu">
+          <button class="dropdown-item">Solutions</button>
+          <ul class="sub-menu">
+            <li><a href="/etc">ETC</a></li>
+            <li><a href="/bbps">BBPS</a></li>
+            <li><a href="/payment-platform">Payment Platform</a></li>
+          </ul>
+        </li>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/partnership">Partnership</a></li>
+        <li><a href="/contact-us">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PAGE TITLE                                                     -->
+  <!-- ============================================================ -->
+  <section class="pp-hero">
+    <div class="container">
+      <p class="uppercase">Last updated: 04 March 2026</p>
+      <h1>Privacy Policy</h1>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PRIVACY POLICY CONTENT                                         -->
+  <!-- ============================================================ -->
+  <section class="pp-content-section">
+    <div class="container">
+      <div class="terms-and-service-inner">
+        <div class="row">
+
+          <!-- Table of contents -->
+          <div class="col-md-4">
+            <div style="position:sticky; top:20px;">
+              <h6 class="content-table-title dm-sans">
+                <img src="data:image/svg+xml,%3csvg%20width='20'%20height='17'%20viewBox='0%200%2020%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%201H19'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%206H10.47'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%2011H19'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%2016H10.47'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="icon">
+                Table of contents
+              </h6>
+              <ol class="terms-list" style="list-style:none;padding:0;">
+                <li><a href="#one" class="toc-link active">Our privacy</a></li>
+                <li><a href="#two" class="toc-link">Information we collect</a></li>
+                <li><a href="#three" class="toc-link">How we use your information</a></li>
+                <li><a href="#four" class="toc-link">How we share your information</a></li>
+                <li><a href="#five" class="toc-link">Contact us</a></li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Article -->
+          <div class="col-md-8">
+            <div class="terms-and-service-content">
+
+              <div id="one">
+                <h4>1. Our privacy</h4>
+                <div>
+                  <p>At Paysonic, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, disclose, and safeguard your information when you visit our website or use our payment services.</p>
+                </div>
+              </div>
+
+              <div id="two">
+                <h4>2. Information we collect</h4>
+                <div>
+                  <p>We may collect information about you when you use our services, such as your name, email address, postal address, phone number, and payment information. We may also collect information about your device and how you use our services, including your IP address, browser type, and operating system.</p>
+                  <p><strong>2.1</strong> We collect this information in several ways, including when you provide it to us directly, when you use our services, and when we obtain it from third-party sources. We may also use cookies and similar technologies to collect information about your browsing behavior and preferences.</p>
+                  <p><strong>2.2</strong> When you use our services, and when we obtain it from third-party sources. We may also use cookies and similar technologies to collect information about your browsing behavior.</p>
+                  <p><strong>2.3</strong> Including when you provide it to us directly, when you use our services, and when we obtain it from third-party sources. We may also use cookies and similar technologies to collect information about your browsing behavior and preferences.</p>
+                </div>
+              </div>
+
+              <div id="three">
+                <h4>3. How we use your information</h4>
+                <div>
+                  <p>We use your information to provide and improve our services, to communicate with you, and to personalize your experience. Specifically, we may use your information for the following purposes:</p>
+                  <ul>
+                    <li>Provide and manage payment services.</li>
+                    <li>Process transactions securely.</li>
+                    <li>Verify your identity and prevent fraud.</li>
+                    <li>Comply with applicable laws and regulatory requirements.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div id="four">
+                <h4>4. How we share your information</h4>
+                <div>
+                  <p>We may share your information with third-party service providers who help us provide our services, such as payment processors and customer support providers. We may also share your information with our partners and affiliates for marketing purposes. In some cases, we may share your information with government authorities or law enforcement agencies to comply with legal requirements or protect our rights and property.<br>We will never sell your information to third parties.</p>
+                </div>
+              </div>
+
+              <div id="five">
+                <h4>5. Contact us</h4>
+                <div>
+                  <p>If you have any questions about these Terms, please contact us at [<a href="/contact-us">Contact page</a>].</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- REACH US CTA                                                   -->
+  <!-- ============================================================ -->
+  <section class="cvlYel">
+    <div class="container">
+      <div class="bg-black reach-us">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 col-md-8">
+            <div class="building-content text-center">
+              <div class="section-title">
+                <h2 class="title text-white reach-title">We'd Love to Hear From You!</h2>
+                <p class="text-white">Have any questions, feedback, or partnership inquiries?</p>
+              </div>
+              <h4 class="fs-20 text-white">
+                Reach us at :
+                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20256%20256'%3e%3crect%20width='256'%20height='256'%20fill='none'/%3e%3cpath%20d='M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z'%20fill='none'%20stroke='%23376BED'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'/%3e%3cpolyline%20points='224%2056%20128%20144%2032%2056'%20fill='none'%20stroke='%23376BED'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'/%3e%3c/svg%3e" alt="mail-icon" class="wd-35">
+                <a href="mailto:connect@paysonictech.com" class="brand-blue">connect@paysonictech.com</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER (Exact match from index.html) ===================== -->
+  <footer class="foot over" id="footer" style="background: var(--white, #FFFFFF); border-top: 1px solid rgba(4,31,73,.06); padding-top: clamp(60px, 8vw, 88px); padding-bottom: 0;">
+    <div class="wrap foot-grid" style="width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(28px, 3vw, 48px); padding-bottom: clamp(20px, 2vw, 28px); justify-items: center; text-align: center;">
+      
+      <!-- Brand & Socials -->
+      <div class="foot-brand" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <a href="index.html" class="logo">
+          <img src="PaysonicTech_Logo_with_Tagline-removebg-preview.png" alt="Paysonic Logo" style="height: 84px; width: auto;">
+        </a>
+        <p style="margin-inline: auto; font-size: .85rem; color: #5B6B84; margin: 14px 0 18px; max-width: 30ch;">India’s mobility payment infrastructure, engineered for scale, connectivity and seamless transactions.</p>
+        <div class="socials" style="display: flex; gap: 9px; justify-content: center;">
+          <a href="mailto:connect@paysonictech.com" aria-label="LinkedIn" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(4,31,73,.10); display: grid; place-items: center; color: #041F49;"><svg width="16" height="16" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M4.6 8.9h3.3V20H4.6zM6.25 3.4a1.94 1.94 0 1 1 0 3.88 1.94 1.94 0 0 1 0-3.88M10.2 8.9h3.16v1.52h.05c.44-.83 1.51-1.71 3.11-1.71 3.33 0 3.94 2.19 3.94 5.04V20h-3.29v-5.55c0-1.32-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93V20H10.2z"/></svg></a>
+          <a href="mailto:connect@paysonictech.com" aria-label="X" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(4,31,73,.10); display: grid; place-items: center; color: #041F49;"><svg width="16" height="16" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M17.3 3.5h3.02l-6.6 7.54L21.5 20.5h-6.08l-4.76-6.22-5.45 6.22H2.18l7.06-8.07L2.34 3.5h6.24l4.3 5.69zm-1.06 15.19h1.67L7.83 5.22H6.03z"/></svg></a>
+          <a href="mailto:connect@paysonictech.com" aria-label="YouTube" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(4,31,73,.10); display: grid; place-items: center; color: #041F49;"><svg width="16" height="16" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.28 5 12 5 12 5s-6.28 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.72 19 12 19 12 19s6.28 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8M10.1 15V9l5.1 3z"/></svg></a>
+          <a href="mailto:connect@paysonictech.com" aria-label="Email" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(4,31,73,.10); display: grid; place-items: center; color: #041F49;"><svg width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2.8" y="4.6" width="18.4" height="14.8" rx="2.6"/><path d="m3.6 6.6 8.4 6 8.4-6"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Products Links -->
+      <div class="fcol" style="text-align: center;">
+        <h4 style="font-size: .86rem; font-weight: 800; color: #041F49; margin-bottom: 16px;">Products</h4>
+        <a href="index.html#products" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">NETC Acquiring</a>
+        <a href="index.html#products" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Mobility Platform</a>
+        <a href="index.html#platform" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">EV Charging</a>
+        <a href="index.html#platform" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Merchant Platform</a>
+      </div>
+
+      <!-- Company Links -->
+      <div class="fcol" style="text-align: center;">
+        <h4 style="font-size: .86rem; font-weight: 800; color: #041F49; margin-bottom: 16px;">Company</h4>
+        <a href="about.html" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">About us</a>
+        <a href="leadership.html" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Leadership</a>
+        <a href="pp.html" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Privacy Policy</a>
+        <a href="#" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Careers</a>
+        <a href="#" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">News &amp; media</a>
+      </div>
+
+      <!-- Stay Connected Form -->
+      <div class="sub" style="background: #EAF3FE; border-radius: 18px; padding: 20px; text-align: left; width: 100%;">
+        <h4 style="font-size: .86rem; font-weight: 800; color: #041F49; margin-bottom: 6px;">Stay Connected</h4>
+        <p style="font-size: .79rem; color: #5B6B84; margin: 0 0 14px;">Monthly Mobility Intelligence</p>
+        <form class="sub-field" id="subForm" action="mailto:connect@paysonictech.com" method="POST" enctype="text/plain" style="display: flex; gap: 8px; background: #fff; border: 1px solid rgba(4,31,73,.10); border-radius: 999px; padding: 5px 5px 5px 16px;">
+          <input id="subEmail" name="Subscriber Email" type="email" placeholder="Enter Email Address" required style="flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: .85rem; color: #041F49;">
+          <button type="submit" aria-label="Subscribe" style="width: 34px; height: 34px; flex: none; border-radius: 50%; background: #02B54E; color: #fff; display: grid; place-items: center; border: none; cursor: pointer;"><svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright & Policy Links Bar -->
+    <div class="foot-bar" style="background: #041F49; color: rgba(255,255,255,.7); padding: 24px 0; font-size: .8rem;">
+      <div class="wrap" style="width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <span>© 2026 Paysonic Technologies Pvt.Ltd. All rights reserved.</span>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <a href="pp.html" style="color: rgba(255,255,255,.7); text-decoration: none;">Privacy Policy</a>
+          <a href="TC.html" style="color: rgba(255,255,255,.7); text-decoration: none;">Terms &amp; Condition</a>
+          <a href="#" style="color: rgba(255,255,255,.7); text-decoration: none;">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- SCROLL TO TOP (progress ring + arrow)                          -->
+  <!-- ============================================================ -->
+  <div class="staco-scroll-top" id="scrollTop">
+    <svg class="progress-circle" width="54" height="54" viewBox="0 0 54 54">
+      <circle class="bg" cx="27" cy="27" r="24"></circle>
+      <circle class="fg" id="progressRing" cx="27" cy="27" r="24"
+              stroke-dasharray="150.79" stroke-dashoffset="150.79"></circle>
+    </svg>
+    <div class="staco-scroll-top-icon">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Scroll-to-top button with circular scroll progress indicator
+  const scrollBtn = document.getElementById('scrollTop');
+  const ring = document.getElementById('progressRing');
+  const circumference = 2 * Math.PI * 24; // r = 24
+
+  ring.style.strokeDasharray = circumference;
+
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+    const offset = circumference - (progress * circumference);
+    ring.style.strokeDashoffset = offset;
+
+    if (scrollTop > 300) {
+      scrollBtn.classList.add('is-visible');
+    } else {
+      scrollBtn.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', updateScrollProgress);
+  updateScrollProgress();
+
+  scrollBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Highlight active table-of-contents link on scroll
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+
+  function updateActiveToc() {
+    let currentIndex = 0;
+    sections.forEach((section, i) => {
+      if (section && section.getBoundingClientRect().top - 120 <= 0) {
+        currentIndex = i;
+      }
+    });
+    tocLinks.forEach((link, i) => link.classList.toggle('active', i === currentIndex));
+  }
+  window.addEventListener('scroll', updateActiveToc);
+  updateActiveToc();
+
+  // Smooth scroll for TOC anchor links
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 90, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
