@@ -87,6 +87,46 @@
     .menu-toggler{display:block;}
   }
 
+  /* ================= NAV — burger + drawer (matches index.html) ================= */
+  .burger{
+    display:none; margin-left:auto; width:42px; height:42px; border-radius:12px;
+    border:1px solid rgba(4,31,73,.10); background:rgba(255,255,255,.8); place-items:center; cursor:pointer;
+  }
+  .burger i{
+    display:block; width:17px; height:1.6px; background:#041F49; border-radius:2px;
+    transition:transform .4s cubic-bezier(.22,1,.36,1), opacity .3s;
+  }
+  .burger i + i{ margin-top:4.5px; }
+  .burger.is-open i:nth-child(1){ transform:translateY(6.1px) rotate(45deg); }
+  .burger.is-open i:nth-child(2){ opacity:0; }
+  .burger.is-open i:nth-child(3){ transform:translateY(-6.1px) rotate(-45deg); }
+
+  .drawer{
+    position:fixed; inset:74px 0 0; z-index:80;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    padding:28px clamp(18px,4vw,40px) 40px;
+    display:flex; flex-direction:column; gap:4px;
+    transform:translateY(-8px);
+    opacity:0; pointer-events:none;
+    transition:opacity .4s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1);
+    overflow-y:auto;
+  }
+  .drawer.is-open{ opacity:1; transform:none; pointer-events:auto; }
+  .drawer a{
+    font-size:1.5rem; font-weight:800; letter-spacing:-.035em; color:#041F49;
+    padding:14px 0; border-bottom:1px solid rgba(4,31,73,.06);
+  }
+  .drawer .btn{ margin-top:24px; align-self:flex-start; }
+
+  body.is-locked{ overflow:hidden; height:100vh; }
+
+  @media (max-width:1080px){
+    .nav-links{ display:none !important; }
+    .burger{ display:grid !important; }
+    .btn.nav-cta{ display:none !important; }
+  }
+
   /* offcanvas mobile menu keeps bootstrap defaults */
   .offcanvasStaco-body .nav-menu > li{border-bottom:1px solid var(--border);}
   .offcanvasStaco-body .dropdown-item,.offcanvasStaco-body .nav-menu > li > a{
@@ -277,9 +317,17 @@
 
       <a href="mailto:connect@paysonictech.com" class="btn nav-cta" style="position:relative; display:inline-flex; align-items:center; justify-content:center; gap:.65em; padding:.62em 1.15em; border-radius:999px; background:#02B54E; color:#fff; font-weight:700; font-size:.875rem; text-decoration:none; white-space:nowrap; box-shadow:0 10px 24px -10px rgba(2,181,78,.75);">Contact us <svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></a>
 
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer" style="display:none; margin-left:auto; width:42px; height:42px; border-radius:12px; border:1px solid rgba(4,31,73,.10); background:rgba(255,255,255,.8); place-items:center;"><i></i><i></i><i></i></button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
     </div>
   </header>
+
+  <div class="drawer" id="drawer">
+    <a href="index.html#platform">Platform</a>
+    <a href="index.html#journey">Solutions</a>
+    <a href="index.html#products">Technology</a>
+    <a href="about.html">About Us</a>
+    <a href="mailto:connect@paysonictech.com" class="btn nav-cta" style="background:#02B54E;">Contact us <svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></a>
+  </div>
 
   <!-- mobile offcanvas menu -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasStaco" aria-labelledby="offcanvasStacoLabel">
@@ -451,7 +499,6 @@
       <div class="fcol" style="text-align: center;">
         <h4 style="font-size: .86rem; font-weight: 800; color: #041F49; margin-bottom: 16px;">Company</h4>
         <a href="about.html" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">About us</a>
-        <a href="leadership.html" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Leadership</a>
         <a href="#" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Careers</a>
         <a href="#" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">News &amp; media</a>
       </div>
@@ -555,6 +602,37 @@
       }
     });
   });
+</script>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger'),
+        drawer = document.getElementById('drawer');
+    if (!burger || !drawer) return;
+
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      burger.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('is-locked');
+    }
+
+    burger.addEventListener('click', function () {
+      var open = !drawer.classList.contains('is-open');
+      drawer.classList.toggle('is-open', open);
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('is-locked', open);
+    });
+
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeDrawer);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeDrawer();
+    });
+  })();
 </script>
 </body>
 </html>

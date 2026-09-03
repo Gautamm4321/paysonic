@@ -166,6 +166,48 @@
       font-size: .875rem;
     }
 
+    .burger{
+      display:none; margin-left:auto;
+      width:42px; height:42px; border-radius:12px;
+      border:1px solid var(--line); background:rgba(255,255,255,.8);
+      place-items:center;
+    }
+    .burger i{
+      display:block; width:17px; height:1.6px; background:var(--navy); border-radius:2px;
+      transition:transform .4s cubic-bezier(.22,1,.36,1), opacity .3s;
+    }
+    .burger i + i{ margin-top:4.5px; }
+    .burger.is-open i:nth-child(1){ transform:translateY(6.1px) rotate(45deg); }
+    .burger.is-open i:nth-child(2){ opacity:0; }
+    .burger.is-open i:nth-child(3){ transform:translateY(-6.1px) rotate(-45deg); }
+
+    .drawer{
+      position:fixed; inset:var(--nav-h) 0 0; z-index:80;
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+      padding:28px var(--gutter) 40px;
+      display:flex; flex-direction:column; gap:4px;
+      transform:translateY(-8px);
+      opacity:0; pointer-events:none;
+      transition:opacity .4s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1);
+      overflow-y:auto;
+    }
+    .drawer.is-open{ opacity:1; transform:none; pointer-events:auto; }
+    .drawer a{
+      font-size:1.5rem; font-weight:800; letter-spacing:-.035em; color:var(--navy);
+      padding:14px 0; border-bottom:1px solid var(--line-soft);
+    }
+    .drawer a.active{ color:var(--blue); }
+    .drawer .btn{ margin-top:24px; align-self:flex-start; }
+
+    body.is-locked{ overflow:hidden; height:100vh; }
+
+    @media (max-width:1080px){
+      .nav-links{ display:none; }
+      .burger{ display:grid; }
+      .btn.nav-cta{ display:none; }
+    }
+
     .btn {
       position: relative;
       display: inline-flex;
@@ -1099,8 +1141,18 @@
             aria-hidden="true">
             <use href="#i-arrow" />
           </svg></a>
+
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
       </div>
     </header>
+
+    <div class="drawer" id="drawer">
+      <a href="index.html#platform">Platform</a>
+      <a href="index.html#journey">Solutions</a>
+      <a href="index.html#products">Technology</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
 
     <main>
       <!-- ===================== ABOUT HERO ===================== -->
@@ -1733,7 +1785,6 @@
         <div class="fcol">
           <h4>Company</h4>
           <a href="about.html">About us</a>
-          <a href="leadership.html">Leadership</a>
           <a href="careers.html">Careers</a>
           <a href="news-media.html">News &amp; media</a>
         </div>
@@ -1906,6 +1957,37 @@
       });
     }, { threshold: 0.2 });
     leaderRows.forEach(function (row) { observer.observe(row); });
+  })();
+</script>
+
+<script>
+  (function () {
+    var burger = document.getElementById('burger'),
+        drawer = document.getElementById('drawer');
+    if (!burger || !drawer) return;
+
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      burger.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('is-locked');
+    }
+
+    burger.addEventListener('click', function () {
+      var open = !drawer.classList.contains('is-open');
+      drawer.classList.toggle('is-open', open);
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('is-locked', open);
+    });
+
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeDrawer);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeDrawer();
+    });
   })();
 </script>
 
