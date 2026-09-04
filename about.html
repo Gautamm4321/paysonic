@@ -1,1120 +1,1600 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#02B54E">
-  <title>About Us — Paysonic | Transforming Experience, Empowering Every Journey</title>
-  <meta name="description"
-    content="Learn more about Paysonic, our mission, and the leadership team driving India's unified mobility payment infrastructure.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <style>
-    /* ==========================================================================
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#02B54E" />
+    <title>
+      About Us — Paysonic | Transforming Experience, Empowering Every Journey
+    </title>
+    <meta
+      name="description"
+      content="Learn more about Paysonic, our mission, and the leadership team driving India's unified mobility payment infrastructure."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ==========================================================================
    PAYSONIC — About Page Styles (Matching Index Theme)
    ========================================================================== */
 
-    :root {
-      --green: #02B54E;
-      --green-600: #019C47;
-      --green-700: #06852F;
-      --green-050: #E8F8EE;
-
-      --blue: #2666F9;
-      --blue-600: #1B4FD4;
-      --blue-050: #E8F0FE;
-
-      --navy: #041F49;
-      --navy-800: #0B2E63;
-      --cream: #FEF0CA;
-      --sky: #EAF3FE;
-
-      --ink: #0A1B34;
-      --muted: #5B6B84;
-      --faint: #6D7C92;
-      --line: rgba(4, 31, 73, .10);
-      --line-soft: rgba(4, 31, 73, .06);
-      --white: #FFFFFF;
-
-      --glass: rgba(255, 255, 255, .72);
-      --glass-hi: rgba(255, 255, 255, .90);
-      --shadow-sm: 0 2px 10px rgba(4, 31, 73, .05);
-      --shadow-md: 0 12px 34px -14px rgba(4, 31, 73, .18);
-      --shadow-lg: 0 40px 90px -40px rgba(4, 31, 73, .35);
-
-      --r-sm: 12px;
-      --r: 18px;
-      --r-lg: 24px;
-      --r-xl: 32px;
-      --gutter: clamp(18px, 4vw, 40px);
-      --maxw: 1240px;
-      --nav-h: 74px;
-
-      --ease: cubic-bezier(.22, 1, .36, 1);
-
-      --font-d: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-      --font-m: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      -webkit-text-size-adjust: 100%;
-      scroll-behavior: auto;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-d);
-      font-weight: 500;
-      font-size: clamp(15.5px, .55vw + 14px, 17px);
-      line-height: 1.6;
-      color: var(--ink);
-      background: var(--white);
-      overflow-x: clip;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-      color: inherit;
-      border: 0;
-      background: none;
-      cursor: pointer;
-    }
-
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    /* ---------- Nav ----------------------------------------------------------- */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 90;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, .78);
-      backdrop-filter: blur(18px) saturate(1.4);
-      -webkit-backdrop-filter: blur(18px) saturate(1.4);
-      border-bottom: 1px solid var(--line-soft);
-    }
-
-    .nav-in {
-      width: 100%;
-      max-width: var(--maxw);
-      margin-inline: auto;
-      padding-inline: var(--gutter);
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex: none;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(14px, 1.7vw, 28px);
-      margin-left: auto;
-    }
-
-    .nav-links a {
-      font-size: .9rem;
-      font-weight: 600;
-      color: var(--navy);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      opacity: .85;
-      transition: opacity .25s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      opacity: 1;
-      color: var(--blue);
-    }
-
-    .btn.nav-cta {
-      margin-left: 8px;
-      padding: .62em 1.15em;
-      font-size: .875rem;
-    }
-
-    .burger{
-      display:none; margin-left:auto;
-      width:42px; height:42px; border-radius:12px;
-      border:1px solid var(--line); background:rgba(255,255,255,.8);
-      place-items:center;
-    }
-    .burger i{
-      display:block; width:17px; height:1.6px; background:var(--navy); border-radius:2px;
-      transition:transform .4s cubic-bezier(.22,1,.36,1), opacity .3s;
-    }
-    .burger i + i{ margin-top:4.5px; }
-    .burger.is-open i:nth-child(1){ transform:translateY(6.1px) rotate(45deg); }
-    .burger.is-open i:nth-child(2){ opacity:0; }
-    .burger.is-open i:nth-child(3){ transform:translateY(-6.1px) rotate(-45deg); }
-
-    .drawer{
-      position:fixed; inset:var(--nav-h) 0 0; z-index:80;
-      background:rgba(255,255,255,.97);
-      backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-      padding:28px var(--gutter) 40px;
-      display:flex; flex-direction:column; gap:4px;
-      transform:translateY(-8px);
-      opacity:0; pointer-events:none;
-      transition:opacity .4s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1);
-      overflow-y:auto;
-    }
-    .drawer.is-open{ opacity:1; transform:none; pointer-events:auto; }
-    .drawer a{
-      font-size:1.5rem; font-weight:800; letter-spacing:-.035em; color:var(--navy);
-      padding:14px 0; border-bottom:1px solid var(--line-soft);
-    }
-    .drawer a.active{ color:var(--blue); }
-    .drawer .btn{ margin-top:24px; align-self:flex-start; }
-
-    body.is-locked{ overflow:hidden; height:100vh; }
-
-    @media (max-width:1080px){
-      .nav-links{ display:none; }
-      .burger{ display:grid; }
-      .btn.nav-cta{ display:none; }
-    }
-
-    .btn {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .65em;
-      padding: .92em 1.6em;
-      border-radius: 999px;
-      background: var(--green);
-      color: #fff;
-      font-weight: 700;
-      font-size: .95rem;
-      letter-spacing: -.01em;
-      white-space: nowrap;
-      box-shadow: 0 10px 24px -10px rgba(2, 181, 78, .75);
-      transition: transform .45s var(--ease), box-shadow .45s var(--ease), background .25s;
-    }
-
-    .btn:hover {
-      background: var(--green-600);
-    }
-
-    /* ---------- Layout & Content Sections ------------------------------------- */
-    .wrap {
-      width: 100%;
-      max-width: var(--maxw);
-      margin-inline: auto;
-      padding-inline: var(--gutter);
-    }
-
-    .about-hero {
-      padding-top: calc(var(--nav-h) + 60px);
-      padding-bottom: 100px;
-      text-align: center;
-      background: linear-gradient(180deg, var(--sky) 0%, #fff 100%);
-    }
-
-    .about-hero h1 {
-      font-size: clamp(2.3rem, 5vw, 4.2rem);
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -.020em;
-      margin-bottom: 16px;
-    }
-
-    .about-hero p {
-      max-width: 65ch;
-      margin-inline: auto;
-      color: var(--muted);
-      font-size: 1.15rem;
-    }
-
-    .band {
-      padding-block: 40px;
-      position: relative;
-    }
-
-    .band-alt {
-      background: var(--sky);
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      align-items: center;
-    }
-
-    .content-grid.reverse {
-      direction: rtl;
-    }
-
-    .content-grid.reverse>* {
-      direction: ltr;
-    }
-
-    .text-block h2 {
-      font-size: clamp(1.4rem, 2.2vw, 2.4rem);
-      color: var(--navy);
-      margin-bottom: 20px;
-      letter-spacing: -0.03em;
-    }
-
-    .text-block p {
-      color: var(--muted);
-      margin-bottom: 16px;
-      font-size: 0.90rem;
-      line-height: 1.5;
-    }
-
-    .text-block ul {
-      list-style: disc;
-      padding-left: 20px;
-      color: var(--muted);
-      margin-top: 12px;
-    }
-
-    .text-block li {
-      margin-bottom: 8px;
-    }
-
-    .image-block img {
-      width: 100%;
-      margin-top: 44px;
-      border-radius: var(--r-lg);
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--line);
-    }
-
-    /* ---------- Narrow text-only bands (no image) ------------------------------ */
-    .band-narrow .wrap {
-      max-width: 860px;
-    }
-
-    .band-narrow .eyebrow {
-      font-family: var(--font-m);
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--green-600);
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .band-narrow h2 {
-      font-size: clamp(1.4rem, 2.2vw, 2.4rem);
-      color: var(--navy);
-      margin-bottom: 20px;
-      letter-spacing: -0.03em;
-    }
-
-    .band-narrow p {
-      color: var(--muted);
-      margin-bottom: 16px;
-      font-size: 1.05rem;
-    }
-
-    .band-narrow .lede {
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 18px;
-    }
-
-    .band-narrow strong {
-      color: var(--navy);
-    }
-
-    /* ---------- Staccam / short-line list (statements) ------------------------ */
-    .statement-list {
-      margin: 22px 0;
-      border-left: 3px solid var(--green);
-      padding-left: 22px;
-    }
-
-    .statement-list li {
-      color: var(--navy);
-      font-weight: 600;
-      font-size: 1.05rem;
-      padding: 6px 0;
-    }
-
-    /* ---------- Feature / principle grids -------------------------------------- */
-    .section-head {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 44px;
-    }
-
-    .section-head .eyebrow {
-      font-family: var(--font-m);
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--green-600);
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--navy);
-      letter-spacing: -0.03em;
-      margin-bottom: 14px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .feature-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      box-shadow: var(--shadow-sm);
-      padding: 28px 30px;
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .feature-card p {
-      color: var(--muted);
-      font-size: .95rem;
-      margin: 0;
-    }
-
-    .feature-grid.principles .feature-card {
-      border-top: 4px solid var(--green);
-    }
-
-    .feature-grid.tech .feature-card {
-      border-top: 4px solid var(--blue);
-    }
-
-    .band-closer p:last-of-type {
-      margin-bottom: 0;
-    }
-
-    /* ---------- Closing band (gradient) ---------------------------------------- */
-    .closing-band {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-800) 100%);
-      color: #fff;
-      padding-block: 80px;
-      text-align: center;
-    }
-
-    .closing-band .wrap {
-      max-width: 820px;
-    }
-
-    .closing-band .eyebrow {
-      font-family: var(--font-m);
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--green);
-      display: block;
-      margin-bottom: 14px;
-    }
-
-    .closing-band h2 {
-      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
-      font-weight: 800;
-      letter-spacing: -.03em;
-      margin-bottom: 20px;
-    }
-
-    .closing-band p {
-      color: rgba(255, 255, 255, .78);
-      font-size: 1.08rem;
-      margin-bottom: 14px;
-    }
-
-    .closing-band p.accent {
-      color: #fff;
-      font-weight: 600;
-    }
-
-    /* ---------- Leadership Section Grid Layout -------------------------------- */
-    .leadership-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-      margin-top: 40px;
-    }
-
-    .leader-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      box-shadow: var(--shadow-sm);
-      padding: 35px;
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-    }
-
-    .leader-row:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    /* Alternating rows format requested */
-    .leader-row.row-right-img {
-      grid-template-columns: 1.2fr 0.8fr;
-    }
-
-    .leader-row.row-left-img {
-      grid-template-columns: 0.8fr 1.2fr;
-    }
-
-    .leader-info h3 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-
-    .leader-title {
-      font-family: var(--font-m);
-      font-size: .8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--green-600);
-      margin-bottom: 16px;
-    }
-
-    .leader-bio {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .leader-avatar {
-      width: 100%;
-      max-width: 240px;
-      aspect-ratio: 4/5;
-      /* Taller vertical frame to stop cutting heads */
-      border-radius: var(--r);
-      overflow: hidden;
-      margin: 0 auto;
-      border: 2px solid var(--line);
-      background: var(--sky);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .leader-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 14%;
-      /* Shifts focus slightly down/up to keep heads fully visible */
-    }
-
-    /* ---------- Footer -------------------------------------------------------- */
-    .foot {
-      background: var(--white);
-      border-top: 1px solid var(--line-soft);
-      padding-top: clamp(60px, 8vw, 88px);
-      padding-bottom: 0;
-    }
-
-    .foot-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: clamp(28px, 3vw, 48px);
-      padding-bottom: clamp(20px, 2vw, 28px);
-      justify-items: center;
-      text-align: center;
-    }
-
-    .foot-brand p {
-      font-size: .85rem;
-      color: var(--muted);
-      margin: 14px 0 18px;
-      max-width: 30ch;
-      margin-inline: auto;
-    }
-
-    .foot-tag {
-      font-family: var(--font-m);
-      font-size: .64rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-top: 10px;
-    }
-
-    .socials {
-      display: flex;
-      gap: 9px;
-      justify-content: center;
-    }
-
-    .socials a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      color: var(--navy);
-      transition: transform .4s var(--ease), background .3s, color .3s, border-color .3s;
-    }
-
-    .socials a:hover {
-      background: var(--navy);
-      color: #fff;
-      border-color: var(--navy);
-      transform: translateY(-3px);
-    }
-
-    .socials svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .fcol h4 {
-      font-size: .86rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      color: var(--navy);
-    }
-
-    .fcol a {
-      display: block;
-      font-size: .85rem;
-      color: var(--muted);
-      padding: 8px 0;
-      transition: color .25s, transform .3s var(--ease);
-    }
-
-    .fcol a:hover {
-      color: var(--blue);
-      transform: translateX(3px);
-    }
-
-    .sub {
-      background: var(--sky);
-      border-radius: var(--r);
-      padding: 20px;
-    }
-
-    .sub h4 {
-      font-size: .86rem;
-      margin-bottom: 6px;
-    }
-
-    .sub p {
-      font-size: .79rem;
-      color: var(--muted);
-      margin: 0 0 14px;
-    }
-
-    .sub-field {
-      display: flex;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 5px 5px 5px 16px;
-    }
-
-    .sub-field input {
-      flex: 1;
-      min-width: 0;
-      border: 0;
-      outline: 0;
-      background: none;
-      font: inherit;
-      font-size: .85rem;
-      color: var(--navy);
-    }
-
-    .sub-field input::placeholder {
-      color: var(--faint);
-    }
-
-    .sub-field button {
-      width: 34px;
-      height: 34px;
-      flex: none;
-      border-radius: 50%;
-      background: var(--green);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      transition: transform .35s var(--ease), background .25s;
-    }
-
-    .sub-field button:hover {
-      background: var(--green-600);
-      transform: translateX(2px);
-    }
-
-    .foot-bar {
-      background: var(--navy);
-      color: rgba(255, 255, 255, .7);
-      padding: 24px 0;
-      font-size: .8rem;
-      text-align: center;
-    }
-
-    /* Responsive design adjustments */
-    @media (max-width: 900px) {
-
-      .content-grid,
-      .content-grid.reverse,
-      .leader-row,
-      .leader-row.row-right-img,
-      .leader-row.row-left-img,
-      .feature-grid {
-        grid-template-columns: 1fr;
+      :root {
+        --green: #02b54e;
+        --green-600: #019c47;
+        --green-700: #06852f;
+        --green-050: #e8f8ee;
+
+        --blue: #2666f9;
+        --blue-600: #1b4fd4;
+        --blue-050: #e8f0fe;
+
+        --navy: #041f49;
+        --navy-800: #0b2e63;
+        --cream: #fef0ca;
+        --sky: #eaf3fe;
+
+        --ink: #0a1b34;
+        --muted: #5b6b84;
+        --faint: #6d7c92;
+        --line: rgba(4, 31, 73, 0.1);
+        --line-soft: rgba(4, 31, 73, 0.06);
+        --white: #ffffff;
+
+        --glass: rgba(255, 255, 255, 0.72);
+        --glass-hi: rgba(255, 255, 255, 0.9);
+        --shadow-sm: 0 2px 10px rgba(4, 31, 73, 0.05);
+        --shadow-md: 0 12px 34px -14px rgba(4, 31, 73, 0.18);
+        --shadow-lg: 0 40px 90px -40px rgba(4, 31, 73, 0.35);
+
+        --r-sm: 12px;
+        --r: 18px;
+        --r-lg: 24px;
+        --r-xl: 32px;
+        --gutter: clamp(18px, 4vw, 40px);
+        --maxw: 1240px;
+        --nav-h: 74px;
+
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+        --font-d:
+          "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          sans-serif;
+        --font-m:
+          "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: auto;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-d);
+        font-weight: 500;
+        font-size: clamp(15.5px, 0.55vw + 14px, 17px);
+        line-height: 1.6;
+        color: var(--ink);
+        background: var(--white);
+        overflow-x: clip;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font: inherit;
+        color: inherit;
+        border: 0;
+        background: none;
+        cursor: pointer;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      /* ---------- Nav ----------------------------------------------------------- */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 90;
+        height: var(--nav-h);
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(18px) saturate(1.4);
+        -webkit-backdrop-filter: blur(18px) saturate(1.4);
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .nav-in {
+        width: 100%;
+        max-width: var(--maxw);
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: none;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(14px, 1.7vw, 28px);
+        margin-left: auto;
+      }
+
+      .nav-links a {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--navy);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        opacity: 0.85;
+        transition: opacity 0.25s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        opacity: 1;
+        color: var(--blue);
+      }
+
+      .btn.nav-cta {
+        margin-left: 8px;
+        padding: 0.62em 1.15em;
+        font-size: 0.875rem;
+      }
+
+      .burger {
+        display: none;
+        margin-left: auto;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.8);
+        place-items: center;
+      }
+      .burger i {
+        display: block;
+        width: 17px;
+        height: 1.6px;
+        background: var(--navy);
+        border-radius: 2px;
+        transition:
+          transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.3s;
+      }
+      .burger i + i {
+        margin-top: 4.5px;
+      }
+      .burger.is-open i:nth-child(1) {
+        transform: translateY(6.1px) rotate(45deg);
+      }
+      .burger.is-open i:nth-child(2) {
+        opacity: 0;
+      }
+      .burger.is-open i:nth-child(3) {
+        transform: translateY(-6.1px) rotate(-45deg);
+      }
+
+      .drawer {
+        position: fixed;
+        inset: var(--nav-h) 0 0;
+        z-index: 80;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 28px var(--gutter) 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        transform: translateY(-8px);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        overflow-y: auto;
+      }
+      .drawer.is-open {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+      }
+      .drawer a {
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        color: var(--navy);
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line-soft);
+      }
+      .drawer a.active {
+        color: var(--blue);
+      }
+      .drawer .btn {
+        margin-top: 24px;
+        align-self: flex-start;
+      }
+
+      body.is-locked {
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      @media (max-width: 1080px) {
+        .nav-links {
+          display: none;
+        }
+        .burger {
+          display: grid;
+        }
+        .btn.nav-cta {
+          display: none;
+        }
+      }
+
+      .btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65em;
+        padding: 0.92em 1.6em;
+        border-radius: 999px;
+        background: var(--green);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+        box-shadow: 0 10px 24px -10px rgba(2, 181, 78, 0.75);
+        transition:
+          transform 0.45s var(--ease),
+          box-shadow 0.45s var(--ease),
+          background 0.25s;
+      }
+
+      .btn:hover {
+        background: var(--green-600);
+      }
+
+      /* ---------- Layout & Content Sections ------------------------------------- */
+      .wrap {
+        width: 100%;
+        max-width: var(--maxw);
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+      }
+
+      .about-hero {
+        padding-top: calc(var(--nav-h) + 60px);
+        padding-bottom: 100px;
+        text-align: center;
+        background: linear-gradient(180deg, var(--sky) 0%, #fff 100%);
+      }
+
+      .about-hero h1 {
+        font-size: clamp(2.3rem, 5vw, 4.2rem);
+        font-weight: 800;
+        color: var(--navy);
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+
+      .about-hero p {
+        max-width: 65ch;
+        margin-inline: auto;
+        color: var(--muted);
+        font-size: 1.15rem;
+      }
+
+      .band {
+        padding-block: 40px;
+        position: relative;
+      }
+
+      .band-alt {
+        background: var(--sky);
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        align-items: center;
+      }
+
+      .content-grid.reverse {
+        direction: rtl;
+      }
+
+      .content-grid.reverse > * {
         direction: ltr;
       }
 
-      .leader-avatar {
-        max-width: 180px;
+      .text-block h2 {
+        font-size: clamp(1.4rem, 2.2vw, 2.4rem);
+        color: var(--navy);
+        margin-bottom: 20px;
+        letter-spacing: -0.03em;
+      }
+
+      .text-block p {
+        color: var(--muted);
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .text-block ul {
+        list-style: disc;
+        padding-left: 20px;
+        color: var(--muted);
+        margin-top: 12px;
+      }
+
+      .text-block li {
+        margin-bottom: 8px;
+      }
+
+      .image-block img {
+        width: 100%;
+        margin-top: 44px;
+        border-radius: var(--r-lg);
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--line);
+      }
+
+      /* ---------- Narrow text-only bands (no image) ------------------------------ */
+      .band-narrow .wrap {
+        max-width: 860px;
+      }
+
+      .band-narrow .eyebrow {
+        font-family: var(--font-m);
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--green-600);
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      .band-narrow h2 {
+        font-size: clamp(1.4rem, 2.2vw, 2.4rem);
+        color: var(--navy);
+        margin-bottom: 20px;
+        letter-spacing: -0.03em;
+      }
+
+      .band-narrow p {
+        color: var(--muted);
+        margin-bottom: 16px;
+        font-size: 1.05rem;
+      }
+
+      .band-narrow .lede {
+        color: var(--navy);
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+      }
+
+      .band-narrow strong {
+        color: var(--navy);
+      }
+
+      /* ---------- Staccam / short-line list (statements) ------------------------ */
+      .statement-list {
+        margin: 22px 0;
+        border-left: 3px solid var(--green);
+        padding-left: 22px;
+      }
+
+      .statement-list li {
+        color: var(--navy);
+        font-weight: 600;
+        font-size: 1.05rem;
+        padding: 6px 0;
+      }
+
+      /* ---------- Feature / principle grids -------------------------------------- */
+      .section-head {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 44px;
+      }
+
+      .section-head .eyebrow {
+        font-family: var(--font-m);
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--green-600);
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        color: var(--navy);
+        letter-spacing: -0.03em;
+        margin-bottom: 14px;
+      }
+
+      .section-head p {
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .feature-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        box-shadow: var(--shadow-sm);
+        padding: 28px 30px;
+        transition:
+          transform 0.3s var(--ease),
+          box-shadow 0.3s var(--ease);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .feature-card h3 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+
+      .feature-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin: 0;
+      }
+
+      .feature-grid.principles .feature-card {
+        border-top: 4px solid var(--green);
+      }
+
+      .feature-grid.tech .feature-card {
+        border-top: 4px solid var(--blue);
+      }
+
+      .band-closer p:last-of-type {
+        margin-bottom: 0;
+      }
+
+      /* ---------- Closing band (gradient) ---------------------------------------- */
+      .closing-band {
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-800) 100%
+        );
+        color: #fff;
+        padding-block: 80px;
+        text-align: center;
+      }
+
+      .closing-band .wrap {
+        max-width: 820px;
+      }
+
+      .closing-band .eyebrow {
+        font-family: var(--font-m);
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--green);
+        display: block;
+        margin-bottom: 14px;
+      }
+
+      .closing-band h2 {
+        font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
         margin-bottom: 20px;
       }
 
-      .foot-grid {
+      .closing-band p {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 1.08rem;
+        margin-bottom: 14px;
+      }
+
+      .closing-band p.accent {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* ---------- Leadership Section Grid Layout -------------------------------- */
+      .leadership-grid {
+        display: grid;
         grid-template-columns: 1fr;
-      }
-    }
-
-    /* ---------- Scroll-freeze reveal (Powering Digital Tolling) ---------- */
-    .scroll-reveal {
-      position: relative;
-      min-height: 190vh;
-    }
-
-    .scroll-reveal-sticky {
-      position: sticky;
-      top: 0;
-      min-height: 74vh;
-      /* increase decrease section height */
-      display: flex;
-      align-items: center;
-    }
-
-    .scroll-reveal .sr-text {
-      opacity: 0.12;
-      filter: blur(6px);
-      transform: translateY(10px);
-      transition: opacity .5s ease, filter .5s ease, transform .5s ease;
-    }
-
-    .scroll-reveal .sr-text.is-visible {
-      opacity: 1;
-      filter: blur(0);
-      transform: translateY(0);
-    }
-
-    /* ---------- Bounce-in feature cards (row by row) ---------- */
-    .bounce-grid .feature-card {
-      opacity: 0;
-      transform: translateY(40px) scale(.9);
-    }
-
-    .bounce-grid.in-view .feature-card {
-      animation: card-bounce-in .7s var(--ease) forwards;
-    }
-
-    /* stagger 2 cards per row (grid is 2 columns) */
-    .bounce-grid.in-view .feature-card:nth-child(1),
-    .bounce-grid.in-view .feature-card:nth-child(2) {
-      animation-delay: 0s;
-    }
-
-    .bounce-grid.in-view .feature-card:nth-child(3),
-    .bounce-grid.in-view .feature-card:nth-child(4) {
-      animation-delay: .25s;
-    }
-
-    .bounce-grid.in-view .feature-card:nth-child(5),
-    .bounce-grid.in-view .feature-card:nth-child(6) {
-      animation-delay: .5s;
-    }
-
-    .bounce-grid.in-view .feature-card:nth-child(7) {
-      animation-delay: .75s;
-    }
-
-    @keyframes card-bounce-in {
-      0% {
-        opacity: 0;
-        transform: translateY(40px) scale(.9);
+        gap: 36px;
+        margin-top: 40px;
       }
 
-      60% {
+      .leader-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        box-shadow: var(--shadow-sm);
+        padding: 35px;
+        transition:
+          transform 0.3s var(--ease),
+          box-shadow 0.3s var(--ease);
+      }
+
+      .leader-row:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+
+      /* Alternating rows format requested */
+      .leader-row.row-right-img {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .leader-row.row-left-img {
+        grid-template-columns: 0.8fr 1.2fr;
+      }
+
+      .leader-info h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 6px;
+      }
+
+      .leader-title {
+        font-family: var(--font-m);
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--green-600);
+        margin-bottom: 16px;
+      }
+
+      .leader-bio {
+        font-size: 0.92rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .leader-avatar {
+        width: 100%;
+        max-width: 240px;
+        aspect-ratio: 4/5;
+        /* Taller vertical frame to stop cutting heads */
+        border-radius: var(--r);
+        overflow: hidden;
+        margin: 0 auto;
+        border: 2px solid var(--line);
+        background: var(--sky);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .leader-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 14%;
+        /* Shifts focus slightly down/up to keep heads fully visible */
+      }
+
+      /* ---------- Footer -------------------------------------------------------- */
+      .foot {
+        background: var(--white);
+        border-top: 1px solid var(--line-soft);
+        padding-top: clamp(60px, 8vw, 88px);
+        padding-bottom: 0;
+      }
+
+      .foot-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(28px, 3vw, 48px);
+        padding-bottom: clamp(20px, 2vw, 28px);
+        justify-items: center;
+        text-align: center;
+      }
+
+      .foot-brand p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin: 14px 0 18px;
+        max-width: 30ch;
+        margin-inline: auto;
+      }
+
+      .foot-tag {
+        font-family: var(--font-m);
+        font-size: 0.64rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin-top: 10px;
+      }
+
+      .socials {
+        display: flex;
+        gap: 9px;
+        justify-content: center;
+      }
+
+      .socials a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        display: grid;
+        place-items: center;
+        color: var(--navy);
+        transition:
+          transform 0.4s var(--ease),
+          background 0.3s,
+          color 0.3s,
+          border-color 0.3s;
+      }
+
+      .socials a:hover {
+        background: var(--navy);
+        color: #fff;
+        border-color: var(--navy);
+        transform: translateY(-3px);
+      }
+
+      .socials svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .fcol h4 {
+        font-size: 0.86rem;
+        font-weight: 800;
+        margin-bottom: 16px;
+        color: var(--navy);
+      }
+
+      .fcol a {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--muted);
+        padding: 8px 0;
+        transition:
+          color 0.25s,
+          transform 0.3s var(--ease);
+      }
+
+      .fcol a:hover {
+        color: var(--blue);
+        transform: translateX(3px);
+      }
+
+      .sub {
+        background: var(--sky);
+        border-radius: var(--r);
+        padding: 20px;
+      }
+
+      .sub h4 {
+        font-size: 0.86rem;
+        margin-bottom: 6px;
+      }
+
+      .sub p {
+        font-size: 0.79rem;
+        color: var(--muted);
+        margin: 0 0 14px;
+      }
+
+      .sub-field {
+        display: flex;
+        gap: 8px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 5px 5px 16px;
+      }
+
+      .sub-field input {
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        outline: 0;
+        background: none;
+        font: inherit;
+        font-size: 0.85rem;
+        color: var(--navy);
+      }
+
+      .sub-field input::placeholder {
+        color: var(--faint);
+      }
+
+      .sub-field button {
+        width: 34px;
+        height: 34px;
+        flex: none;
+        border-radius: 50%;
+        background: var(--green);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        transition:
+          transform 0.35s var(--ease),
+          background 0.25s;
+      }
+
+      .sub-field button:hover {
+        background: var(--green-600);
+        transform: translateX(2px);
+      }
+
+      .foot-bar {
+        background: var(--navy);
+        color: rgba(255, 255, 255, 0.7);
+        padding: 24px 0;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+
+      /* Responsive design adjustments */
+      @media (max-width: 900px) {
+        .content-grid,
+        .content-grid.reverse,
+        .leader-row,
+        .leader-row.row-right-img,
+        .leader-row.row-left-img,
+        .feature-grid {
+          grid-template-columns: 1fr;
+          direction: ltr;
+        }
+
+        .leader-avatar {
+          max-width: 180px;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* ---------- Scroll-freeze reveal (Powering Digital Tolling) ---------- */
+      .scroll-reveal {
+        position: relative;
+        min-height: 190vh;
+      }
+
+      .scroll-reveal-sticky {
+        position: sticky;
+        top: 0;
+        min-height: 74vh;
+        /* increase decrease section height */
+        display: flex;
+        align-items: center;
+      }
+
+      .scroll-reveal .sr-text {
+        opacity: 0.12;
+        filter: blur(6px);
+        transform: translateY(10px);
+        transition:
+          opacity 0.5s ease,
+          filter 0.5s ease,
+          transform 0.5s ease;
+      }
+
+      .scroll-reveal .sr-text.is-visible {
         opacity: 1;
-        transform: translateY(-8px) scale(1.03);
+        filter: blur(0);
+        transform: translateY(0);
       }
 
-      80% {
-        transform: translateY(3px) scale(.99);
+      /* ---------- Bounce-in feature cards (row by row) ---------- */
+      .bounce-grid .feature-card {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
       }
 
-      100% {
+      .bounce-grid.in-view .feature-card {
+        animation: card-bounce-in 0.7s var(--ease) forwards;
+      }
+
+      /* stagger 2 cards per row (grid is 2 columns) */
+      .bounce-grid.in-view .feature-card:nth-child(1),
+      .bounce-grid.in-view .feature-card:nth-child(2) {
+        animation-delay: 0s;
+      }
+
+      .bounce-grid.in-view .feature-card:nth-child(3),
+      .bounce-grid.in-view .feature-card:nth-child(4) {
+        animation-delay: 0.25s;
+      }
+
+      .bounce-grid.in-view .feature-card:nth-child(5),
+      .bounce-grid.in-view .feature-card:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+
+      .bounce-grid.in-view .feature-card:nth-child(7) {
+        animation-delay: 0.75s;
+      }
+
+      @keyframes card-bounce-in {
+        0% {
+          opacity: 0;
+          transform: translateY(40px) scale(0.9);
+        }
+
+        60% {
+          opacity: 1;
+          transform: translateY(-8px) scale(1.03);
+        }
+
+        80% {
+          transform: translateY(3px) scale(0.99);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .fade-up-item {
+        opacity: 0;
+        transform: translateY(60px) scale(0.97);
+        /* Niche se thoda aur upar aayega aur halka sa scale hoga */
+        transition:
+          opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      .fade-up-item.is-visible {
         opacity: 1;
         transform: translateY(0) scale(1);
       }
-    }
 
+      /* ---------- Directional Slide & Fade Scroll Effects (Slower & Smooth) ---------- */
+      .fade-left-item {
+        opacity: 0;
+        transform: translateX(-70px);
+        transition:
+          opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
 
-    .fade-up-item {
-      opacity: 0;
-      transform: translateY(60px) scale(0.97);
-      /* Niche se thoda aur upar aayega aur halka sa scale hoga */
-      transition: opacity 1s cubic-bezier(.16, 1, .3, 1), transform 1s cubic-bezier(.16, 1, .3, 1);
-      will-change: opacity, transform;
-    }
+      .fade-right-item {
+        opacity: 0;
+        transform: translateX(70px);
+        transition:
+          opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
 
-    .fade-up-item.is-visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+      .fade-left-item.is-visible,
+      .fade-right-item.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
+      /* ---------- Leadership Alternate Slide-In Animation ---------- */
+      .leader-row .leader-info,
+      .leader-row .leader-avatar {
+        opacity: 0;
+        transition:
+          opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
 
-    /* ---------- Directional Slide & Fade Scroll Effects (Slower & Smooth) ---------- */
-    .fade-left-item {
-      opacity: 0;
-      transform: translateX(-70px);
-      transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1), transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
+      /* Card 1 & 3: Image on Right, Text on Left */
+      .leader-row.anim-left-right .leader-info {
+        transform: translateX(-70px);
+      }
 
-    .fade-right-item {
-      opacity: 0;
-      transform: translateX(70px);
-      transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1), transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
+      .leader-row.anim-left-right .leader-avatar {
+        transform: translateX(70px);
+      }
 
-    .fade-left-item.is-visible,
-    .fade-right-item.is-visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
+      /* Card 2 & 4: Image on Left, Text on Right */
+      .leader-row.anim-right-left .leader-info {
+        transform: translateX(70px);
+      }
 
+      .leader-row.anim-right-left .leader-avatar {
+        transform: translateX(-70px);
+      }
 
-    /* ---------- Leadership Alternate Slide-In Animation ---------- */
-    .leader-row .leader-info,
-    .leader-row .leader-avatar {
-      opacity: 0;
-      transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1), transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
+      /* Jab visible ho jayein */
+      .leader-row.is-visible .leader-info,
+      .leader-row.is-visible .leader-avatar {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-    /* Card 1 & 3: Image on Right, Text on Left */
-    .leader-row.anim-left-right .leader-info {
-      transform: translateX(-70px);
-    }
+      /* ---------- Custom Styling for Section 3 (Scale Section) ---------- */
+      .scale-custom-section .text-block h2 {
+        font-size: 1.8rem;
+        /* reduce the heading size*/
+        margin-bottom: 10px;
+        /* gap between heading and para */
+      }
 
-    .leader-row.anim-left-right .leader-avatar {
-      transform: translateX(70px);
-    }
+      .scale-custom-section .text-block p {
+        font-size: 0.9rem;
+        /* para text size */
+        margin-bottom: 10px;
+        /* Paragraphs vertical line gap  */
+        line-height: 1.42;
+        /* Line spacing paas-paas kiya */
+      }
 
-    /* Card 2 & 4: Image on Left, Text on Right */
-    .leader-row.anim-right-left .leader-info {
-      transform: translateX(70px);
-    }
+      .scale-custom-section .text-block ul {
+        margin-top: 6px;
+        margin-bottom: 10px;
+      }
 
-    .leader-row.anim-right-left .leader-avatar {
-      transform: translateX(-70px);
-    }
+      .scale-custom-section .text-block li {
+        margin-bottom: 3px;
+        /* Bullet points ke beech ka gap kam kiya */
+        font-size: 0.9rem;
+      }
 
-    /* Jab visible ho jayein */
-    .leader-row.is-visible .leader-info,
-    .leader-row.is-visible .leader-avatar {
-      opacity: 1;
-      transform: translateX(0);
-    }
+      .scale-custom-section .image-block img {
+        height: 100%;
+        max-height: 480px;
+        /* Image ki height badhayi taaki bada dikhe */
+        object-fit: cover;
+      }
 
-    /* ---------- Custom Styling for Section 3 (Scale Section) ---------- */
-    .scale-custom-section .text-block h2 {
-      font-size: 1.8rem;
-      /* reduce the heading size*/
-      margin-bottom: 10px;
-      /* gap between heading and para */
-    }
+      /* ---------- Custom Styling for Vision & Mission Section ---------- */
+      .vision-custom-section .text-block h2 {
+        font-size: 1.8rem;
+        margin-bottom: 14px;
+      }
 
-    .scale-custom-section .text-block p {
-      font-size: 0.90rem;
-      /* para text size */
-      margin-bottom: 10px;
-      /* Paragraphs vertical line gap  */
-      line-height: 1.42;
-      /* Line spacing paas-paas kiya */
-    }
+      .vision-custom-section .text-block p {
+        font-size: 0.92rem;
+        margin-bottom: 6px;
+        /* Paragraphs and heading gap */
+        line-height: 1.45;
+        /* Line spacing */
+      }
 
-    .scale-custom-section .text-block ul {
-      margin-top: 6px;
-      margin-bottom: 10px;
-    }
+      .vision-custom-section .text-block ul {
+        margin-top: 6px;
+        margin-bottom: 12px;
+      }
 
-    .scale-custom-section .text-block li {
-      margin-bottom: 3px;
-      /* Bullet points ke beech ka gap kam kiya */
-      font-size: 0.9rem;
-    }
+      .vision-custom-section .text-block li {
+        margin-bottom: 1px;
+        /* points gap*/
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
 
-    .scale-custom-section .image-block img {
-      height: 100%;
-      max-height: 480px;
-      /* Image ki height badhayi taaki bada dikhe */
-      object-fit: cover;
-    }
+      .vision-custom-section .image-block img {
+        height: 100%;
+        max-height: 480px;
+        /* image size */
+        object-fit: cover;
+      }
 
-    /* ---------- Custom Styling for Vision & Mission Section ---------- */
-    .vision-custom-section .text-block h2 {
-      font-size: 1.8rem;
-      margin-bottom: 14px;
-    }
+      /* ---------- Know More Button + Expandable Detail ---------- */
+      .leader-more-btn {
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 22px;
+        background: transparent;
+        border: 1.5px solid var(--accent, var(--green));
+        border-radius: 999px;
+        color: var(--accent, var(--green-600));
+        font-family: var(--font-m);
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition:
+          background 0.25s var(--ease),
+          color 0.25s var(--ease),
+          transform 0.25s var(--ease);
+      }
 
-    .vision-custom-section .text-block p {
-      font-size: 0.92rem;
-      margin-bottom: 6px;
-      /* Paragraphs and heading gap */
-      line-height: 1.45;
-      /* Line spacing */
-    }
+      .leader-more-btn:hover {
+        background: var(--accent, var(--green));
+        color: #fff;
+        transform: translateY(-2px);
+      }
 
-    .vision-custom-section .text-block ul {
-      margin-top: 6px;
-      margin-bottom: 12px;
-    }
+      .leader-more-btn .btn-icon {
+        font-size: 1.05rem;
+        line-height: 1;
+        transition: transform 0.3s var(--ease);
+      }
 
-    .vision-custom-section .text-block li {
-      margin-bottom: 1px;
-      /* points gap*/
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+      .leader-more-btn[aria-expanded="true"] .btn-icon {
+        transform: rotate(45deg);
+      }
 
-    .vision-custom-section .image-block img {
-      height: 100%;
-      max-height: 480px;
-      /* image size */
-      object-fit: cover;
-    }
+      .leader-detail {
+        grid-column: 1 / -1;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin-top: 0;
+        transition:
+          max-height 0.5s var(--ease),
+          opacity 0.4s var(--ease),
+          margin-top 0.4s var(--ease);
+      }
 
+      .leader-detail.open {
+        opacity: 1;
+        margin-top: 30px;
+      }
 
-/* ---------- Know More Button + Expandable Detail ---------- */
-.leader-more-btn {
-  margin-top: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
-  background: transparent;
-  border: 1.5px solid var(--accent, var(--green));
-  border-radius: 999px;
-  color: var(--accent, var(--green-600));
-  font-family: var(--font-m);
-  font-size: .82rem;
-  font-weight: 600;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
-}
+      .leader-detail-inner {
+        border-top: 1px solid var(--line);
+        padding-top: 28px;
+      }
 
-.leader-more-btn:hover {
-  background: var(--accent, var(--green));
-  color: #fff;
-  transform: translateY(-2px);
-}
+      .leader-detail-inner p {
+        color: var(--muted);
+        margin-bottom: 14px;
+        font-size: 0.96rem;
+        line-height: 1.65;
+      }
 
-.leader-more-btn .btn-icon {
-  font-size: 1.05rem;
-  line-height: 1;
-  transition: transform .3s var(--ease);
-}
+      .mandate-title {
+        font-size: 1.08rem;
+        font-weight: 800;
+        color: var(--navy);
+        margin: 22px 0 16px;
+      }
 
-.leader-more-btn[aria-expanded="true"] .btn-icon {
-  transform: rotate(45deg);
-}
+      .mandate-list {
+        display: grid;
+        gap: 13px;
+        margin-bottom: 6px;
+      }
 
-.leader-detail {
-  grid-column: 1 / -1;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
-  transition: max-height .5s var(--ease), opacity .4s var(--ease), margin-top .4s var(--ease);
-}
+      .mandate-list li {
+        position: relative;
+        padding-left: 25px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
 
-.leader-detail.open {
-  opacity: 1;
-  margin-top: 30px;
-}
+      .mandate-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 3px;
+        background: var(--accent, var(--green));
+      }
 
-.leader-detail-inner {
-  border-top: 1px solid var(--line);
-  padding-top: 28px;
-}
+      .mandate-list li strong {
+        color: var(--navy);
+      }
 
-.leader-detail-inner p {
-  color: var(--muted);
-  margin-bottom: 14px;
-  font-size: .96rem;
-  line-height: 1.65;
-}
+      .leader-closing {
+        margin-top: 26px;
+        padding: 20px 24px;
+        background: var(--sky);
+        border-left: 4px solid var(--accent, var(--green));
+        border-radius: var(--r-sm);
+      }
 
-.mandate-title {
-  font-size: 1.08rem;
-  font-weight: 800;
-  color: var(--navy);
-  margin: 22px 0 16px;
-}
+      .leader-closing .tag {
+        display: block;
+        color: var(--navy);
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+        font-family: var(--font-m);
+        font-weight: 600;
+      }
 
-.mandate-list {
-  display: grid;
-  gap: 13px;
-  margin-bottom: 6px;
-}
+      .leader-closing p {
+        margin: 0;
+        color: var(--navy);
+        font-weight: 600;
+        font-size: 0.96rem;
+      }
 
-.mandate-list li {
-  position: relative;
-  padding-left: 25px;
-  color: var(--muted);
-  font-size: .92rem;
-  line-height: 1.6;
-}
+      @media (max-width: 900px) {
+        .leader-detail {
+          grid-column: auto;
+        }
+      }
 
-.mandate-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-  background: var(--accent, var(--green));
-}
+      /* ==========================================================================
+   MOBILE RESPONSIVE LAYER — Comprehensive
+   Covers: 900px tablet, 600px phone, 400px small phone
+   Fixes: horizontal overflow, scroll-freeze gaps, leadership layout,
+          footer grid, image heights, drawer sizing, animation directions.
+   ========================================================================== */
 
-.mandate-list li strong {
-  color: var(--navy);
-}
+      /* --- 1. Kill sideways scroll globally ----------------------------------- */
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
 
-.leader-closing {
-  margin-top: 26px;
-  padding: 20px 24px;
-  background: var(--sky);
-  border-left: 4px solid var(--accent, var(--green));
-  border-radius: var(--r-sm);
-}
+      /* --- 2. Media elements never overflow their container ------------------- */
+      img,
+      svg,
+      video {
+        max-width: 100%;
+      }
+      img {
+        height: auto;
+      }
 
-.leader-closing .tag {
-  display: block;
-  color: var(--navy);
-  font-size: .74rem;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  margin-bottom: 8px;
-  font-family: var(--font-m);
-  font-weight: 600;
-}
+      /* ========================== ≤ 900px (Tablet) ============================= */
+      @media (max-width: 900px) {
+        /* Long words wrap rather than push the page wide */
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        li,
+        a,
+        span,
+        b,
+        strong {
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+        }
 
-.leader-closing p {
-  margin: 0;
-  color: var(--navy);
-  font-weight: 600;
-  font-size: .96rem;
-}
+        /* ---- Slide-in animations: convert X-axis travel to Y-axis on mobile
+     so nothing ever sits outside the viewport and causes horizontal scroll */
+        .fade-left-item,
+        .fade-right-item {
+          transform: translateY(28px);
+        }
+        .fade-left-item.is-visible,
+        .fade-right-item.is-visible {
+          transform: translateY(0);
+        }
 
-@media (max-width: 900px) {
-  .leader-detail {
-    grid-column: auto;
-  }
-}
+        .leader-row.anim-left-right .leader-info,
+        .leader-row.anim-left-right .leader-avatar,
+        .leader-row.anim-right-left .leader-info,
+        .leader-row.anim-right-left .leader-avatar {
+          transform: translateY(28px);
+        }
+        .leader-row.is-visible .leader-info,
+        .leader-row.is-visible .leader-avatar {
+          transform: translateY(0);
+        }
 
+        .fade-up-item {
+          transform: translateY(28px) scale(1);
+        }
+        .fade-up-item.is-visible {
+          transform: translateY(0) scale(1);
+        }
 
-  </style>
-</head>
+        /* ---- The scroll-freeze band reserved 190vh on desktop — size to
+     content on mobile */
+        .scroll-reveal {
+          min-height: 0;
+        }
+        .scroll-reveal-sticky {
+          position: static;
+          min-height: 0;
+          display: block;
+          padding-block: 44px;
+        }
+        /* All sr-text items are always visible on mobile */
+        .scroll-reveal .sr-text {
+          opacity: 1;
+          filter: none;
+          transform: none;
+        }
 
-<body>
+        /* ---- Section spacing ---- */
+        .band {
+          padding-block: 34px;
+        }
+
+        .about-hero {
+          padding-top: calc(var(--nav-h) + 34px);
+          padding-bottom: 52px;
+        }
+        .about-hero h1 {
+          font-size: clamp(1.85rem, 7vw, 2.5rem);
+        }
+        .about-hero p {
+          font-size: 1rem;
+        }
+
+        /* ---- Content grid gaps ---- */
+        .content-grid {
+          gap: 22px;
+        }
+
+        /* ---- Images: sane height below copy ---- */
+        .image-block img {
+          margin-top: 0;
+          width: 100%;
+          height: auto;
+          max-height: 300px;
+          object-fit: cover;
+        }
+        .scale-custom-section .image-block img,
+        .vision-custom-section .image-block img {
+          height: auto;
+          max-height: 300px;
+        }
+
+        /* ---- Feature cards ---- */
+        .feature-grid {
+          gap: 16px;
+        }
+        .feature-card {
+          padding: 22px 20px;
+        }
+
+        /* ---- Section head ---- */
+        .section-head {
+          margin-bottom: 30px;
+        }
+        .section-head h2 {
+          font-size: clamp(1.5rem, 4.5vw, 2rem);
+        }
+
+        /* ---- Leadership rows: photo on top, text below, centered ---- */
+        .leader-row {
+          padding: 24px 20px;
+          gap: 20px;
+          justify-items: center;
+          text-align: center;
+        }
+        .leader-row .leader-avatar {
+          order: -1;
+        }
+        .leader-avatar {
+          max-width: 170px;
+          margin-bottom: 6px;
+        }
+        .leader-info h3 {
+          font-size: 1.25rem;
+        }
+        .leader-more-btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .leader-detail {
+          grid-column: auto;
+        }
+
+        /* ---- Footer: 2-column grid on tablet ---- */
+        .foot-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .foot-brand,
+        .sub {
+          grid-column: 1 / -1;
+        }
+
+        /* ---- Footer bar: stack vertically ---- */
+        .foot-bar .wrap {
+          flex-direction: column;
+          text-align: center;
+          gap: 8px;
+        }
+
+        /* ---- Band-narrow tweaks ---- */
+        .band-narrow p {
+          font-size: 0.97rem;
+        }
+        .band-narrow .lede {
+          font-size: 1.08rem;
+        }
+        .statement-list li {
+          font-size: 0.97rem;
+        }
+
+        .closing-band {
+          padding-block: 52px;
+        }
+      }
+
+      /* ========================== ≤ 600px (Phone) ============================== */
+      @media (max-width: 600px) {
+        .band {
+          padding-block: 28px;
+        }
+
+        /* Headings */
+        .text-block h2 {
+          font-size: clamp(1.35rem, 5.6vw, 1.7rem);
+        }
+        .scale-custom-section .text-block h2,
+        .vision-custom-section .text-block h2 {
+          font-size: 1.4rem;
+        }
+        .band-narrow h2 {
+          font-size: clamp(1.35rem, 5.6vw, 1.7rem);
+        }
+
+        /* Images */
+        .image-block img {
+          max-height: 230px;
+        }
+        .scale-custom-section .image-block img,
+        .vision-custom-section .image-block img {
+          max-height: 230px;
+        }
+
+        /* Feature cards */
+        .feature-card {
+          padding: 20px 18px;
+        }
+        .feature-card h3 {
+          font-size: 0.97rem;
+        }
+
+        /* Leadership */
+        .leader-avatar {
+          max-width: 140px;
+        }
+        .leader-info h3 {
+          font-size: 1.15rem;
+        }
+        .leader-bio {
+          font-size: 0.88rem;
+        }
+        .mandate-list li {
+          font-size: 0.88rem;
+        }
+        .leader-closing p {
+          font-size: 0.9rem;
+        }
+
+        /* Footer: single column */
+        .foot-grid {
+          grid-template-columns: 1fr;
+        }
+        .foot-brand,
+        .sub {
+          grid-column: auto;
+        }
+
+        /* Subscribe field: vertical stack */
+        .sub-field {
+          flex-direction: column;
+          border-radius: var(--r);
+          padding: 12px;
+          gap: 10px;
+        }
+        .sub-field input {
+          min-width: 0;
+          width: 100%;
+          padding: 4px 0;
+        }
+        .sub-field button {
+          width: 100%;
+          border-radius: var(--r-sm);
+          height: 40px;
+        }
+
+        /* Nav logo slightly smaller */
+        .logo img {
+          height: 52px !important;
+        }
+
+        /* Drawer links slightly smaller */
+        .drawer a {
+          font-size: 1.25rem;
+        }
+
+        /* About hero */
+        .about-hero h1 {
+          font-size: clamp(1.6rem, 6.5vw, 2rem);
+        }
+        .about-hero p {
+          font-size: 0.95rem;
+        }
+
+        /* Section head */
+        .section-head h2 {
+          font-size: clamp(1.35rem, 5vw, 1.75rem);
+        }
+        .section-head p {
+          font-size: 0.95rem;
+        }
+
+        /* Band-narrow */
+        .band-narrow p {
+          font-size: 0.93rem;
+        }
+        .band-narrow .lede {
+          font-size: 1rem;
+        }
+
+        /* Closing band */
+        .closing-band h2 {
+          font-size: clamp(1.5rem, 6vw, 2rem);
+        }
+        .closing-band p {
+          font-size: 0.97rem;
+        }
+      }
+
+      /* ========================== ≤ 400px (Very small phones) ================== */
+      @media (max-width: 400px) {
+        :root {
+          --gutter: 14px;
+        }
+
+        .band {
+          padding-block: 22px;
+        }
+
+        .about-hero {
+          padding-top: calc(var(--nav-h) + 24px);
+          padding-bottom: 38px;
+        }
+        .about-hero h1 {
+          font-size: 1.5rem;
+          letter-spacing: -0.02em;
+        }
+        .about-hero p {
+          font-size: 0.9rem;
+        }
+
+        .text-block h2,
+        .band-narrow h2 {
+          font-size: 1.3rem;
+        }
+
+        .feature-card {
+          padding: 18px 16px;
+        }
+        .feature-card h3 {
+          font-size: 0.93rem;
+        }
+
+        .leader-avatar {
+          max-width: 120px;
+        }
+        .leader-row {
+          padding: 18px 14px;
+        }
+        .leader-info h3 {
+          font-size: 1.05rem;
+        }
+
+        .logo img {
+          height: 46px !important;
+        }
+
+        .drawer a {
+          font-size: 1.1rem;
+          padding: 10px 0;
+        }
+
+        .foot-bar {
+          font-size: 0.72rem;
+        }
+      }
+    </style>
+  </head>
 
   <body>
-
     <!-- ===================== ICON SPRITE (footer icons) ===================== -->
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <svg
+      width="0"
+      height="0"
+      style="position: absolute"
+      aria-hidden="true"
+      focusable="false"
+    >
       <defs>
         <symbol id="i-arrow" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="M4.5 12h15M13.5 6l6 6-6 6" />
           </g>
         </symbol>
         <symbol id="i-in" viewBox="0 0 24 24">
-          <path fill="currentColor"
-            d="M4.6 8.9h3.3V20H4.6zM6.25 3.4a1.94 1.94 0 1 1 0 3.88 1.94 1.94 0 0 1 0-3.88M10.2 8.9h3.16v1.52h.05c.44-.83 1.51-1.71 3.11-1.71 3.33 0 3.94 2.19 3.94 5.04V20h-3.29v-5.55c0-1.32-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93V20H10.2z" />
+          <path
+            fill="currentColor"
+            d="M4.6 8.9h3.3V20H4.6zM6.25 3.4a1.94 1.94 0 1 1 0 3.88 1.94 1.94 0 0 1 0-3.88M10.2 8.9h3.16v1.52h.05c.44-.83 1.51-1.71 3.11-1.71 3.33 0 3.94 2.19 3.94 5.04V20h-3.29v-5.55c0-1.32-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93V20H10.2z"
+          />
         </symbol>
         <symbol id="i-x" viewBox="0 0 24 24">
-          <path fill="currentColor"
-            d="M17.3 3.5h3.02l-6.6 7.54L21.5 20.5h-6.08l-4.76-6.22-5.45 6.22H2.18l7.06-8.07L2.34 3.5h6.24l4.3 5.69zm-1.06 15.19h1.67L7.83 5.22H6.03z" />
+          <path
+            fill="currentColor"
+            d="M17.3 3.5h3.02l-6.6 7.54L21.5 20.5h-6.08l-4.76-6.22-5.45 6.22H2.18l7.06-8.07L2.34 3.5h6.24l4.3 5.69zm-1.06 15.19h1.67L7.83 5.22H6.03z"
+          />
         </symbol>
         <symbol id="i-yt" viewBox="0 0 24 24">
-          <path fill="currentColor"
-            d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.28 5 12 5 12 5s-6.28 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.72 19 12 19 12 19s6.28 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8M10.1 15V9l5.1 3z" />
+          <path
+            fill="currentColor"
+            d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.28 5 12 5 12 5s-6.28 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.72 19 12 19 12 19s6.28 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8M10.1 15V9l5.1 3z"
+          />
         </symbol>
         <symbol id="i-mail" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <rect x="2.8" y="4.6" width="18.4" height="14.8" rx="2.6" />
             <path d="m3.6 6.6 8.4 6 8.4-6" />
           </g>
@@ -1122,12 +1602,15 @@
       </defs>
     </svg>
 
-
     <!-- ===================== NAV ===================== -->
     <header class="nav" id="nav">
       <div class="nav-in">
         <a href="index.html" class="logo" aria-label="Paysonic — home">
-          <img src="PaysonicTech-removebg-preview.png" alt="Paysonic Logo" style="height: 66px; width: auto;">
+          <img
+            src="PaysonicTech-removebg-preview.png"
+            alt="Paysonic Logo"
+            style="height: 84px; width: auto"
+          />
         </a>
 
         <nav class="nav-links" aria-label="Primary">
@@ -1137,12 +1620,21 @@
           <a href="about.html" class="active">About Us</a>
         </nav>
 
-        <a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us <svg width="15" height="15"
-            aria-hidden="true">
-            <use href="#i-arrow" />
-          </svg></a>
+        <a href="mailto:connect@paysonictech.com" class="btn nav-cta"
+          >Contact us
+          <svg width="15" height="15" aria-hidden="true">
+            <use href="#i-arrow" /></svg
+        ></a>
 
-        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
+        <button
+          class="burger"
+          id="burger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="drawer"
+        >
+          <i></i><i></i><i></i>
+        </button>
       </div>
     </header>
 
@@ -1151,7 +1643,11 @@
       <a href="index.html#journey">Solutions</a>
       <a href="index.html#products">Technology</a>
       <a href="about.html" class="active">About Us</a>
-      <a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a href="mailto:connect@paysonictech.com" class="btn nav-cta"
+        >Contact us
+        <svg width="15" height="15" aria-hidden="true">
+          <use href="#i-arrow" /></svg
+      ></a>
     </div>
 
     <main>
@@ -1159,8 +1655,10 @@
       <section class="about-hero">
         <div class="wrap">
           <h1>Building the Infrastructure for Mobility Payments</h1>
-          <p>Paysonic is a technology and payments infrastructure company powering the evolution of digital mobility
-            across India and beyond.</p>
+          <p>
+            Paysonic is a technology and payments infrastructure company
+            powering the evolution of digital mobility across India and beyond.
+          </p>
         </div>
       </section>
 
@@ -1169,21 +1667,28 @@
         <div class="wrap content-grid">
           <div class="text-block">
             <h2>Powering Digital Mobility Solutions</h2>
-            <p>We build secure, scalable and interoperable payment infrastructure that enables seamless financial
-              transactions across tolling, FASTag, Multi-Lane Free Flow (MLFF), parking and connected mobility
-              ecosystems.
+            <p>
+              We build secure, scalable and interoperable payment infrastructure
+              that enables seamless financial transactions across tolling,
+              FASTag, Multi-Lane Free Flow (MLFF), parking and connected
+              mobility ecosystems.
             </p>
-            <p>As mobility becomes increasingly digital, connected and intelligent, the underlying payment
-              infrastructure
-              must evolve with it. Paysonic is focused on building that infrastructure—connecting financial
-              institutions,
-              payment networks, mobility operators, technology platforms and businesses through reliable, technology-led
-              payment solutions.</p>
-            <p>Our platforms are designed to support high-volume, real-time transaction environments where security,
-              reliability, scalability, interoperability and operational efficiency are critical.</p>
+            <p>
+              As mobility becomes increasingly digital, connected and
+              intelligent, the underlying payment infrastructure must evolve
+              with it. Paysonic is focused on building that
+              infrastructure—connecting financial institutions, payment
+              networks, mobility operators, technology platforms and businesses
+              through reliable, technology-led payment solutions.
+            </p>
+            <p>
+              Our platforms are designed to support high-volume, real-time
+              transaction environments where security, reliability, scalability,
+              interoperability and operational efficiency are critical.
+            </p>
           </div>
           <div class="image-block">
-            <img src="section1.png" alt="NETC Toll Collection">
+            <img src="section1.png" alt="NETC Toll Collection" />
           </div>
         </div>
       </section>
@@ -1193,21 +1698,32 @@
         <div class="wrap content-grid reverse">
           <div class="text-block fade-up-item">
             <h2>Enabling the Next Generation of Mobility</h2>
-            <p>The future of mobility is moving beyond conventional toll plazas, physical payment points and fragmented
-              transaction experiences.</p>
-            <p>Vehicles are becoming connected. Tolling is becoming barrier-free. Parking is becoming automated.
-              Payments
-              are increasingly embedded into the mobility experience. Paysonic operates at the intersection of these
-              transformations.</p>
-            <p>We develop technology and payment infrastructure that enables vehicles, operators, institutions and
-              businesses to participate in a more connected, cashless and frictionless mobility ecosystem.</p>
-            <p>From electronic toll collection and FASTag transactions to MLFF tolling and digital parking payments, our
-              solutions are designed to make payments increasingly invisible within the customer journey—while providing
-              the infrastructure, controls and transaction intelligence required by enterprise operators and financial
-              institutions.</p>
+            <p>
+              The future of mobility is moving beyond conventional toll plazas,
+              physical payment points and fragmented transaction experiences.
+            </p>
+            <p>
+              Vehicles are becoming connected. Tolling is becoming barrier-free.
+              Parking is becoming automated. Payments are increasingly embedded
+              into the mobility experience. Paysonic operates at the
+              intersection of these transformations.
+            </p>
+            <p>
+              We develop technology and payment infrastructure that enables
+              vehicles, operators, institutions and businesses to participate in
+              a more connected, cashless and frictionless mobility ecosystem.
+            </p>
+            <p>
+              From electronic toll collection and FASTag transactions to MLFF
+              tolling and digital parking payments, our solutions are designed
+              to make payments increasingly invisible within the customer
+              journey—while providing the infrastructure, controls and
+              transaction intelligence required by enterprise operators and
+              financial institutions.
+            </p>
           </div>
-          <div class="image-block fade-up-item" style="transition-delay: 0.25s;">
-            <img src="section3.png" alt="FASTag Seamless Payments">
+          <div class="image-block fade-up-item" style="transition-delay: 0.25s">
+            <img src="section3.png" alt="FASTag Seamless Payments" />
           </div>
         </div>
       </section>
@@ -1217,51 +1733,102 @@
         <div class="wrap content-grid">
           <div class="text-block fade-up-item">
             <h2>Payments Infrastructure Built for Scale</h2>
-            <p>Modern mobility generates high-frequency, time-sensitive and geographically distributed transactions.
-              Payment infrastructure supporting these environments must be engineered differently.</p>
-            <p>Paysonic focuses on building platforms capable of supporting large transaction volumes, real-time
-              processing, multiple payment rails, ecosystem integrations and enterprise-grade operational requirements.
+            <p>
+              Modern mobility generates high-frequency, time-sensitive and
+              geographically distributed transactions. Payment infrastructure
+              supporting these environments must be engineered differently.
             </p>
-            <p>Our approach combines payment technology with mobility-domain expertise to create solutions that can
-              integrate across diverse stakeholders and infrastructure environments.</p>
-            <p>We believe scalable payment infrastructure should provide more than transaction processing. It should
-              deliver:</p>
+            <p>
+              Paysonic focuses on building platforms capable of supporting large
+              transaction volumes, real-time processing, multiple payment rails,
+              ecosystem integrations and enterprise-grade operational
+              requirements.
+            </p>
+            <p>
+              Our approach combines payment technology with mobility-domain
+              expertise to create solutions that can integrate across diverse
+              stakeholders and infrastructure environments.
+            </p>
+            <p>
+              We believe scalable payment infrastructure should provide more
+              than transaction processing. It should deliver:
+            </p>
             <ul>
-              <li><strong>Reliability</strong> across critical transaction journeys</li>
-              <li><strong>Security</strong> across payment and operational environments</li>
-              <li><strong>Interoperability</strong> across technology and payment ecosystems</li>
-              <li><strong>Scalability</strong> for growing transaction volumes</li>
-              <li><strong>Visibility</strong> through transaction intelligence and analytics</li>
-              <li><strong>Operational efficiency</strong> through automation</li>
-              <li><strong>Flexibility</strong> to support evolving mobility use cases</li>
+              <li>
+                <strong>Reliability</strong> across critical transaction
+                journeys
+              </li>
+              <li>
+                <strong>Security</strong> across payment and operational
+                environments
+              </li>
+              <li>
+                <strong>Interoperability</strong> across technology and payment
+                ecosystems
+              </li>
+              <li>
+                <strong>Scalability</strong> for growing transaction volumes
+              </li>
+              <li>
+                <strong>Visibility</strong> through transaction intelligence and
+                analytics
+              </li>
+              <li>
+                <strong>Operational efficiency</strong> through automation
+              </li>
+              <li>
+                <strong>Flexibility</strong> to support evolving mobility use
+                cases
+              </li>
             </ul>
-            <p>This philosophy guides the way we design, integrate and operate our platforms.</p>
+            <p>
+              This philosophy guides the way we design, integrate and operate
+              our platforms.
+            </p>
           </div>
-          <div class="image-block fade-up-item" style="transition-delay: 0.25s;">
-            <img src="section2.png" alt="MLFF Free Flow">
+          <div class="image-block fade-up-item" style="transition-delay: 0.25s">
+            <img src="section2.png" alt="MLFF Free Flow" />
           </div>
         </div>
       </section>
 
       <!-- ===================== NEW: Powering Digital Tolling ===================== -->
-      <section class="band band-alt band-narrow scroll-reveal" id="tolling-scroll">
+      <section
+        class="band band-alt band-narrow scroll-reveal"
+        id="tolling-scroll"
+      >
         <div class="scroll-reveal-sticky">
           <div class="wrap">
             <span class="eyebrow">Electronic Tolling</span>
             <h2 class="sr-text">Powering Digital Tolling</h2>
-            <p class="sr-text">Electronic toll collection has fundamentally changed the way highway payments are
-              processed. With FASTag and NETC, toll payments have evolved from conventional cash-based transactions to
-              automated digital payments.</p>
-            <p class="sr-text">The next phase of this transformation is Multi-Lane Free Flow (MLFF)—where vehicles can
-              pass through tolling zones without conventional barriers or stopping at physical toll booths.</p>
-            <p class="sr-text">India's MLFF rollout combines technologies such as FASTag, RFID-based identification,
-              Automatic Number Plate Recognition (ANPR), cameras and automated transaction processing to enable
-              barrier-free tolling.</p>
-            <p class="sr-text">Paysonic is positioned to support this evolution through payment and transaction
-              infrastructure designed for the next generation of electronic tolling.</p>
-            <p class="sr-text">Our focus is to enable the financial transaction layer behind increasingly automated
-              mobility environments—helping create a tolling ecosystem that is faster, more efficient, transparent and
-              digitally connected.</p>
+            <p class="sr-text">
+              Electronic toll collection has fundamentally changed the way
+              highway payments are processed. With FASTag and NETC, toll
+              payments have evolved from conventional cash-based transactions to
+              automated digital payments.
+            </p>
+            <p class="sr-text">
+              The next phase of this transformation is Multi-Lane Free Flow
+              (MLFF)—where vehicles can pass through tolling zones without
+              conventional barriers or stopping at physical toll booths.
+            </p>
+            <p class="sr-text">
+              India's MLFF rollout combines technologies such as FASTag,
+              RFID-based identification, Automatic Number Plate Recognition
+              (ANPR), cameras and automated transaction processing to enable
+              barrier-free tolling.
+            </p>
+            <p class="sr-text">
+              Paysonic is positioned to support this evolution through payment
+              and transaction infrastructure designed for the next generation of
+              electronic tolling.
+            </p>
+            <p class="sr-text">
+              Our focus is to enable the financial transaction layer behind
+              increasingly automated mobility environments—helping create a
+              tolling ecosystem that is faster, more efficient, transparent and
+              digitally connected.
+            </p>
           </div>
         </div>
       </section>
@@ -1271,18 +1838,29 @@
         <div class="wrap">
           <span class="eyebrow">Beyond the Toll Plaza</span>
           <h2>Extending FASTag Beyond Tolling</h2>
-          <p>FASTag has created one of the world's most significant digital mobility payment ecosystems, extending
-            electronic payments across India's highway network.</p>
+          <p>
+            FASTag has created one of the world's most significant digital
+            mobility payment ecosystems, extending electronic payments across
+            India's highway network.
+          </p>
           <p>The opportunity now extends beyond toll collection.</p>
-          <p>FASTag can support multiple mobility use cases, including parking, vehicle-related services, EV charging
-            and
-            other location-based transactions. India's highway ecosystem has already been exploring these broader FASTag
-            applications.</p>
-          <p>Paysonic's vision is to contribute to this evolution by enabling payment infrastructure that allows
-            existing
-            digital mobility credentials and payment rails to support broader, more convenient use cases.</p>
+          <p>
+            FASTag can support multiple mobility use cases, including parking,
+            vehicle-related services, EV charging and other location-based
+            transactions. India's highway ecosystem has already been exploring
+            these broader FASTag applications.
+          </p>
+          <p>
+            Paysonic's vision is to contribute to this evolution by enabling
+            payment infrastructure that allows existing digital mobility
+            credentials and payment rails to support broader, more convenient
+            use cases.
+          </p>
           <p>Our objective is simple:</p>
-          <p class="lede">One connected mobility ecosystem. Multiple payment experiences. Seamless transactions.</p>
+          <p class="lede">
+            One connected mobility ecosystem. Multiple payment experiences.
+            Seamless transactions.
+          </p>
         </div>
       </section>
 
@@ -1291,23 +1869,39 @@
         <div class="wrap content-grid reverse">
           <div class="text-block fade-right-item">
             <h2>Transforming Parking Payments</h2>
-            <p>Parking is another critical component of the connected mobility ecosystem.</p>
-            <p>Traditional parking environments often involve physical tickets, cash handling, manual verification and
-              fragmented payment processes. Digital parking infrastructure can transform this experience through
-              automated
-              vehicle identification, FASTag, UPI, ANPR and integrated payment processing.</p>
-            <p>Paysonic enables the transition towards cashless, contactless and technology-enabled parking payments,
-              helping operators improve transaction efficiency while delivering a more convenient customer experience.
+            <p>
+              Parking is another critical component of the connected mobility
+              ecosystem.
+            </p>
+            <p>
+              Traditional parking environments often involve physical tickets,
+              cash handling, manual verification and fragmented payment
+              processes. Digital parking infrastructure can transform this
+              experience through automated vehicle identification, FASTag, UPI,
+              ANPR and integrated payment processing.
+            </p>
+            <p>
+              Paysonic enables the transition towards cashless, contactless and
+              technology-enabled parking payments, helping operators improve
+              transaction efficiency while delivering a more convenient customer
+              experience.
             </p>
             <p>The opportunity extends across:</p>
-            <p><strong>Airports | Malls | Commercial Real Estate | Hospitals | Hotels | Transit Hubs | Municipal Parking
-                |
-                Residential Communities | Enterprise Campuses</strong></p>
-            <p>By connecting vehicle identification and payment infrastructure, smart parking can become a natural
-              extension of the digital mobility journey.</p>
+            <p>
+              <strong
+                >Airports | Malls | Commercial Real Estate | Hospitals | Hotels
+                | Transit Hubs | Municipal Parking | Residential Communities |
+                Enterprise Campuses</strong
+              >
+            </p>
+            <p>
+              By connecting vehicle identification and payment infrastructure,
+              smart parking can become a natural extension of the digital
+              mobility journey.
+            </p>
           </div>
           <div class="image-block fade-left-item">
-            <img src="section4.png" alt="Smart Parking Payments">
+            <img src="section4.png" alt="Smart Parking Payments" />
           </div>
         </div>
       </section>
@@ -1318,19 +1912,30 @@
           <div class="text-block fade-left-item">
             <h2>Connecting the Mobility Ecosystem</h2>
             <p>Mobility payments involve multiple participants.</p>
-            <p>Banks. Payment networks. Infrastructure operators. Technology providers. Mobility businesses. Government
-              and regulatory ecosystems. End customers.</p>
-            <p>Paysonic's role is to help connect these stakeholders through technology and payment infrastructure.</p>
-            <p>Our platforms are designed to support integration across financial institutions, payment systems,
-              mobility
-              infrastructure and enterprise applications—creating a connected transaction environment where different
-              components can work together efficiently.</p>
-            <p>This ecosystem-led approach allows Paysonic to address complex payment challenges while maintaining a
-              focus
-              on standardisation, interoperability and operational resilience.</p>
+            <p>
+              Banks. Payment networks. Infrastructure operators. Technology
+              providers. Mobility businesses. Government and regulatory
+              ecosystems. End customers.
+            </p>
+            <p>
+              Paysonic's role is to help connect these stakeholders through
+              technology and payment infrastructure.
+            </p>
+            <p>
+              Our platforms are designed to support integration across financial
+              institutions, payment systems, mobility infrastructure and
+              enterprise applications—creating a connected transaction
+              environment where different components can work together
+              efficiently.
+            </p>
+            <p>
+              This ecosystem-led approach allows Paysonic to address complex
+              payment challenges while maintaining a focus on standardisation,
+              interoperability and operational resilience.
+            </p>
           </div>
           <div class="image-block fade-right-item">
-            <img src="section5.png" alt="Connecting Mobility Ecosystem">
+            <img src="section5.png" alt="Connecting Mobility Ecosystem" />
           </div>
         </div>
       </section>
@@ -1341,7 +1946,10 @@
           <div class="section-head">
             <span class="eyebrow">Our Approach</span>
             <h2>Technology at the Core</h2>
-            <p>Technology is fundamental to everything we build. Our approach brings together:</p>
+            <p>
+              Technology is fundamental to everything we build. Our approach
+              brings together:
+            </p>
           </div>
           <div class="feature-grid tech bounce-grid">
             <div class="feature-card">
@@ -1350,15 +1958,23 @@
             </div>
             <div class="feature-card">
               <h3>Mobility Technology</h3>
-              <p>Solutions designed around tolling, parking and connected vehicle environments.</p>
+              <p>
+                Solutions designed around tolling, parking and connected vehicle
+                environments.
+              </p>
             </div>
             <div class="feature-card">
               <h3>Vehicle Identification</h3>
-              <p>Integration with technologies such as FASTag, RFID and ANPR.</p>
+              <p>
+                Integration with technologies such as FASTag, RFID and ANPR.
+              </p>
             </div>
             <div class="feature-card">
               <h3>Digital Integration</h3>
-              <p>APIs and technology interfaces designed to connect platforms and ecosystem participants.</p>
+              <p>
+                APIs and technology interfaces designed to connect platforms and
+                ecosystem participants.
+              </p>
             </div>
             <div class="feature-card">
               <h3>Data &amp; Intelligence</h3>
@@ -1366,15 +1982,31 @@
             </div>
             <div class="feature-card">
               <h3>Automation</h3>
-              <p>Reducing manual intervention across high-volume transaction environments.</p>
+              <p>
+                Reducing manual intervention across high-volume transaction
+                environments.
+              </p>
             </div>
             <div class="feature-card">
               <h3>Security &amp; Controls</h3>
-              <p>Technology architecture designed with security and operational integrity at its core.</p>
+              <p>
+                Technology architecture designed with security and operational
+                integrity at its core.
+              </p>
             </div>
           </div>
-          <p style="text-align:center; color:var(--muted); max-width:720px; margin:36px auto 0; font-size:1.02rem;">The
-            result is an infrastructure layer designed to operate reliably behind the customer experience.</p>
+          <p
+            style="
+              text-align: center;
+              color: var(--muted);
+              max-width: 720px;
+              margin: 36px auto 0;
+              font-size: 1.02rem;
+            "
+          >
+            The result is an infrastructure layer designed to operate reliably
+            behind the customer experience.
+          </p>
         </div>
       </section>
 
@@ -1391,9 +2023,15 @@
             <li>Technology partners require interoperability.</li>
             <li>Enterprises require scalability.</li>
           </ul>
-          <p>Paysonic approaches every platform with these expectations in mind.</p>
-          <p>We focus on building systems that are secure, dependable, transparent and operationally resilient, while
-            continuously evolving our technology to address changing payment and mobility requirements.</p>
+          <p>
+            Paysonic approaches every platform with these expectations in mind.
+          </p>
+          <p>
+            We focus on building systems that are secure, dependable,
+            transparent and operationally resilient, while continuously evolving
+            our technology to address changing payment and mobility
+            requirements.
+          </p>
         </div>
       </section>
 
@@ -1403,31 +2041,47 @@
           <div class="section-head">
             <span class="eyebrow">How We Build</span>
             <h2>Enterprise by Design</h2>
-            <p>Our solutions are designed for environments where transaction reliability and operational performance are
-              business-critical. Paysonic works with the principles of:</p>
+            <p>
+              Our solutions are designed for environments where transaction
+              reliability and operational performance are business-critical.
+              Paysonic works with the principles of:
+            </p>
           </div>
           <div class="feature-grid principles bounce-grid">
             <div class="feature-card">
               <h3>Security by Design</h3>
-              <p>Embedding security considerations throughout the technology and transaction lifecycle.</p>
+              <p>
+                Embedding security considerations throughout the technology and
+                transaction lifecycle.
+              </p>
             </div>
             <div class="feature-card">
               <h3>Scalability by Architecture</h3>
-              <p>Building platforms capable of supporting growing transaction volumes and expanding ecosystems.</p>
+              <p>
+                Building platforms capable of supporting growing transaction
+                volumes and expanding ecosystems.
+              </p>
             </div>
             <div class="feature-card">
               <h3>Interoperability by Default</h3>
-              <p>Designing for integration across payment networks, financial institutions, operators and technology
-                platforms.</p>
+              <p>
+                Designing for integration across payment networks, financial
+                institutions, operators and technology platforms.
+              </p>
             </div>
             <div class="feature-card">
               <h3>Operational Excellence</h3>
-              <p>Focusing on uptime, transaction integrity, monitoring, reconciliation and efficient operations.</p>
+              <p>
+                Focusing on uptime, transaction integrity, monitoring,
+                reconciliation and efficient operations.
+              </p>
             </div>
             <div class="feature-card">
               <h3>Innovation with Purpose</h3>
-              <p>Applying emerging technologies where they deliver measurable improvements to mobility and payment
-                experiences.</p>
+              <p>
+                Applying emerging technologies where they deliver measurable
+                improvements to mobility and payment experiences.
+              </p>
             </div>
           </div>
         </div>
@@ -1436,270 +2090,506 @@
       <!-- ===================== LEADERSHIP SECTION (CUSTOM LAYOUT) ===================== -->
       <section class="band">
         <div class="wrap">
-          <div style="text-align: center; margin-bottom: 30px;">
+          <div style="text-align: center; margin-bottom: 30px">
             <span
-              style="font-family: var(--font-m); font-size: .9rem; letter-spacing: .2em; text-transform: uppercase; color: var(--green-600);">
-              Our Team</span>
-
+              style="
+                font-family: var(--font-m);
+                font-size: 0.9rem;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: var(--green-600);
+              "
+            >
+              Our Team</span
+            >
           </div>
 
-         
-        <div class="leadership-grid">
+          <div class="leadership-grid">
+            <!-- 1st Card: Swapnil Jambhale -->
+            <article
+              class="leader-row row-right-img anim-left-right"
+              style="border-top: 5px solid var(--green)"
+            >
+              <div class="leader-info">
+                <h3 class="leader-name">Swapnil Jambhale</h3>
+                <div class="leader-title">Founder &amp; CEO</div>
+                <div class="leader-bio">
+                  20+ Years in Banking &amp; Payments | Ex-COO, Payment Infra
+                  Co. | Ex-GM, Multi-State Scheduled Bank | Digital Banking
+                  &amp; NPCI Products | Doctorate in Digital Financial
+                  Technology
+                </div>
+                <button
+                  class="leader-more-btn"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="btn-text">Know More</span>
+                  <span class="btn-icon">+</span>
+                </button>
+              </div>
+              <div class="leader-avatar">
+                <img src="swapnil (2).jpeg" alt="Swapnil Jambhale" />
+              </div>
 
-  <!-- 1st Card: Swapnil Jambhale -->
-  <article class="leader-row row-right-img anim-left-right" style="border-top: 5px solid var(--green);">
-    <div class="leader-info">
-      <h3 class="leader-name">Swapnil Jambhale</h3>
-      <div class="leader-title">Founder &amp; CEO</div>
-      <div class="leader-bio">
-        20+ Years in Banking &amp; Payments | Ex-COO, Payment Infra Co. | Ex-GM, Multi-State Scheduled Bank |
-        Digital Banking &amp; NPCI Products | Doctorate in Digital Financial Technology
-      </div>
-      <button class="leader-more-btn" type="button" aria-expanded="false">
-        <span class="btn-text">Know More</span>
-        <span class="btn-icon">+</span>
-      </button>
-    </div>
-    <div class="leader-avatar">
-      <img src="swapnil (2).jpeg" alt="Swapnil Jambhale">
-    </div>
+              <div class="leader-detail" style="--accent: var(--green)">
+                <div class="leader-detail-inner">
+                  <p>
+                    As the Founder &amp; CEO of Paysonic Technologies, Swapnil
+                    leads the company's vision, strategic direction, product
+                    innovation, and execution, with a focus on transforming the
+                    mobility payments ecosystem in India.
+                  </p>
+                  <p>
+                    Under his leadership, Paysonic is building an
+                    <strong
+                      >enterprise-grade, API-first mobility payments
+                      infrastructure</strong
+                    >
+                    that brings together banks, payment networks, mobility
+                    operators, enterprises, government organizations, OEMs, and
+                    consumers through a secure, scalable, and interoperable
+                    technology platform.
+                  </p>
+                  <p>
+                    Swapnil drives Paysonic's efforts to simplify complex
+                    mobility payment journeys and create seamless, connected
+                    experiences across tolling, parking, mobility services, and
+                    emerging digital payment ecosystems.
+                  </p>
 
-    <div class="leader-detail" style="--accent: var(--green);">
-      <div class="leader-detail-inner">
-        <p>As the Founder &amp; CEO of Paysonic Technologies, Swapnil leads the company's vision, strategic
-          direction, product innovation, and execution, with a focus on transforming the mobility payments
-          ecosystem in India.</p>
-        <p>Under his leadership, Paysonic is building an <strong>enterprise-grade, API-first mobility payments
-          infrastructure</strong> that brings together banks, payment networks, mobility operators, enterprises,
-          government organizations, OEMs, and consumers through a secure, scalable, and interoperable technology
-          platform.</p>
-        <p>Swapnil drives Paysonic's efforts to simplify complex mobility payment journeys and create seamless,
-          connected experiences across tolling, parking, mobility services, and emerging digital payment
-          ecosystems.</p>
+                  <h4 class="mandate-title">
+                    Leadership &amp; Strategic Mandate
+                  </h4>
+                  <ul class="mandate-list">
+                    <li>
+                      <strong>Vision &amp; Strategy:</strong> Define Paysonic's
+                      long-term vision, business strategy, growth priorities,
+                      and market positioning.
+                    </li>
+                    <li>
+                      <strong>Product &amp; Technology:</strong> Lead the
+                      evolution of Paysonic's mobility payments platform,
+                      technology architecture, product roadmap, and innovation
+                      agenda.
+                    </li>
+                    <li>
+                      <strong>Strategic Partnerships:</strong> Establish and
+                      strengthen relationships with banks, payment networks,
+                      mobility operators, OEMs, enterprises, and government
+                      institutions.
+                    </li>
+                    <li>
+                      <strong>Business Growth:</strong> Drive enterprise
+                      business development, strategic alliances, market
+                      expansion, and key institutional relationships.
+                    </li>
+                    <li>
+                      <strong>Innovation:</strong> Champion innovation across
+                      digital payments, mobility technology, payment
+                      infrastructure, and connected mobility.
+                    </li>
+                    <li>
+                      <strong>Governance &amp; Security:</strong> Ensure a
+                      strong focus on regulatory compliance, information
+                      security, operational resilience, and industry standards,
+                      including applicable RBI, NPCI, and PCI DSS requirements.
+                    </li>
+                    <li>
+                      <strong>Leadership &amp; Talent:</strong> Build and mentor
+                      high-performing teams across technology, product,
+                      operations, business development, and strategic functions.
+                    </li>
+                  </ul>
 
-        <h4 class="mandate-title">Leadership &amp; Strategic Mandate</h4>
-        <ul class="mandate-list">
-          <li><strong>Vision &amp; Strategy:</strong> Define Paysonic's long-term vision, business strategy, growth
-            priorities, and market positioning.</li>
-          <li><strong>Product &amp; Technology:</strong> Lead the evolution of Paysonic's mobility payments
-            platform, technology architecture, product roadmap, and innovation agenda.</li>
-          <li><strong>Strategic Partnerships:</strong> Establish and strengthen relationships with banks, payment
-            networks, mobility operators, OEMs, enterprises, and government institutions.</li>
-          <li><strong>Business Growth:</strong> Drive enterprise business development, strategic alliances, market
-            expansion, and key institutional relationships.</li>
-          <li><strong>Innovation:</strong> Champion innovation across digital payments, mobility technology,
-            payment infrastructure, and connected mobility.</li>
-          <li><strong>Governance &amp; Security:</strong> Ensure a strong focus on regulatory compliance,
-            information security, operational resilience, and industry standards, including applicable RBI, NPCI,
-            and PCI DSS requirements.</li>
-          <li><strong>Leadership &amp; Talent:</strong> Build and mentor high-performing teams across technology,
-            product, operations, business development, and strategic functions.</li>
-        </ul>
+                  <div class="leader-closing">
+                    <span class="tag"
+                      >Building the Future of Mobility Payments</span
+                    >
+                    <p>
+                      Swapnil's leadership is focused on establishing Paysonic
+                      as a trusted technology and payments infrastructure
+                      partner for India's evolving mobility ecosystem — enabling
+                      secure, scalable, interoperable, and frictionless mobility
+                      payments at enterprise scale.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-        <div class="leader-closing">
-          <span class="tag">Building the Future of Mobility Payments</span>
-          <p>Swapnil's leadership is focused on establishing Paysonic as a trusted technology and payments
-            infrastructure partner for India's evolving mobility ecosystem — enabling secure, scalable,
-            interoperable, and frictionless mobility payments at enterprise scale.</p>
-        </div>
-      </div>
-    </div>
-  </article>
+            <!-- 2nd Card: Makarand Agasti -->
+            <article
+              class="leader-row row-left-img anim-right-left"
+              style="border-top: 5px solid #00b4d8"
+            >
+              <div class="leader-avatar">
+                <img src="makrand.jpeg" alt="Makarand Agasti" />
+              </div>
+              <div class="leader-info">
+                <h3 class="leader-name">Makarand Agasti</h3>
+                <div class="leader-title">Co-Founder &amp; CFO</div>
+                <div class="leader-bio">
+                  15+ Years in BFSI | Ex-Regional Head, Leading Bank | Asset
+                  &amp; Liability Management | Advisor to FIs | PGCP – IIM
+                  Nagpur | Law, PGDM Fin, MPM
+                </div>
+                <button
+                  class="leader-more-btn"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="btn-text">Know More</span>
+                  <span class="btn-icon">+</span>
+                </button>
+              </div>
 
-  <!-- 2nd Card: Makarand Agasti -->
-  <article class="leader-row row-left-img anim-right-left" style="border-top: 5px solid #00B4D8;">
-    <div class="leader-avatar">
-      <img src="makrand.jpeg" alt="Makarand Agasti">
-    </div>
-    <div class="leader-info">
-      <h3 class="leader-name">Makarand Agasti</h3>
-      <div class="leader-title">Co-Founder &amp; CFO</div>
-      <div class="leader-bio">
-        15+ Years in BFSI | Ex-Regional Head, Leading Bank | Asset &amp; Liability Management | Advisor to FIs |
-        PGCP – IIM Nagpur | Law, PGDM Fin, MPM
-      </div>
-      <button class="leader-more-btn" type="button" aria-expanded="false">
-        <span class="btn-text">Know More</span>
-        <span class="btn-icon">+</span>
-      </button>
-    </div>
+              <div class="leader-detail" style="--accent: #00b4d8">
+                <div class="leader-detail-inner">
+                  <p>
+                    As the Co-Founder &amp; CFO of Paysonic Technologies,
+                    Makarand leads the company's financial strategy, corporate
+                    planning, governance, and commercial operations, supporting
+                    Paysonic's growth as a technology and payments
+                    infrastructure company.
+                  </p>
+                  <p>
+                    Makarand plays a key role in building the financial and
+                    operational foundation required to scale Paysonic's mobility
+                    payments platform and deepen its engagement with banks,
+                    payment networks, enterprises, mobility operators, and
+                    institutional partners.
+                  </p>
+                  <p>
+                    His mandate spans financial planning, capital strategy,
+                    business performance, commercial structuring, risk
+                    management, and corporate governance, ensuring that
+                    Paysonic's growth is underpinned by disciplined execution,
+                    sustainable economics, and strong financial controls.
+                  </p>
 
-    <div class="leader-detail" style="--accent: #00B4D8;">
-      <div class="leader-detail-inner">
-        <p>As the Co-Founder &amp; CFO of Paysonic Technologies, Makarand leads the company's financial strategy,
-          corporate planning, governance, and commercial operations, supporting Paysonic's growth as a technology
-          and payments infrastructure company.</p>
-        <p>Makarand plays a key role in building the financial and operational foundation required to scale
-          Paysonic's mobility payments platform and deepen its engagement with banks, payment networks,
-          enterprises, mobility operators, and institutional partners.</p>
-        <p>His mandate spans financial planning, capital strategy, business performance, commercial structuring,
-          risk management, and corporate governance, ensuring that Paysonic's growth is underpinned by disciplined
-          execution, sustainable economics, and strong financial controls.</p>
+                  <h4 class="mandate-title">
+                    Leadership &amp; Strategic Mandate
+                  </h4>
+                  <ul class="mandate-list">
+                    <li>
+                      <strong>Financial Strategy:</strong> Define and execute
+                      Paysonic's financial strategy, planning framework,
+                      budgets, and long-term financial priorities.
+                    </li>
+                    <li>
+                      <strong>Business Planning:</strong> Drive financial
+                      modelling, business planning, performance measurement, and
+                      strategic decision support across the organization.
+                    </li>
+                    <li>
+                      <strong>Commercial Strategy:</strong> Lead commercial
+                      structuring, pricing frameworks, unit economics, and
+                      financial evaluation of strategic opportunities and
+                      partnerships.
+                    </li>
+                    <li>
+                      <strong>Corporate Governance:</strong> Establish robust
+                      financial controls, governance frameworks, reporting
+                      systems, and compliance processes aligned with applicable
+                      regulatory and industry requirements.
+                    </li>
+                    <li>
+                      <strong>Risk &amp; Controls:</strong> Oversee financial
+                      risk management, operational controls, audit readiness,
+                      and processes supporting a secure and resilient business
+                      environment.
+                    </li>
+                    <li>
+                      <strong>Strategic Partnerships:</strong> Support
+                      institutional relationships with banks, payment networks,
+                      enterprises, investors, and strategic partners from a
+                      financial and commercial perspective.
+                    </li>
+                    <li>
+                      <strong>Scale &amp; Sustainability:</strong> Build the
+                      financial infrastructure and operating discipline required
+                      to support Paysonic's expansion while maintaining
+                      sustainable and scalable business economics.
+                    </li>
+                    <li>
+                      <strong>Organizational Leadership:</strong> Partner
+                      closely with the leadership team to align financial
+                      priorities with product, technology, business development,
+                      and overall corporate strategy.
+                    </li>
+                  </ul>
 
-        <h4 class="mandate-title">Leadership &amp; Strategic Mandate</h4>
-        <ul class="mandate-list">
-          <li><strong>Financial Strategy:</strong> Define and execute Paysonic's financial strategy, planning
-            framework, budgets, and long-term financial priorities.</li>
-          <li><strong>Business Planning:</strong> Drive financial modelling, business planning, performance
-            measurement, and strategic decision support across the organization.</li>
-          <li><strong>Commercial Strategy:</strong> Lead commercial structuring, pricing frameworks, unit
-            economics, and financial evaluation of strategic opportunities and partnerships.</li>
-          <li><strong>Corporate Governance:</strong> Establish robust financial controls, governance frameworks,
-            reporting systems, and compliance processes aligned with applicable regulatory and industry
-            requirements.</li>
-          <li><strong>Risk &amp; Controls:</strong> Oversee financial risk management, operational controls, audit
-            readiness, and processes supporting a secure and resilient business environment.</li>
-          <li><strong>Strategic Partnerships:</strong> Support institutional relationships with banks, payment
-            networks, enterprises, investors, and strategic partners from a financial and commercial
-            perspective.</li>
-          <li><strong>Scale &amp; Sustainability:</strong> Build the financial infrastructure and operating
-            discipline required to support Paysonic's expansion while maintaining sustainable and scalable
-            business economics.</li>
-          <li><strong>Organizational Leadership:</strong> Partner closely with the leadership team to align
-            financial priorities with product, technology, business development, and overall corporate
-            strategy.</li>
-        </ul>
+                  <div class="leader-closing">
+                    <span class="tag"
+                      >Building a Scalable Mobility Payments Business</span
+                    >
+                    <p>
+                      Makarand's leadership is focused on strengthening
+                      Paysonic's financial foundation, commercial discipline,
+                      and corporate governance as the company scales its
+                      mobility payments infrastructure — creating a sustainable
+                      platform for long-term growth, strategic partnerships, and
+                      value creation across India's evolving mobility ecosystem.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-        <div class="leader-closing">
-          <span class="tag">Building a Scalable Mobility Payments Business</span>
-          <p>Makarand's leadership is focused on strengthening Paysonic's financial foundation, commercial
-            discipline, and corporate governance as the company scales its mobility payments infrastructure —
-            creating a sustainable platform for long-term growth, strategic partnerships, and value creation
-            across India's evolving mobility ecosystem.</p>
-        </div>
-      </div>
-    </div>
-  </article>
+            <!-- 3rd Card: Rohit Tambe -->
+            <article
+              class="leader-row row-right-img anim-left-right"
+              style="border-top: 5px solid var(--blue)"
+            >
+              <div class="leader-info">
+                <h3 class="leader-name">Rohit Tambe</h3>
+                <div class="leader-title">CTO</div>
+                <div class="leader-bio">
+                  10+ Years in Infra | Network Expert | B.Tech (CS) | CCNA
+                  Certified | System Stability | Team Leadership &amp; Tech
+                  Optimization | Infra-led Innovation
+                </div>
+                <button
+                  class="leader-more-btn"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="btn-text">Know More</span>
+                  <span class="btn-icon">+</span>
+                </button>
+              </div>
+              <div class="leader-avatar">
+                <img src="rohit.jpeg" alt="Rohit Tambe" />
+              </div>
 
-  <!-- 3rd Card: Rohit Tambe -->
-  <article class="leader-row row-right-img anim-left-right" style="border-top: 5px solid var(--blue);">
-    <div class="leader-info">
-      <h3 class="leader-name">Rohit Tambe</h3>
-      <div class="leader-title">CTO</div>
-      <div class="leader-bio">
-        10+ Years in Infra | Network Expert | B.Tech (CS) | CCNA Certified | System Stability | Team Leadership
-        &amp; Tech Optimization | Infra-led Innovation
-      </div>
-      <button class="leader-more-btn" type="button" aria-expanded="false">
-        <span class="btn-text">Know More</span>
-        <span class="btn-icon">+</span>
-      </button>
-    </div>
-    <div class="leader-avatar">
-      <img src="rohit.jpeg" alt="Rohit Tambe">
-    </div>
+              <div class="leader-detail" style="--accent: var(--blue)">
+                <div class="leader-detail-inner">
+                  <p>
+                    As the Chief Technology Officer (CTO) of Paysonic
+                    Technologies, Rohit leads the company's technology vision,
+                    platform architecture, engineering strategy, and digital
+                    infrastructure, driving the development of Paysonic's
+                    next-generation mobility payments technology.
+                  </p>
+                  <p>
+                    Rohit is responsible for translating Paysonic's business and
+                    product vision into
+                    <strong
+                      >secure, scalable, resilient, and enterprise-ready
+                      technology solutions</strong
+                    >. His leadership spans platform architecture, product
+                    engineering, API infrastructure, systems integration,
+                    cybersecurity, data, and technology operations.
+                  </p>
+                  <p>
+                    With a strong focus on engineering excellence and
+                    innovation, Rohit plays a critical role in building the
+                    technology foundation that enables seamless connectivity
+                    between banks, payment networks, mobility operators,
+                    enterprises, government organizations, OEMs, and consumers.
+                  </p>
 
-    <div class="leader-detail" style="--accent: var(--blue);">
-      <div class="leader-detail-inner">
-        <p>As the Chief Technology Officer (CTO) of Paysonic Technologies, Rohit leads the company's technology
-          vision, platform architecture, engineering strategy, and digital infrastructure, driving the
-          development of Paysonic's next-generation mobility payments technology.</p>
-        <p>Rohit is responsible for translating Paysonic's business and product vision into <strong>secure,
-          scalable, resilient, and enterprise-ready technology solutions</strong>. His leadership spans platform
-          architecture, product engineering, API infrastructure, systems integration, cybersecurity, data, and
-          technology operations.</p>
-        <p>With a strong focus on engineering excellence and innovation, Rohit plays a critical role in building
-          the technology foundation that enables seamless connectivity between banks, payment networks, mobility
-          operators, enterprises, government organizations, OEMs, and consumers.</p>
+                  <h4 class="mandate-title">
+                    Technology &amp; Leadership Mandate
+                  </h4>
+                  <ul class="mandate-list">
+                    <li>
+                      <strong>Technology Vision:</strong> Define and execute
+                      Paysonic's technology strategy in alignment with the
+                      company's business and product roadmap.
+                    </li>
+                    <li>
+                      <strong>Platform Architecture:</strong> Lead the
+                      architecture and evolution of Paysonic's API-first
+                      mobility payments platform, ensuring scalability,
+                      reliability, interoperability, and performance.
+                    </li>
+                    <li>
+                      <strong>Engineering Leadership:</strong> Build and lead
+                      high-performing engineering teams across software
+                      development, platform engineering, DevOps, integrations,
+                      and technology operations.
+                    </li>
+                    <li>
+                      <strong>Product Engineering:</strong> Drive the
+                      transformation of product requirements into robust,
+                      intuitive, and enterprise-grade technology solutions.
+                    </li>
+                    <li>
+                      <strong>API &amp; Systems Integration:</strong> Develop
+                      scalable integration frameworks connecting banks, payment
+                      networks, mobility platforms, enterprises, OEMs, and other
+                      ecosystem participants.
+                    </li>
+                    <li>
+                      <strong>Security &amp; Resilience:</strong> Establish
+                      strong technology practices for cybersecurity, data
+                      protection, system resilience, access controls,
+                      monitoring, and business continuity.
+                    </li>
+                    <li>
+                      <strong>Innovation:</strong> Evaluate and adopt emerging
+                      technologies to enhance mobility payments, automation,
+                      interoperability, data intelligence, and digital
+                      experiences.
+                    </li>
+                    <li>
+                      <strong>Technology Governance:</strong> Establish
+                      engineering standards, architecture principles,
+                      development methodologies, technology governance, and
+                      operational best practices.
+                    </li>
+                    <li>
+                      <strong>Scalability & Performance: </strong>Ensure
+                      Paysonic’s technology infrastructure is designed to
+                      support high transaction volumes, real-time processing,
+                      rapid integrations, and future ecosystem expansion.
+                    </li>
+                  </ul>
 
-        <h4 class="mandate-title">Technology &amp; Leadership Mandate</h4>
-        <ul class="mandate-list">
-          <li><strong>Technology Vision:</strong> Define and execute Paysonic's technology strategy in alignment
-            with the company's business and product roadmap.</li>
-          <li><strong>Platform Architecture:</strong> Lead the architecture and evolution of Paysonic's API-first
-            mobility payments platform, ensuring scalability, reliability, interoperability, and performance.</li>
-          <li><strong>Engineering Leadership:</strong> Build and lead high-performing engineering teams across
-            software development, platform engineering, DevOps, integrations, and technology operations.</li>
-          <li><strong>Product Engineering:</strong> Drive the transformation of product requirements into robust,
-            intuitive, and enterprise-grade technology solutions.</li>
-          <li><strong>API &amp; Systems Integration:</strong> Develop scalable integration frameworks connecting
-            banks, payment networks, mobility platforms, enterprises, OEMs, and other ecosystem participants.</li>
-          <li><strong>Security &amp; Resilience:</strong> Establish strong technology practices for cybersecurity,
-            data protection, system resilience, access controls, monitoring, and business continuity.</li>
-          <li><strong>Innovation:</strong> Evaluate and adopt emerging technologies to enhance mobility payments,
-            automation, interoperability, data intelligence, and digital experiences.</li>
-          <li><strong>Technology Governance:</strong> Establish engineering standards, architecture principles,
-            development methodologies, technology governance, and operational best practices.</li>
-            <li><strong>Scalability & Performance: </strong>Ensure Paysonic’s technology infrastructure is designed to support high transaction volumes, real-time processing, rapid integrations, and future ecosystem expansion.</li>
-        </ul>
+                  <div class="leader-closing">
+                    <span class="tag"
+                      >Engineering the Future of Mobility Payments</span
+                    >
+                    <p>
+                      Rohit's leadership is focused on building the technology
+                      backbone for connected and frictionless mobility payments
+                      — combining scalable architecture, intelligent
+                      integrations, security, and engineering excellence to
+                      enable Paysonic's vision of a seamless mobility payments
+                      ecosystem across India.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-        <div class="leader-closing">
-          <span class="tag">Engineering the Future of Mobility Payments</span>
-          <p>Rohit's leadership is focused on building the technology backbone for connected and frictionless
-            mobility payments — combining scalable architecture, intelligent integrations, security, and
-            engineering excellence to enable Paysonic's vision of a seamless mobility payments ecosystem across
-            India.</p>
-        </div>
-      </div>
-    </div>
-  </article>
+            <!-- 4th Card: Tejas Kadam -->
+            <article
+              class="leader-row row-left-img anim-right-left"
+              style="border-top: 5px solid #8338ec"
+            >
+              <div class="leader-avatar">
+                <img src="tejas (2).jpeg" alt="Tejas Kadam" />
+              </div>
+              <div class="leader-info">
+                <h3 class="leader-name">Tejas Kadam</h3>
+                <div class="leader-title">CBO</div>
+                <div class="leader-bio">
+                  18+ Years in Payment Technology | Ex-CEO Fintech Startups |
+                  Worked with NPCI &amp; Payment Technology MNCs | Fintech
+                  Mentor | Top 50 Startup Fintech Leaders in India
+                </div>
+                <button
+                  class="leader-more-btn"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="btn-text">Know More</span>
+                  <span class="btn-icon">+</span>
+                </button>
+              </div>
 
-  <!-- 4th Card: Tejas Kadam -->
-  <article class="leader-row row-left-img anim-right-left" style="border-top: 5px solid #8338EC;">
-    <div class="leader-avatar">
-      <img src="tejas (2).jpeg" alt="Tejas Kadam">
-    </div>
-    <div class="leader-info">
-      <h3 class="leader-name">Tejas Kadam</h3>
-      <div class="leader-title">CBO</div>
-      <div class="leader-bio">
-        18+ Years in Payment Technology | Ex-CEO Fintech Startups | Worked with NPCI &amp; Payment Technology
-        MNCs | Fintech Mentor | Top 50 Startup Fintech Leaders in India
-      </div>
-      <button class="leader-more-btn" type="button" aria-expanded="false">
-        <span class="btn-text">Know More</span>
-        <span class="btn-icon">+</span>
-      </button>
-    </div>
+              <div class="leader-detail" style="--accent: #8338ec">
+                <div class="leader-detail-inner">
+                  <p>
+                    As the Chief Business Officer (CBO) of Paysonic
+                    Technologies, Tejas Kadam leads the company's business
+                    strategy, commercial growth, enterprise development, and
+                    strategic partnerships, with a focus on expanding Paysonic's
+                    presence across India's rapidly evolving mobility payments
+                    ecosystem.
+                  </p>
+                  <p>
+                    Tejas plays a key role in translating Paysonic's technology
+                    capabilities into scalable business opportunities by
+                    building relationships across banks, payment networks,
+                    mobility operators, enterprises, OEMs, government
+                    organizations, and strategic ecosystem partners.
+                  </p>
+                  <p>
+                    His mandate spans business development, enterprise sales,
+                    strategic alliances, market expansion, commercial strategy,
+                    and ecosystem development, helping create sustainable growth
+                    opportunities while strengthening Paysonic's position as a
+                    technology and payments infrastructure partner.
+                  </p>
 
-    <div class="leader-detail" style="--accent: #8338EC;">
-      <div class="leader-detail-inner">
-        <p>As the Chief Business Officer (CBO) of Paysonic Technologies, Tejas Kadam leads the company's business
-          strategy, commercial growth, enterprise development, and strategic partnerships, with a focus on
-          expanding Paysonic's presence across India's rapidly evolving mobility payments ecosystem.</p>
-        <p>Tejas plays a key role in translating Paysonic's technology capabilities into scalable business
-          opportunities by building relationships across banks, payment networks, mobility operators, enterprises,
-          OEMs, government organizations, and strategic ecosystem partners.</p>
-        <p>His mandate spans business development, enterprise sales, strategic alliances, market expansion,
-          commercial strategy, and ecosystem development, helping create sustainable growth opportunities while
-          strengthening Paysonic's position as a technology and payments infrastructure partner.</p>
+                  <h4 class="mandate-title">
+                    Business &amp; Commercial Mandate
+                  </h4>
+                  <ul class="mandate-list">
+                    <li>
+                      <strong>Business Strategy:</strong> Develop and execute
+                      business growth strategies aligned with Paysonic's vision,
+                      product capabilities, and market opportunities.
+                    </li>
+                    <li>
+                      <strong>Enterprise Business Development:</strong> Drive
+                      acquisition and growth of strategic enterprise and
+                      institutional customers across mobility and payments
+                      segments.
+                    </li>
+                    <li>
+                      <strong>Strategic Partnerships:</strong> Build and manage
+                      high-value relationships with banks, payment networks,
+                      mobility operators, OEMs, enterprises, government
+                      institutions, and technology partners.
+                    </li>
+                    <li>
+                      <strong>Market Expansion:</strong> Identify new markets,
+                      use cases, and mobility payment opportunities to expand
+                      Paysonic's ecosystem and business footprint.
+                    </li>
+                    <li>
+                      <strong>Commercial Strategy:</strong> Develop commercial
+                      models, partnership structures, go-to-market strategies,
+                      and growth frameworks that support sustainable business
+                      economics.
+                    </li>
+                    <li>
+                      <strong>Ecosystem Development:</strong> Create strategic
+                      collaborations that connect multiple stakeholders and
+                      accelerate adoption of Paysonic's mobility payments
+                      infrastructure.
+                    </li>
+                    <li>
+                      <strong>Customer Relationships:</strong> Strengthen
+                      relationships with key customers and partners, ensuring
+                      alignment between business requirements and Paysonic's
+                      technology capabilities.
+                    </li>
+                    <li>
+                      <strong>Revenue Growth:</strong> Drive revenue generation,
+                      strategic account development, pipeline growth, and
+                      long-term commercial opportunities.
+                    </li>
+                    <li>
+                      <strong>Cross-Functional Leadership: </strong> Work
+                      closely with product, technology, finance, and operations
+                      teams to convert market opportunities into scalable and
+                      successfully executed business initiatives.
+                    </li>
+                  </ul>
 
-        <h4 class="mandate-title">Business &amp; Commercial Mandate</h4>
-        <ul class="mandate-list">
-          <li><strong>Business Strategy:</strong> Develop and execute business growth strategies aligned with
-            Paysonic's vision, product capabilities, and market opportunities.</li>
-          <li><strong>Enterprise Business Development:</strong> Drive acquisition and growth of strategic
-            enterprise and institutional customers across mobility and payments segments.</li>
-          <li><strong>Strategic Partnerships:</strong> Build and manage high-value relationships with banks,
-            payment networks, mobility operators, OEMs, enterprises, government institutions, and technology
-            partners.</li>
-          <li><strong>Market Expansion:</strong> Identify new markets, use cases, and mobility payment
-            opportunities to expand Paysonic's ecosystem and business footprint.</li>
-          <li><strong>Commercial Strategy:</strong> Develop commercial models, partnership structures,
-            go-to-market strategies, and growth frameworks that support sustainable business economics.</li>
-          <li><strong>Ecosystem Development:</strong> Create strategic collaborations that connect multiple
-            stakeholders and accelerate adoption of Paysonic's mobility payments infrastructure.</li>
-          <li><strong>Customer Relationships:</strong> Strengthen relationships with key customers and partners,
-            ensuring alignment between business requirements and Paysonic's technology capabilities.</li>
-          <li><strong>Revenue Growth:</strong> Drive revenue generation, strategic account development, pipeline
-            growth, and long-term commercial opportunities.</li>
-           <li><strong>Cross-Functional Leadership: </strong> Work closely with product, technology, finance, and operations teams to convert market opportunities into scalable and successfully executed business initiatives.</li> 
-        </ul>
-
-        <div class="leader-closing">
-          <span class="tag">Expanding the Mobility Payments Ecosystem</span>
-          <p>Tejas's leadership is focused on building strategic relationships, unlocking new business
-            opportunities, and accelerating the adoption of Paysonic's mobility payments infrastructure —
-            connecting technology, payments, and mobility stakeholders to create a more integrated and
-            frictionless mobility ecosystem across India.</p>
-        </div>
-      </div>
-    </div>
-  </article>
-
-</div>
-
-
+                  <div class="leader-closing">
+                    <span class="tag"
+                      >Expanding the Mobility Payments Ecosystem</span
+                    >
+                    <p>
+                      Tejas's leadership is focused on building strategic
+                      relationships, unlocking new business opportunities, and
+                      accelerating the adoption of Paysonic's mobility payments
+                      infrastructure — connecting technology, payments, and
+                      mobility stakeholders to create a more integrated and
+                      frictionless mobility ecosystem across India.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -1708,25 +2598,37 @@
         <div class="wrap content-grid">
           <div class="text-block">
             <h2>Our Vision &amp; Mission</h2>
-            <p><strong>Our Vision:</strong> To build the infrastructure that enables seamless, connected and intelligent
-              mobility payments across India and global markets.</p>
-            <p>We envision a future where mobility payments are no longer separate transactions but an integrated part
-              of
-              the transportation experience.</p>
+            <p>
+              <strong>Our Vision:</strong> To build the infrastructure that
+              enables seamless, connected and intelligent mobility payments
+              across India and global markets.
+            </p>
+            <p>
+              We envision a future where mobility payments are no longer
+              separate transactions but an integrated part of the transportation
+              experience.
+            </p>
             <ul>
               <li>A vehicle should be able to move.</li>
               <li>Infrastructure should identify it.</li>
               <li>The payment should happen automatically.</li>
               <li>And the customer should simply continue the journey.</li>
             </ul>
-            <p style="margin-top:24px;"><strong>Our Mission:</strong> To engineer secure, scalable and interoperable
-              payment infrastructure that simplifies mobility transactions and enables the next generation of connected
-              transportation.</p>
-            <p>We are committed to combining technology, payments and mobility expertise to create infrastructure that
-              delivers value for financial institutions, mobility operators, businesses and end customers.</p>
+            <p style="margin-top: 24px">
+              <strong>Our Mission:</strong> To engineer secure, scalable and
+              interoperable payment infrastructure that simplifies mobility
+              transactions and enables the next generation of connected
+              transportation.
+            </p>
+            <p>
+              We are committed to combining technology, payments and mobility
+              expertise to create infrastructure that delivers value for
+              financial institutions, mobility operators, businesses and end
+              customers.
+            </p>
           </div>
           <div class="image-block">
-            <img src="section7.png" alt="Powering Mobility">
+            <img src="section7.png" alt="Powering Mobility" />
           </div>
         </div>
       </section>
@@ -1735,17 +2637,33 @@
         <div class="scroll-reveal-sticky">
           <div class="wrap">
             <span class="eyebrow">Looking Ahead</span>
-            <h2 class="sr-text">The Transformation of Mobility Is Only Beginning</h2>
-            <p class="sr-text">The next generation will bring together barrier-free tolling, intelligent parking,
-              connected vehicles, digital identity, embedded payments, real-time transaction processing, automated
-              infrastructure and data-driven mobility services.</p>
+            <h2 class="sr-text">
+              The Transformation of Mobility Is Only Beginning
+            </h2>
+            <p class="sr-text">
+              The next generation will bring together barrier-free tolling,
+              intelligent parking, connected vehicles, digital identity,
+              embedded payments, real-time transaction processing, automated
+              infrastructure and data-driven mobility services.
+            </p>
             <p class="sr-text accent">Paysonic is building for this future.</p>
-            <p class="sr-text">Our ambition is not simply to participate in the digital mobility ecosystem, but to help
-              build the infrastructure layer that enables it.</p>
-            <p class="sr-text">As mobility becomes more connected, payments must become more intelligent.</p>
-            <p class="sr-text">As infrastructure becomes more automated, transactions must become more seamless.</p>
-            <p class="sr-text">And as ecosystems become more interconnected, payment infrastructure must become more
-              interoperable.</p>
+            <p class="sr-text">
+              Our ambition is not simply to participate in the digital mobility
+              ecosystem, but to help build the infrastructure layer that enables
+              it.
+            </p>
+            <p class="sr-text">
+              As mobility becomes more connected, payments must become more
+              intelligent.
+            </p>
+            <p class="sr-text">
+              As infrastructure becomes more automated, transactions must become
+              more seamless.
+            </p>
+            <p class="sr-text">
+              And as ecosystems become more interconnected, payment
+              infrastructure must become more interoperable.
+            </p>
           </div>
         </div>
       </section>
@@ -1755,22 +2673,32 @@
     <footer class="foot" id="footer">
       <div class="wrap foot-grid">
         <div class="foot-brand">
-          <img src="PaysonicTech_Logo_with_Tagline-removebg-preview.png" alt="Paysonic Logo"
-            style="height: 84px; width: auto;">
-          <p>India's mobility payment infrastructure, engineered for scale, connectivity and seamless transactions.</p>
+          <img
+            src="PaysonicTech_Logo_with_Tagline-removebg-preview.png"
+            alt="Paysonic Logo"
+            style="height: 84px; width: auto"
+          />
+          <p>
+            India's mobility payment infrastructure, engineered for scale,
+            connectivity and seamless transactions.
+          </p>
           <div class="socials">
-            <a href="#" aria-label="LinkedIn"><svg aria-hidden="true">
-                <use href="#i-in" />
-              </svg></a>
-            <a href="#" aria-label="X"><svg aria-hidden="true">
-                <use href="#i-x" />
-              </svg></a>
-            <a href="#" aria-label="YouTube"><svg aria-hidden="true">
-                <use href="#i-yt" />
-              </svg></a>
-            <a href="#" aria-label="Email"><svg aria-hidden="true">
-                <use href="#i-mail" />
-              </svg></a>
+            <a href="#" aria-label="LinkedIn"
+              ><svg aria-hidden="true">
+                <use href="#i-in" /></svg
+            ></a>
+            <a href="#" aria-label="X"
+              ><svg aria-hidden="true">
+                <use href="#i-x" /></svg
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><svg aria-hidden="true">
+                <use href="#i-yt" /></svg
+            ></a>
+            <a href="#" aria-label="Email"
+              ><svg aria-hidden="true">
+                <use href="#i-mail" /></svg
+            ></a>
           </div>
         </div>
 
@@ -1792,30 +2720,95 @@
         <div class="sub">
           <h4>Stay Connected</h4>
           <p>Monthly Mobility Intelligence</p>
-          <form class="sub-field" id="subForm" action="mailto:connect@paysonictech.com" method="POST"
-            enctype="text/plain">
-            <label for="subEmail" class="sr-only"
-              style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
-            <input id="subEmail" name="Subscriber Email" type="email" placeholder="Enter Email Address" required>
-            <button type="submit" aria-label="Subscribe"><svg width="15" height="15" aria-hidden="true">
+          <form
+            class="sub-field"
+            id="subForm"
+            action="mailto:connect@paysonictech.com"
+            method="POST"
+            enctype="text/plain"
+          >
+            <label
+              for="subEmail"
+              class="sr-only"
+              style="
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip: rect(0 0 0 0);
+              "
+              >Email address</label
+            >
+            <input
+              id="subEmail"
+              name="Subscriber Email"
+              type="email"
+              placeholder="Enter Email Address"
+              required
+            />
+            <button type="submit" aria-label="Subscribe">
+              <svg width="15" height="15" aria-hidden="true">
                 <use href="#i-arrow" />
-              </svg></button>
+              </svg>
+            </button>
           </form>
-
         </div>
       </div>
 
-      <div class="foot-bar"
-        style="background: #041F49; color: rgba(255,255,255,.7); padding: 24px 0; font-size: .8rem;">
-        <div class="wrap"
-          style="width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-          <span>© 2026 Paysonic Technologies Pvt.Ltd. All rights reserved.</span>
-          <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-            <a href="pp.html"
-              style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Privacy Policy</a>
-            <a href="TC.html" style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Terms
-              &amp; Condition</a>
-            <a href="#" style="color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s;">Cookies</a>
+      <div
+        class="foot-bar"
+        style="
+          background: #041f49;
+          color: rgba(255, 255, 255, 0.7);
+          padding: 24px 0;
+          font-size: 0.8rem;
+        "
+      >
+        <div
+          class="wrap"
+          style="
+            width: 100%;
+            max-width: 1240px;
+            margin-inline: auto;
+            padding-inline: clamp(18px, 4vw, 40px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+          "
+        >
+          <span
+            >© 2026 Paysonic Technologies Pvt.Ltd. All rights reserved.</span
+          >
+          <div style="display: flex; gap: 20px; flex-wrap: wrap">
+            <a
+              href="pp.html"
+              style="
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                transition: color 0.25s;
+              "
+              >Privacy Policy</a
+            >
+            <a
+              href="TC.html"
+              style="
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                transition: color 0.25s;
+              "
+              >Terms &amp; Condition</a
+            >
+            <a
+              href="#"
+              style="
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                transition: color 0.25s;
+              "
+              >Cookies</a
+            >
           </div>
         </div>
       </div>
@@ -1823,16 +2816,16 @@
 
     <script>
       (function () {
-        var sections = document.querySelectorAll('.scroll-reveal');
+        var sections = document.querySelectorAll(".scroll-reveal");
         if (!sections.length) return;
 
         function update() {
           sections.forEach(function (section) {
-            var items = section.querySelectorAll('.sr-text');
+            var items = section.querySelectorAll(".sr-text");
             var rect = section.getBoundingClientRect();
             var total = rect.height - window.innerHeight;
             if (total <= 0) return;
-            var progress = (-rect.top) / total;
+            var progress = -rect.top / total;
             progress = Math.min(Math.max(progress, 0), 1);
 
             var step = 1 / items.length;
@@ -1840,157 +2833,179 @@
             items.forEach(function (el, i) {
               // i === 0 (Yani heading) turant visible ho jayegi jab section aayega
               if (i === 0 || progress >= i * step) {
-                el.classList.add('is-visible');
+                el.classList.add("is-visible");
               } else {
-                el.classList.remove('is-visible');
+                el.classList.remove("is-visible");
               }
             });
           });
         }
 
-        window.addEventListener('scroll', update, { passive: true });
-        window.addEventListener('resize', update);
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
         update();
       })();
     </script>
 
     <script>
       (function () {
-        var grids = document.querySelectorAll('.bounce-grid');
+        var grids = document.querySelectorAll(".bounce-grid");
         if (!grids.length) return;
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              observer.unobserve(entry.target); // sirf ek baar animate ho, dobara scroll karne pe repeat na ho
-            }
-          });
-        }, { threshold: 0.2 });
-        grids.forEach(function (grid) { observer.observe(grid); });
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target); // sirf ek baar animate ho, dobara scroll karne pe repeat na ho
+              }
+            });
+          },
+          { threshold: 0.2 },
+        );
+        grids.forEach(function (grid) {
+          observer.observe(grid);
+        });
       })();
     </script>
 
     <script>
       (function () {
-        var fadeElements = document.querySelectorAll('.fade-up-item');
+        var fadeElements = document.querySelectorAll(".fade-up-item");
         if (!fadeElements.length) return;
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.25 }); /* 0.25 matlab jab 25% section dikhega tab effect trigger hoga */
-        fadeElements.forEach(function (el) { observer.observe(el); });
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.25 },
+        ); /* 0.25 matlab jab 25% section dikhega tab effect trigger hoga */
+        fadeElements.forEach(function (el) {
+          observer.observe(el);
+        });
       })();
     </script>
-
 
     <script>
       (function () {
-        var fadeElements = document.querySelectorAll('.fade-up-item, .fade-left-item, .fade-right-item');
+        var fadeElements = document.querySelectorAll(
+          ".fade-up-item, .fade-left-item, .fade-right-item",
+        );
         if (!fadeElements.length) return;
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15 }); /* Thoda pehle trigger hoga aur smooth chalega */
-        fadeElements.forEach(function (el) { observer.observe(el); });
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        ); /* Thoda pehle trigger hoga aur smooth chalega */
+        fadeElements.forEach(function (el) {
+          observer.observe(el);
+        });
       })();
     </script>
 
+    <script>
+      (function () {
+        var buttons = document.querySelectorAll(".leader-more-btn");
+        if (!buttons.length) return;
+
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var row = btn.closest(".leader-row");
+            var detail = row.querySelector(".leader-detail");
+            var isOpen = detail.classList.contains("open");
+
+            // Close any other open card first (only one open at a time)
+            document
+              .querySelectorAll(".leader-detail.open")
+              .forEach(function (openDetail) {
+                if (openDetail !== detail) {
+                  openDetail.style.maxHeight = null;
+                  openDetail.classList.remove("open");
+                  var otherBtn = openDetail
+                    .closest(".leader-row")
+                    .querySelector(".leader-more-btn");
+                  otherBtn.setAttribute("aria-expanded", "false");
+                  otherBtn.querySelector(".btn-text").textContent = "Know More";
+                }
+              });
+
+            if (isOpen) {
+              // Same button pressed again -> close it
+              detail.style.maxHeight = null;
+              detail.classList.remove("open");
+              btn.setAttribute("aria-expanded", "false");
+              btn.querySelector(".btn-text").textContent = "Know More";
+            } else {
+              // Open this one
+              detail.classList.add("open");
+              detail.style.maxHeight = detail.scrollHeight + "px";
+              btn.setAttribute("aria-expanded", "true");
+              btn.querySelector(".btn-text").textContent = "Show Less";
+            }
+          });
+        });
+      })();
+    </script>
 
     <script>
-  (function () {
-    var buttons = document.querySelectorAll('.leader-more-btn');
-    if (!buttons.length) return;
+      (function () {
+        var leaderRows = document.querySelectorAll(".leader-row");
+        if (!leaderRows.length) return;
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.2 },
+        );
+        leaderRows.forEach(function (row) {
+          observer.observe(row);
+        });
+      })();
+    </script>
 
-    buttons.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var row = btn.closest('.leader-row');
-        var detail = row.querySelector('.leader-detail');
-        var isOpen = detail.classList.contains('open');
+    <script>
+      (function () {
+        var burger = document.getElementById("burger"),
+          drawer = document.getElementById("drawer");
+        if (!burger || !drawer) return;
 
-        // Close any other open card first (only one open at a time)
-        document.querySelectorAll('.leader-detail.open').forEach(function (openDetail) {
-          if (openDetail !== detail) {
-            openDetail.style.maxHeight = null;
-            openDetail.classList.remove('open');
-            var otherBtn = openDetail.closest('.leader-row').querySelector('.leader-more-btn');
-            otherBtn.setAttribute('aria-expanded', 'false');
-            otherBtn.querySelector('.btn-text').textContent = 'Know More';
-          }
+        function closeDrawer() {
+          drawer.classList.remove("is-open");
+          burger.classList.remove("is-open");
+          burger.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("is-locked");
+        }
+
+        burger.addEventListener("click", function () {
+          var open = !drawer.classList.contains("is-open");
+          drawer.classList.toggle("is-open", open);
+          burger.classList.toggle("is-open", open);
+          burger.setAttribute("aria-expanded", String(open));
+          document.body.classList.toggle("is-locked", open);
         });
 
-        if (isOpen) {
-          // Same button pressed again -> close it
-          detail.style.maxHeight = null;
-          detail.classList.remove('open');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.querySelector('.btn-text').textContent = 'Know More';
-        } else {
-          // Open this one
-          detail.classList.add('open');
-          detail.style.maxHeight = detail.scrollHeight + 'px';
-          btn.setAttribute('aria-expanded', 'true');
-          btn.querySelector('.btn-text').textContent = 'Show Less';
-        }
-      });
-    });
-  })();
-</script>
+        drawer.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", closeDrawer);
+        });
 
-<script>
-  (function () {
-    var leaderRows = document.querySelectorAll('.leader-row');
-    if (!leaderRows.length) return;
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    leaderRows.forEach(function (row) { observer.observe(row); });
-  })();
-</script>
-
-<script>
-  (function () {
-    var burger = document.getElementById('burger'),
-        drawer = document.getElementById('drawer');
-    if (!burger || !drawer) return;
-
-    function closeDrawer() {
-      drawer.classList.remove('is-open');
-      burger.classList.remove('is-open');
-      burger.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('is-locked');
-    }
-
-    burger.addEventListener('click', function () {
-      var open = !drawer.classList.contains('is-open');
-      drawer.classList.toggle('is-open', open);
-      burger.classList.toggle('is-open', open);
-      burger.setAttribute('aria-expanded', String(open));
-      document.body.classList.toggle('is-locked', open);
-    });
-
-    drawer.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', closeDrawer);
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeDrawer();
-    });
-  })();
-</script>
-
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeDrawer();
+        });
+      })();
+    </script>
   </body>
-
 </html>
