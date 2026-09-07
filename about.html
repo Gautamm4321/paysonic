@@ -1036,11 +1036,11 @@
 
       /* ---------- Know More Button + Expandable Detail ---------- */
       .leader-more-btn {
-        margin-top: 20px;
+        margin-top: 10px;
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        padding: 11px 22px;
+        gap: 5px;
+        padding: 6px 14px;
         background: transparent;
         border: 1.5px solid var(--accent, var(--green));
         border-radius: 999px;
@@ -1327,7 +1327,7 @@
           font-size: 1.25rem;
         }
         .leader-more-btn {
-          width: 100%;
+          width: 80%;
           justify-content: center;
         }
         .leader-detail {
@@ -1609,7 +1609,12 @@
           <img
             src="PaysonicTech-removebg-preview.png"
             alt="Paysonic Logo"
-            style="height: 84px; width: auto"
+            style="
+              height: clamp(40px, 5.5vw, 58px);
+              width: auto;
+              max-width: 100%;
+              object-fit: contain;
+            "
           />
         </a>
 
@@ -1793,25 +1798,43 @@
       </section>
 
       <!-- ===================== NEW: Powering Digital Tolling ===================== -->
-      <section class="band band-alt band-narrow" id="tolling-scroll">
-        <div class="wrap">
-          <span class="eyebrow fade-up-item">Electronic Tolling</span>
-          <h2 class="fade-up-item" style="transition-delay: 0.1s;">Powering Digital Tolling</h2>
-          <p class="fade-up-item" style="transition-delay: 0.2s;">
-            Electronic toll collection has fundamentally changed the way highway payments are processed. With FASTag and NETC, toll payments have evolved from conventional cash-based transactions to automated digital payments.
-          </p>
-          <p class="fade-up-item" style="transition-delay: 0.3s;">
-            The next phase of this transformation is Multi-Lane Free Flow (MLFF)—where vehicles can pass through tolling zones without conventional barriers or stopping at physical toll booths.
-          </p>
-          <p class="fade-up-item" style="transition-delay: 0.4s;">
-            India's MLFF rollout combines technologies such as FASTag, RFID-based identification, Automatic Number Plate Recognition (ANPR), cameras and automated transaction processing to enable barrier-free tolling.
-          </p>
-          <p class="fade-up-item" style="transition-delay: 0.5s;">
-            Paysonic is positioned to support this evolution through payment and transaction infrastructure designed for the next generation of electronic tolling.
-          </p>
-          <p class="fade-up-item" style="transition-delay: 0.6s;">
-            Our focus is to enable the financial transaction layer behind increasingly automated mobility environments—helping create a tolling ecosystem that is faster, more efficient, transparent and digitally connected.
-          </p>
+      <section
+        class="band band-alt band-narrow scroll-reveal"
+        id="tolling-scroll"
+      >
+        <div class="scroll-reveal-sticky">
+          <div class="wrap">
+            <span class="eyebrow">Electronic Tolling</span>
+            <h2 class="sr-text">Powering Digital Tolling</h2>
+            <p class="sr-text">
+              Electronic toll collection has fundamentally changed the way
+              highway payments are processed. With FASTag and NETC, toll
+              payments have evolved from conventional cash-based transactions to
+              automated digital payments.
+            </p>
+            <p class="sr-text">
+              The next phase of this transformation is Multi-Lane Free Flow
+              (MLFF)—where vehicles can pass through tolling zones without
+              conventional barriers or stopping at physical toll booths.
+            </p>
+            <p class="sr-text">
+              India's MLFF rollout combines technologies such as FASTag,
+              RFID-based identification, Automatic Number Plate Recognition
+              (ANPR), cameras and automated transaction processing to enable
+              barrier-free tolling.
+            </p>
+            <p class="sr-text">
+              Paysonic is positioned to support this evolution through payment
+              and transaction infrastructure designed for the next generation of
+              electronic tolling.
+            </p>
+            <p class="sr-text">
+              Our focus is to enable the financial transaction layer behind
+              increasingly automated mobility environments—helping create a
+              tolling ecosystem that is faster, more efficient, transparent and
+              digitally connected.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -2076,7 +2099,7 @@
             <span
               style="
                 font-family: var(--font-m);
-                font-size: 0.9rem;
+                font-size: 1.5rem;
                 letter-spacing: 0.2em;
                 text-transform: uppercase;
                 color: var(--green-600);
@@ -2094,12 +2117,50 @@
             >
               <div class="leader-info">
                 <h3 class="leader-name">Swapnil Jambhale</h3>
-                <div class="leader-title">Founder &amp; CEO</div>
+                <div
+                  class="leader-title"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    white-space: nowrap;
+                  "
+                  ;
+                >
+                  Founder &amp; CEO
+
+                  <a
+                    href="https://www.linkedin.com/in/swapniljam/"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      width: 28px;
+                      height: 28px;
+                      padding: 0px;
+                      margin: 0px;
+                      text-decoration: none;
+                      flex-shrink: 0;
+                      vertical-align: middle;
+                    "
+                  >
+                    <svg
+                      aria-hidden="true"
+                      style="width: 50px; height: 50px; display: block"
+                    >
+                      <use href="#i-in"></use>
+                    </svg>
+                  </a>
+                </div>
                 <div class="leader-bio">
-                  20+ Years in Banking &amp; Payments | Ex-COO, Payment Infra
-                  Co. | Ex-GM, Multi-State Scheduled Bank | Digital Banking
-                  &amp; NPCI Products | Doctorate in Digital Financial
-                  Technology
+                  Swapnil's leadership is focused on establishing Paysonic as a
+                  trusted technology and payments infrastructure partner for
+                  India's evolving mobility ecosystem — enabling secure,
+                  scalable, interoperable, and frictionless mobility payments at
+                  enterprise scale.
                 </div>
                 <button
                   class="leader-more-btn"
@@ -2189,11 +2250,10 @@
                       >Building the Future of Mobility Payments</span
                     >
                     <p>
-                      Swapnil's leadership is focused on establishing Paysonic
-                      as a trusted technology and payments infrastructure
-                      partner for India's evolving mobility ecosystem — enabling
-                      secure, scalable, interoperable, and frictionless mobility
-                      payments at enterprise scale.
+                      20+ Years in Banking &amp; Payments | Ex-COO, Payment
+                      Infra Co. | Ex-GM, Multi-State Scheduled Bank | Digital
+                      Banking &amp; NPCI Products | Doctorate in Digital
+                      Financial Technology
                     </p>
                   </div>
                 </div>
@@ -2210,7 +2270,45 @@
               </div>
               <div class="leader-info">
                 <h3 class="leader-name">Makarand Agasti</h3>
-                <div class="leader-title">Co-Founder &amp; CFO</div>
+                <div
+                  class="leader-title"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    white-space: nowrap;
+                  "
+                  ;
+                >
+                  Co-Founder &amp; CEO
+
+                  <a
+                    href="https://www.linkedin.com/in/makarand-paysonictech/"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      width: 28px;
+                      height: 28px;
+                      padding: 0px;
+                      margin: 0px;
+                      text-decoration: none;
+                      flex-shrink: 0;
+                      vertical-align: middle;
+                    "
+                  >
+                    <svg
+                      aria-hidden="true"
+                      style="width: 50px; height: 50px; display: block"
+                    >
+                      <use href="#i-in"></use>
+                    </svg>
+                  </a>
+                </div>
+
                 <div class="leader-bio">
                   15+ Years in BFSI | Ex-Regional Head, Leading Bank | Asset
                   &amp; Liability Management | Advisor to FIs | PGCP – IIM
@@ -2326,7 +2424,44 @@
             >
               <div class="leader-info">
                 <h3 class="leader-name">Rohit Tambe</h3>
-                <div class="leader-title">CTO</div>
+                <div
+                  class="leader-title"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    white-space: nowrap;
+                  "
+                  ;
+                >
+                  CTO
+
+                  <a
+                    href="https://www.linkedin.com/in/rohit-tambe-a02937248/"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      width: 28px;
+                      height: 28px;
+                      padding: 0px;
+                      margin: 0px;
+                      text-decoration: none;
+                      flex-shrink: 0;
+                      vertical-align: middle;
+                    "
+                  >
+                    <svg
+                      aria-hidden="true"
+                      style="width: 50px; height: 50px; display: block"
+                    >
+                      <use href="#i-in"></use>
+                    </svg>
+                  </a>
+                </div>
                 <div class="leader-bio">
                   10+ Years in Infra | Network Expert | B.Tech (CS) | CCNA
                   Certified | System Stability | Team Leadership &amp; Tech
@@ -2457,7 +2592,44 @@
               </div>
               <div class="leader-info">
                 <h3 class="leader-name">Tejas Kadam</h3>
-                <div class="leader-title">CBO</div>
+                <div
+                  class="leader-title"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    white-space: nowrap;
+                  "
+                  ;
+                >
+                  CBO
+
+                  <a
+                    href="https://www.linkedin.com/in/tejas-kadam-363790123/"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      width: 28px;
+                      height: 28px;
+                      padding: 0px;
+                      margin: 0px;
+                      text-decoration: none;
+                      flex-shrink: 0;
+                      vertical-align: middle;
+                    "
+                  >
+                    <svg
+                      aria-hidden="true"
+                      style="width: 50px; height: 50px; display: block"
+                    >
+                      <use href="#i-in"></use>
+                    </svg>
+                  </a>
+                </div>
                 <div class="leader-bio">
                   18+ Years in Payment Technology | Ex-CEO Fintech Startups |
                   Worked with NPCI &amp; Payment Technology MNCs | Fintech
