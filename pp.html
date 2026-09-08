@@ -294,6 +294,179 @@
     font-size:16px;
   }
   .staco-scroll-top:hover .staco-scroll-top-icon{color:var(--ink);}
+
+  /* ================= MOBILE PHONES RESPONSIVE (Strictly <= 768px) ================= */
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+    }
+    .container {
+      padding-inline: 16px !important;
+    }
+    .nav-in {
+      padding-inline: 16px !important;
+      height: 68px !important;
+    }
+    .logo img {
+      height: 52px !important;
+    }
+    .drawer {
+      inset: 68px 0 0 !important;
+      padding: 24px 20px 36px !important;
+    }
+    .drawer a {
+      font-size: 1.25rem !important;
+      padding: 12px 0 !important;
+    }
+    .pp-hero {
+      padding: 34px 0 28px !important;
+    }
+    .pp-hero h1 {
+      font-size: clamp(26px, 7vw, 34px) !important;
+      line-height: 1.22 !important;
+    }
+    .pp-hero p.uppercase {
+      font-size: 11.5px !important;
+      margin-bottom: 8px !important;
+    }
+    .pp-content-section {
+      padding: 28px 0 32px !important;
+    }
+    .terms-and-service-inner .col-md-4 {
+      margin-bottom: 24px !important;
+    }
+    .terms-and-service-inner .col-md-4 > div {
+      position: static !important;
+      background: #F8F9FB !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 14px !important;
+      padding: 16px 14px !important;
+    }
+    .content-table-title {
+      font-size: 12px !important;
+      margin-bottom: 12px !important;
+    }
+    .terms-list li {
+      margin-bottom: 2px !important;
+    }
+    .terms-list a {
+      font-size: 14px !important;
+      padding: 8px 12px !important;
+    }
+    .terms-and-service-content h4 {
+      font-size: 19px !important;
+      margin-bottom: 10px !important;
+    }
+    .terms-and-service-content p,
+    .terms-and-service-content ul li {
+      font-size: 15px !important;
+      line-height: 1.65 !important;
+    }
+    .terms-and-service-content > div {
+      margin-bottom: 26px !important;
+      scroll-margin-top: 80px !important;
+    }
+    .cvlYel {
+      padding: 0 0 40px !important;
+    }
+    .bg-black.reach-us {
+      padding: 34px 18px !important;
+      border-radius: 20px !important;
+    }
+    .reach-title {
+      font-size: clamp(21px, 5.5vw, 26px) !important;
+    }
+    .building-content p {
+      font-size: 14px !important;
+    }
+    .building-content .fs-20 {
+      font-size: 15px !important;
+      margin-top: 18px !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+    }
+    .building-content .brand-blue {
+      word-break: break-all !important;
+      font-size: 15.5px !important;
+    }
+    .foot {
+      padding-top: 44px !important;
+    }
+    .foot-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      row-gap: 32px !important;
+      column-gap: 20px !important;
+      padding-inline: 16px !important;
+      padding-bottom: 24px !important;
+      justify-items: center !important;
+      text-align: center !important;
+    }
+    .foot-brand {
+      grid-column: 1 / -1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+    .foot-brand p {
+      max-width: 32ch !important;
+      margin: 12px auto 16px !important;
+    }
+    .fcol {
+      text-align: center !important;
+      width: 100% !important;
+    }
+    .fcol h4 {
+      font-size: 0.92rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 12px !important;
+    }
+    .fcol a {
+      display: block !important;
+      font-size: 0.85rem !important;
+      padding: 6px 0 !important;
+    }
+    .sub {
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
+      max-width: 400px !important;
+      margin: 0 auto !important;
+      padding: 18px 16px !important;
+    }
+    .foot-bar .wrap {
+      flex-direction: column !important;
+      text-align: center !important;
+      gap: 12px !important;
+      padding-inline: 16px !important;
+    }
+    .foot-bar .wrap > div {
+      justify-content: center !important;
+      gap: 16px !important;
+    }
+    .staco-scroll-top {
+      right: 16px !important;
+      bottom: 16px !important;
+      width: 44px !important;
+      height: 44px !important;
+    }
+    .staco-scroll-top svg.progress-circle {
+      width: 44px !important;
+      height: 44px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pp-hero h1 {
+      font-size: 26px !important;
+    }
+    .reach-title {
+      font-size: 20px !important;
+    }
+    .bg-black.reach-us {
+      padding: 26px 14px !important;
+      border-radius: 16px !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -315,7 +488,7 @@
         <a href="about.html" style="font-size:.9rem; font-weight:600; color:#041F49; text-decoration:none;">About Us</a>
       </nav>
 
-      <a href="mailto:connect@paysonictech.com" class="btn nav-cta" style="position:relative; display:inline-flex; align-items:center; justify-content:center; gap:.65em; padding:.62em 1.15em; border-radius:999px; background:#02B54E; color:#fff; font-weight:700; font-size:.875rem; text-decoration:none; white-space:nowrap; box-shadow:0 10px 24px -10px rgba(2,181,78,.75);">Contact us <svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></a>
+      <a href="#" class="btn nav-cta" id="openContactUs" style="position:relative; display:inline-flex; align-items:center; justify-content:center; gap:.65em; padding:.62em 1.15em; border-radius:999px; background:#02B54E; color:#fff; font-weight:700; font-size:.875rem; text-decoration:none; white-space:nowrap; box-shadow:0 10px 24px -10px rgba(2,181,78,.75);">Contact us <svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></a>
 
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
     </div>
@@ -326,7 +499,7 @@
     <a href="index.html#journey">Solutions</a>
     <a href="index.html#products">Technology</a>
     <a href="about.html">About Us</a>
-    <a href="mailto:connect@paysonictech.com" class="btn nav-cta" style="background:#02B54E;">Contact us <svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></a>
+    <a href="#" class="btn nav-cta" id="openContactUsDrawer" style="background:#02B54E;">Contact us <svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></a>
   </div>
 
   <!-- mobile offcanvas menu -->
@@ -489,7 +662,6 @@
         <h4 style="font-size: .86rem; font-weight: 800; color: #041F49; margin-bottom: 16px;">Products</h4>
         <a href="index.html#products" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">NETC Product</a>
         <a href="index.html#products" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Mobility Platform</a>
-        <a href="index.html#platform" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">EV Charging</a>
         <a href="index.html#platform" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">One Platform</a>
       </div>
 
@@ -497,15 +669,14 @@
       <div class="fcol" style="text-align: center;">
         <h4 style="font-size: .86rem; font-weight: 800; color: #041F49; margin-bottom: 16px;">Company</h4>
         <a href="about.html" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">About us</a>
-        <a href="#" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Careers</a>
-        <a href="#" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">News &amp; media</a>
+        <a href="careers.html" style="display: block; font-size: .85rem; color: #5B6B84; padding: 8px 0; text-decoration: none;">Careers</a>
       </div>
 
       <!-- Stay Connected Form -->
       <div class="sub" style="background: #EAF3FE; border-radius: 18px; padding: 20px; text-align: left; width: 100%;">
         <h4 style="font-size: .86rem; font-weight: 800; color: #041F49; margin-bottom: 6px;">Stay Connected</h4>
         <p style="font-size: .79rem; color: #5B6B84; margin: 0 0 14px;">Monthly Mobility Intelligence</p>
-        <form class="sub-field" id="subForm" action="mailto:connect@paysonictech.com" method="POST" enctype="text/plain" style="display: flex; gap: 8px; background: #fff; border: 1px solid rgba(4,31,73,.10); border-radius: 999px; padding: 5px 5px 5px 16px;">
+        <form class="sub-field" id="subForm" action="#" method="GET" style="display: flex; gap: 8px; background: #fff; border: 1px solid rgba(4,31,73,.10); border-radius: 999px; padding: 5px 5px 5px 16px;">
           <input id="subEmail" name="Subscriber Email" type="email" placeholder="Enter Email Address" required style="flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: .85rem; color: #041F49;">
           <button type="submit" aria-label="Subscribe" style="width: 34px; height: 34px; flex: none; border-radius: 50%; background: #02B54E; color: #fff; display: grid; place-items: center; border: none; cursor: pointer;"><svg width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></svg></button>
         </form>
@@ -632,5 +803,226 @@
     });
   })();
 </script>
+
+<!-- ===================== CONTACT MODAL ===================== -->
+<style>
+  .overlay{position:fixed;inset:0;background:rgba(10,18,35,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:16px;z-index:10000;}
+  .overlay.open{display:flex;}
+  .contact-modal{display:block !important;position:relative !important;top:auto !important;left:auto !important;background:#fff !important;width:100% !important;max-width:420px !important;height:auto !important;border-radius:20px !important;padding:28px 28px 24px !important;box-shadow:0 20px 60px rgba(4,31,73,.25) !important;animation:mpop .2s ease;font-family:inherit;margin:auto;max-height:calc(100vh - 32px);overflow-y:auto;z-index:10001;}
+  @keyframes mpop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+  .modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(4,31,73,.12);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;color:#5b6b84;transition:background .15s;}
+  .modal-close:hover{background:#f0f2f7;}
+  .modal-eyebrow{color:#02b54e;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+  .contact-modal h2{margin:0 0 4px;font-size:22px;font-weight:800;color:#041f49;line-height:1.2;}
+  .contact-modal p.sub{color:#6b7488;font-size:13px;margin:0 0 18px;line-height:1.45;}
+  .mfield{margin-bottom:12px;}
+  .mfield label{display:block;font-size:12.5px;font-weight:700;color:#041f49;margin-bottom:4px;}
+  .mfield label .req{color:#d64545;margin-left:2px;}
+  .mfield input,.mfield textarea{width:100%;border:1.5px solid rgba(4,31,73,.12);border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;color:#041f49;background:#fbfcfe;box-sizing:border-box;transition:border-color .15s,box-shadow .15s;}
+  .mfield input:focus,.mfield textarea:focus{outline:none;border-color:#02b54e;box-shadow:0 0 0 3px rgba(2,181,78,.12);}
+  .mfield textarea{resize:vertical;min-height:72px;}
+  .mfield-error{display:none;color:#d64545;font-size:12px;margin-top:3px;}
+  .mfield.invalid input,.mfield.invalid textarea{border-color:#d64545;}
+  .mfield.invalid .mfield-error{display:block;}
+  .modal-submit-btn{width:100%;padding:13px;border-radius:11px;background:linear-gradient(135deg,#02b54e,#06852f);color:#fff;font-weight:700;font-size:15px;border:none;cursor:pointer;box-shadow:0 6px 16px rgba(2,181,78,.28);transition:transform .15s,box-shadow .15s;margin-top:4px;}
+  .modal-submit-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(2,181,78,.35);}
+  .modal-submit-btn:disabled{opacity:.7;cursor:not-allowed;transform:none;}
+  .msuccess{display:none;text-align:center;padding:20px 0 8px;}
+  .msuccess.open{display:block;}
+  .msuccess .tick{width:56px;height:56px;border-radius:50%;background:rgba(2,181,78,.12);color:#02b54e;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 14px;}
+  .msuccess h3{margin:0 0 8px;color:#041f49;font-size:20px;font-weight:800;}
+  .msuccess p{color:#6b7488;font-size:14px;margin:0;line-height:1.5;}
+  .mdone-btn{margin-top:18px;padding:11px 28px;border-radius:10px;background:#fff;border:1.5px solid rgba(4,31,73,.12);color:#041f49;font-weight:700;font-size:14px;cursor:pointer;transition:background .15s;}
+  .mdone-btn:hover{background:#f0f2f7;}
+
+  @media (max-width: 576px) {
+    .overlay { padding: 12px !important; }
+    .contact-modal {
+      padding: 22px 18px 18px !important;
+      border-radius: 16px !important;
+      max-height: calc(100vh - 24px) !important;
+    }
+    .contact-modal h2 { font-size: 20px !important; }
+    .contact-modal p.sub { font-size: 12.5px !important; margin-bottom: 14px !important; }
+    .mfield { margin-bottom: 10px !important; }
+    .mfield label { font-size: 12px !important; }
+    .mfield input, .mfield textarea { font-size: 13.5px !important; padding: 9px 11px !important; }
+    .modal-submit-btn { padding: 11px !important; font-size: 14px !important; }
+  }
+</style>
+
+<div class="overlay" id="overlay">
+  <div class="contact-modal">
+    <button class="modal-close" id="closeModal" aria-label="Close">&#x2715;</button>
+    <div id="mFormView">
+      <div class="modal-eyebrow">Get in touch</div>
+      <h2>Talk to Paysonic</h2>
+      <p class="sub">Share your details and our team will reach out shortly.</p>
+      <form id="contactForm" novalidate>
+        <div class="mfield" id="mfield-name">
+          <label for="mname">Name<span class="req">*</span></label>
+          <input type="text" id="mname" placeholder="Your full name" autocomplete="name"/>
+          <div class="mfield-error">Please enter your name.</div>
+        </div>
+        <div class="mfield" id="mfield-number">
+          <label for="mnumber">Phone<span class="req">*</span></label>
+          <input type="tel" id="mnumber" placeholder="e.g. +91 98765 43210" autocomplete="tel"/>
+          <div class="mfield-error">Please enter a valid phone number.</div>
+        </div>
+        <div class="mfield" id="mfield-email">
+          <label for="memail">Email<span class="req">*</span></label>
+          <input type="email" id="memail" placeholder="you@company.com" autocomplete="email"/>
+          <div class="mfield-error">Please enter a valid email.</div>
+        </div>
+        <div class="mfield">
+          <label for="mmessage">Message</label>
+          <textarea id="mmessage" placeholder="Tell us a bit about what you need..."></textarea>
+        </div>
+        <button type="submit" class="modal-submit-btn" id="mSubmitBtn">Submit</button>
+      </form>
+    </div>
+    <div class="msuccess" id="mSuccessView">
+      <div class="tick">&#10003;</div>
+      <h3>Thanks &#8212; we&#39;ve got it!</h3>
+      <p>Our team will reach out to you shortly.</p>
+      <button class="mdone-btn" id="mDoneBtn">Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('overlay');
+    var closeModal = document.getElementById('closeModal');
+    var form = document.getElementById('contactForm');
+    var mFormView = document.getElementById('mFormView');
+    var mSuccessView = document.getElementById('mSuccessView');
+    var mDoneBtn = document.getElementById('mDoneBtn');
+    var openContactUs = document.getElementById('openContactUs');
+    var openContactUsDrawer = document.getElementById('openContactUsDrawer');
+
+    function openModal() {
+      if (mFormView) mFormView.style.display = 'block';
+      if (mSuccessView) mSuccessView.classList.remove('open');
+      if (overlay) overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      var first = document.getElementById('mname');
+      if (first) setTimeout(function(){ first.focus(); }, 100);
+    }
+
+    function closeModalFn() {
+      if (overlay) overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(function() {
+        if (form) form.reset();
+        clearErrors();
+        if (mFormView) mFormView.style.display = 'block';
+        if (mSuccessView) mSuccessView.classList.remove('open');
+        var errEl = document.getElementById('mspree-error');
+        if (errEl) errEl.textContent = '';
+      }, 200);
+    }
+
+    if (openContactUs) openContactUs.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+    if (openContactUsDrawer) openContactUsDrawer.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+    if (closeModal) closeModal.addEventListener('click', closeModalFn);
+    if (mDoneBtn) mDoneBtn.addEventListener('click', closeModalFn);
+    if (overlay) overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModalFn(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay && overlay.classList.contains('open')) closeModalFn(); });
+
+    function clearErrors() {
+      ['mfield-name','mfield-number','mfield-email'].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.classList.remove('invalid');
+      });
+    }
+    function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+    function isValidPhone(v){ var d = v.replace(/[^0-9]/g,''); return d.length >= 7 && d.length <= 15; }
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        clearErrors();
+        var name = document.getElementById('mname').value.trim();
+        var number = document.getElementById('mnumber').value.trim();
+        var email = document.getElementById('memail').value.trim();
+        var message = document.getElementById('mmessage').value.trim();
+        var valid = true;
+        if (!name) { document.getElementById('mfield-name').classList.add('invalid'); valid = false; }
+        if (!number || !isValidPhone(number)) { document.getElementById('mfield-number').classList.add('invalid'); valid = false; }
+        if (!email || !isValidEmail(email)) { document.getElementById('mfield-email').classList.add('invalid'); valid = false; }
+        if (!valid) return;
+
+        var btn = document.getElementById('mSubmitBtn');
+        var orig = btn ? btn.textContent : 'Submit';
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+        fetch('https://formspree.io/f/mwlkrgnr', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, phone: number, email: email, message: message })
+        })
+        .then(function(res) {
+          if (res.ok) {
+            if (mFormView) mFormView.style.display = 'none';
+            if (mSuccessView) mSuccessView.classList.add('open');
+            if (form) form.reset();
+          } else {
+            return res.json().then(function(d){ throw new Error(d && d.error ? d.error : 'Submission failed.'); });
+          }
+        })
+        .catch(function(err) {
+          var errEl = document.getElementById('mspree-error');
+          if (!errEl) {
+            errEl = document.createElement('p');
+            errEl.id = 'mspree-error';
+            errEl.style.cssText = 'color:#d64545;font-size:13px;margin:8px 0 0;text-align:center;';
+            form.appendChild(errEl);
+          }
+          errEl.textContent = err.message || 'Something went wrong. Please try again.';
+        })
+        .finally(function() {
+          if (btn) { btn.disabled = false; btn.textContent = orig; }
+        });
+      });
+    }
+
+    // Stay Connected form -> opens Gmail with entered email in To field
+    var subForm = document.getElementById('subForm');
+    if (subForm) {
+      subForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = document.getElementById('subEmail');
+        if (!input) return;
+        var email = input.value.trim();
+        if (!email) return;
+
+        var paysonicEmail = 'connect@paysonictech.com';
+        var subject = 'Stay Connected — Monthly Mobility Intelligence';
+        var body = 'Hello Paysonic Team,\n\nI would like to stay connected and receive monthly mobility intelligence updates.\n\nMy Email: ' + email;
+
+        var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
+          + '&to=' + encodeURIComponent(paysonicEmail)
+          + '&su=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+
+        var mailtoUrl = 'mailto:' + encodeURIComponent(paysonicEmail)
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+
+        var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile) {
+          window.location.href = mailtoUrl;
+        } else {
+          var win = window.open(gmailUrl, '_blank');
+          if (!win || win.closed || typeof win.closed === 'undefined') {
+            window.location.href = mailtoUrl;
+          }
+        }
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>

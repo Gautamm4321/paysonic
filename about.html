@@ -1446,14 +1446,44 @@
         font-size: 0.9rem;
       }
 
-      /* Footer: single column */
+      /* Footer: 2 columns for links on mobile */
       .foot-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
+        row-gap: 32px !important;
+        column-gap: 20px !important;
+        justify-items: center !important;
+        text-align: center !important;
       }
-
-      .foot-brand,
+      .foot-brand {
+        grid-column: 1 / -1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .foot-brand p {
+        max-width: 32ch !important;
+        margin: 12px auto 16px !important;
+      }
+      .fcol {
+        text-align: center !important;
+        width: 100% !important;
+      }
+      .fcol h4 {
+        font-size: 0.92rem !important;
+        font-weight: 800 !important;
+        margin-bottom: 12px !important;
+      }
+      .fcol a {
+        display: block !important;
+        font-size: 0.85rem !important;
+        padding: 6px 0 !important;
+      }
       .sub {
-        grid-column: auto;
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
       }
 
       /* Subscribe field: vertical stack */
@@ -2000,7 +2030,7 @@
         <a href="about.html" class="active">About Us</a>
       </nav>
 
-      <a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us
+      <a href="#cta" class="btn nav-cta" id="openContactUs">Contact us
         <svg width="15" height="15" aria-hidden="true">
           <use href="#i-arrow" />
         </svg></a>
@@ -2016,7 +2046,7 @@
     <a href="index.html#journey">Solutions</a>
     <a href="index.html#products">Technology</a>
     <a href="about.html" class="active">About Us</a>
-    <a href="mailto:connect@paysonictech.com" class="btn nav-cta">Contact us
+    <a href="#cta" class="btn nav-cta" id="openContactUsDrawer">Contact us
       <svg width="15" height="15" aria-hidden="true">
         <use href="#i-arrow" />
       </svg></a>
@@ -2599,7 +2629,7 @@
                     gap: 8px;
                     white-space: nowrap;
                   " ;>
-                Co-Founder &amp; CEO
+                Co-Founder &amp; CFO
 
                 <a href="https://www.linkedin.com/in/makarand-paysonictech/" aria-label="LinkedIn" target="_blank"
                   rel="noopener noreferrer" style="
@@ -3097,7 +3127,6 @@
         <h4>Products</h4>
         <a href="index.html#products">NETC Product</a>
         <a href="index.html#products">Mobility Platform</a>
-        <a href="index.html#platform">EV Charging</a>
         <a href="index.html#platform">One Platform</a>
       </div>
 
@@ -3105,14 +3134,12 @@
         <h4>Company</h4>
         <a href="about.html">About us</a>
         <a href="careers.html">Careers</a>
-        <a href="news-media.html">News &amp; media</a>
       </div>
 
       <div class="sub">
         <h4>Stay Connected</h4>
         <p>Monthly Mobility Intelligence</p>
-        <form class="sub-field" id="subForm" action="mailto:connect@paysonictech.com" method="POST"
-          enctype="text/plain">
+        <form class="sub-field" id="subForm" action="#" method="GET">
           <label for="subEmail" class="sr-only" style="
                 position: absolute;
                 width: 1px;
@@ -3439,12 +3466,7 @@
           openModal('contact');
         });
 
-        // Opens on hover/mouseenter instantly across screens and emulators
-        ctaTab.addEventListener('mouseenter', function (e) {
-          openModal('contact');
-        });
-
-        // Opens instantly on first tap on mobile/tablet (fixes double-tap delay on touch devices)
+        // Opens on first tap on mobile/tablet (fixes double-tap delay on touch devices)
         ctaTab.addEventListener('touchstart', function (e) {
           e.preventDefault();
           openModal('contact');
@@ -3522,17 +3544,92 @@
 
           if (!valid) return;
 
-          const subject = encodeURIComponent('Contact Enquiry from Paysonic Website');
-          const body = encodeURIComponent(
-            'Name: ' + name + '\n' +
-            'Phone: ' + number + '\n' +
-            'Email: ' + email + '\n' +
-            'Message: ' + message
-          );
-          window.location.href = 'mailto:gautam.lakhanii016@gmail.com?subject=' + subject + '&body=' + body;
+          // Disable submit button and show loading state
+          const submitBtn = form.querySelector('[type="submit"]');
+          const originalText = submitBtn ? submitBtn.textContent : 'Submit';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+            submitBtn.style.opacity = '0.75';
+          }
 
-          if (formView) formView.style.display = 'none';
-          if (successView) successView.classList.add('open');
+          // Send to Formspree
+          fetch('https://formspree.io/f/mwlkrgnr', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              name: name,
+              phone: number,
+              email: email,
+              message: message
+            })
+          })
+          .then(function (res) {
+            if (res.ok) {
+              if (formView) formView.style.display = 'none';
+              if (successView) successView.classList.add('open');
+              if (form) form.reset();
+            } else {
+              return res.json().then(function (data) {
+                throw new Error((data && data.error) ? data.error : 'Submission failed. Please try again.');
+              });
+            }
+          })
+          .catch(function (err) {
+            let errEl = document.getElementById('formspree-error');
+            if (!errEl) {
+              errEl = document.createElement('p');
+              errEl.id = 'formspree-error';
+              errEl.style.cssText = 'color:#d64545;font-size:13px;margin:8px 0 0;text-align:center;';
+              form.appendChild(errEl);
+            }
+            errEl.textContent = err.message || 'Something went wrong. Please try again.';
+          })
+          .finally(function () {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+              submitBtn.style.opacity = '';
+            }
+          });
+        });
+      }
+
+      // Stay Connected form -> opens Gmail with Paysonic's email in To field
+      var subForm = document.getElementById('subForm');
+      if (subForm) {
+        subForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var input = document.getElementById('subEmail');
+          if (!input) return;
+          var email = input.value.trim();
+          if (!email) return;
+
+          var paysonicEmail = 'connect@paysonictech.com';
+          var subject = 'Stay Connected — Monthly Mobility Intelligence';
+          var body = 'Hello Paysonic Team,\n\nI would like to stay connected and receive monthly mobility intelligence updates.\n\nMy Email: ' + email;
+
+          var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
+            + '&to=' + encodeURIComponent(paysonicEmail)
+            + '&su=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(body);
+
+          var mailtoUrl = 'mailto:' + encodeURIComponent(paysonicEmail)
+            + '?subject=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(body);
+
+          var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+          if (isMobile) {
+            window.location.href = mailtoUrl;
+          } else {
+            var win = window.open(gmailUrl, '_blank');
+            if (!win || win.closed || typeof win.closed === 'undefined') {
+              window.location.href = mailtoUrl;
+            }
+          }
         });
       }
     })();

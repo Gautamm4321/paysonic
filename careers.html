@@ -4,16 +4,13 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Unified Mobility Payments Platform for Tolls, MLFF, Parking, EV charging, Fuel, Transit and E-Challan. Paysonic delivers secure, scalable Digital Payment Infrastructure for India.">
-<meta name="keywords" content="">
-<meta name="author" content="uigigs">
-<title>Terms & Conditions — Paysonic</title>
-
-<!-- bootstrap css -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<meta name="description" content="Careers at Paysonic — join the team building India's unified mobility payments infrastructure.">
+<title>Careers — Paysonic</title>
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
+ 
 <style>
   :root{
     --green:      #02B54E;
@@ -39,10 +36,11 @@
     --gutter:     clamp(18px, 4vw, 40px);
     --maxw:       1240px;
     --nav-h:      74px;
+    --ease:       cubic-bezier(.22, 1, .36, 1);
     --font-d:     "Manrope", ui-sans-serif, system-ui, sans-serif;
     --font-m:     "IBM Plex Mono", ui-monospace, monospace;
   }
-
+ 
   *{box-sizing:border-box;}
   body{
     margin:0;
@@ -57,10 +55,10 @@
   ul{list-style:none;margin:0;padding:0;}
   img{max-width:100%;}
   h1,h2,h3,h4,h5,h6{font-family:var(--font-d);font-weight:800;color:var(--navy);margin:0;}
-
+ 
   .container{max-width:1200px;margin:0 auto;padding:0 20px;}
-
-  /* ================= NAV (Exact match from index.html) ================= */
+ 
+  /* ================= NAV (exact match from TC.html / index.html) ================= */
   .nav{
     position:fixed; top:0; left:0; right:0; z-index:90;
     height:var(--nav-h);
@@ -85,18 +83,19 @@
     display:inline-flex; align-items:center; gap:5px;
     opacity:.85; transition:opacity .25s;
   }
-  .nav-links a:hover{ opacity:1; color:var(--blue); }
+  .nav-links a:hover,
+  .nav-links a.active{ opacity:1; color:var(--blue); }
   .btn.nav-cta{ margin-left:8px; padding:.62em 1.15em; font-size:.875rem; }
-
+ 
   .btn{
     position:relative; display:inline-flex; align-items:center; justify-content:center;
     gap:.65em; padding:.92em 1.6em; border-radius:999px; background:var(--green);
     color:#fff; font-weight:700; font-size:.95rem; letter-spacing:-.01em;
     white-space:nowrap; box-shadow:0 10px 24px -10px rgba(2,181,78,.75);
-    transition:transform .45s cubic-bezier(.22,1,.36,1), background .25s;
+    transition:transform .45s var(--ease), background .25s;
   }
   .btn:hover{ background:var(--green-600); }
-
+ 
   .burger{
     display:none; margin-left:auto; width:42px; height:42px; border-radius:12px;
     border:1px solid var(--line); background:rgba(255,255,255,.8); place-items:center; cursor:pointer;
@@ -105,11 +104,11 @@
     display:block; width:17px; height:1.6px; background:var(--navy); border-radius:2px;
   }
   .burger i + i{ margin-top:4.5px; }
-
+ 
   .burger.is-open i:nth-child(1){ transform:translateY(6.1px) rotate(45deg); }
   .burger.is-open i:nth-child(2){ opacity:0; }
   .burger.is-open i:nth-child(3){ transform:translateY(-6.1px) rotate(-45deg); }
-
+ 
   .drawer{
     position:fixed; inset:var(--nav-h) 0 0; z-index:80;
     background:rgba(255,255,255,.97);
@@ -118,7 +117,7 @@
     display:flex; flex-direction:column; gap:4px;
     transform:translateY(-8px);
     opacity:0; pointer-events:none;
-    transition:opacity .4s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1);
+    transition:opacity .4s var(--ease), transform .5s var(--ease);
     overflow-y:auto;
   }
   .drawer.is-open{ opacity:1; transform:none; pointer-events:auto; }
@@ -127,70 +126,89 @@
     padding:14px 0; border-bottom:1px solid var(--line-soft);
   }
   .drawer .btn{ margin-top:24px; align-self:flex-start; }
-
+ 
   body.is-locked{ overflow:hidden; height:100vh; }
-
+ 
   @media (max-width:1080px){
     .nav-links{ display:none; }
     .burger{ display:grid; }
     .nav-cta{ display:none; }
   }
-
-  /* ================= PAGE HERO / TITLE ================= */
-  .pp-hero{
-    background:#EAF3FE;
-    padding:calc(var(--nav-h) + 60px) 0 48px;
+ 
+  /* ================= PAGE HERO ================= */
+  .cr-hero{
+    background:var(--sky);
+    padding:calc(var(--nav-h) + 60px) 0 56px;
     border-bottom:1px solid var(--line);
     text-align:center;
   }
-  .pp-hero p.uppercase{
-    text-transform:uppercase; letter-spacing:.08em;
-    font-size:13px; font-weight:600; color:var(--faint);
+  .cr-hero p.uppercase{
+    text-transform:uppercase; letter-spacing:.18em;
+    font-size:.72rem; font-weight:600; color:var(--green-600);
     margin-bottom:14px; font-family:var(--font-m);
   }
-  .pp-hero h1{ font-size:clamp(2.3rem, 5vw, 4.2rem); font-weight:800; color:var(--navy); }
-
-  /* ================= CONTENT SECTION ================= */
-  .pp-content-section{padding:64px 0 40px;}
-  .content-table-title{
-    display:flex;align-items:center;gap:8px;
-    font-size:13px;font-weight:700;letter-spacing:.06em;
-    color:var(--blue);text-transform:uppercase;margin-bottom:18px;
-    font-family:var(--font-m);
+  .cr-hero h1{ font-size:clamp(2.3rem, 5vw, 4.2rem); font-weight:800; color:var(--navy); letter-spacing:-.02em; margin-bottom:14px; }
+  .cr-hero p.lede{ max-width:60ch; margin:0 auto; color:var(--muted); font-size:1.1rem; }
+ 
+  /* ================= CONTENT ================= */
+  .cr-content{ padding:clamp(40px, 7vw, 64px) 0 40px; }
+  .cr-content .inner{ max-width:820px; margin:0 auto; width:100%; }
+  .cr-content h2{
+    font-size:clamp(1.4rem, 4vw + .5rem, 2.2rem);
+    color:var(--green-700); margin-bottom:18px; letter-spacing:-.01em;
   }
-  .terms-list{padding-left:0;}
-  .terms-list li{margin-bottom:4px;}
-  .terms-list a{
-    display:block;padding:10px 14px;border-radius:8px;
-    font-size:15px;font-weight:500;color:var(--muted);
-    border-left:2px solid transparent;
-    transition:all .15s ease;
+  .cr-content p{
+    margin:0 0 22px;
+    font-size:clamp(.92rem, 1.6vw + .5rem, 1.02rem);
+    color:var(--muted); line-height:1.75;
   }
-  .terms-list a:hover,.terms-list a.active{
-    color:var(--blue); background:var(--blue-050); border-left-color:var(--blue);
+ 
+  .resume-card{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+    background:#fff; border:1px solid var(--line); border-radius:var(--r-lg);
+    box-shadow:0 12px 34px -14px rgba(4,31,73,.18);
+    padding:clamp(18px, 3.5vw, 28px);
+    margin-top:8px;
+    width:100%;
   }
-  .terms-and-service-content h4{
-    font-size:22px; font-weight:800; color:var(--navy); margin-bottom:14px;
+  .resume-card .resume-text{
+    display:flex; align-items:center; flex-wrap:wrap;
+    gap:8px 10px;
+    min-width:0;
+    flex:1 1 auto;
+    height:auto;
   }
-  .terms-and-service-content > div{margin-bottom:38px;scroll-margin-top:100px;}
-  .terms-and-service-content p{
-    font-size:16px; line-height:1.75; color:var(--muted); margin-bottom:14px;
+  .resume-card b{
+    font-weight:800; color:var(--navy);
+    font-size:clamp(.9rem, 1.6vw + .45rem, 1rem);
+    white-space:nowrap;
   }
-  .terms-and-service-content p strong{color:var(--navy);}
-  .terms-and-service-content ul{margin:14px 0;padding-left:0;}
-  .terms-and-service-content ul li{
-    position:relative; padding-left:20px; font-size:16px; line-height:1.8; color:var(--muted);
+  .resume-card a.mail-link{
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--blue); font-weight:700;
+    font-size:clamp(.85rem, 1.6vw + .4rem, 1rem);
+    border-bottom:1px solid transparent; transition:border-color .15s ease;
+    min-width:0;
+    word-break:break-word;
+    overflow-wrap:anywhere;
   }
-  .terms-and-service-content a{color:var(--blue);font-weight:600;}
-
-  /* ================= FOOTER (Exact match from index.html) ================= */
+  .resume-card a.mail-link svg{ flex-shrink:0; }
+  .resume-card a.mail-link:hover{ border-color:var(--blue); }
+ 
+  .resume-card .btn{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+ 
+  /* ================= FOOTER (exact match from index.html) ================= */
   .foot{ background: var(--white); border-top: 1px solid var(--line-soft); padding-top: clamp(60px, 8vw, 88px); padding-bottom: 0; }
   .foot-grid{
     width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px);
     display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(28px, 3vw, 48px);
     padding-bottom: clamp(20px, 2vw, 28px); justify-items: center; text-align: center;
   }
-  .foot-brand p{ font-size: .85rem; color: var(--muted); margin: 14px 0 18px; max-width: 30ch; }
+  .foot-brand p{ font-size: .85rem; color: var(--muted); margin: 14px 0 18px; max-width: 30ch; margin-inline:auto; }
   .socials{ display: flex; gap: 9px; justify-content: center; }
   .socials a{
     width: 36px; height: 36px; border-radius: 50%;
@@ -207,66 +225,171 @@
   .sub p{ font-size: .79rem; color: var(--muted); margin: 0 0 14px; }
   .sub-field{ display: flex; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 5px 5px 5px 16px; }
   .sub-field input{ flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: .85rem; color: var(--navy); }
-  .sub-field button{ width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; border: none; cursor: pointer; }
+  .sub-field input::placeholder{ color:var(--faint); }
+  .sub-field button{ width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; border: none; cursor: pointer; transition: background .25s, transform .35s var(--ease); }
+  .sub-field button:hover{ background: var(--green-600); transform: translateX(2px); }
   .foot-bar{ background: var(--navy); color: rgba(255,255,255,.7); padding: 24px 0; font-size: .8rem; }
   .foot-bar .wrap{ width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
   .foot-bar a{ color: rgba(255,255,255,.7); text-decoration: none; transition: color .25s; }
   .foot-bar a:hover{ color: #fff; }
-
+ 
   @media (max-width: 1080px){
-    .foot-grid{
+    .foot-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ================= MOBILE PHONES RESPONSIVE (Strictly <= 768px) ================= */
+  @media (max-width: 768px){
+    html, body {
+      overflow-x: hidden;
+    }
+    .container {
+      padding-inline: 16px !important;
+    }
+    .nav-in {
+      height: 68px !important;
+      padding-inline: 16px !important;
+    }
+    .logo img {
+      height: 52px !important;
+    }
+    .drawer {
+      inset: 68px 0 0 !important;
+      padding: 24px 20px 36px !important;
+    }
+    .drawer a {
+      font-size: 1.25rem !important;
+      padding: 12px 0 !important;
+    }
+    .cr-hero {
+      padding: calc(68px + 32px) 16px 36px !important;
+    }
+    .cr-hero h1 {
+      font-size: clamp(2rem, 7vw, 2.75rem) !important;
+      margin-bottom: 10px !important;
+    }
+    .cr-hero p.lede {
+      font-size: 0.98rem !important;
+      padding: 0 8px !important;
+    }
+    .cr-content {
+      padding: 32px 0 36px !important;
+    }
+    .cr-content h2 {
+      font-size: clamp(1.35rem, 5.5vw, 1.8rem) !important;
+      margin-bottom: 14px !important;
+    }
+    .cr-content p {
+      font-size: 0.95rem !important;
+      line-height: 1.7 !important;
+      margin-bottom: 20px !important;
+    }
+    .resume-card {
+      padding: 22px 20px !important;
+      border-radius: 18px !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      gap: 16px !important;
+      height: auto !important;
+    }
+    .resume-card .resume-text {
+      flex: 0 0 auto !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 6px !important;
+      height: auto !important;
+    }
+    .resume-card b {
+      font-size: 0.95rem !important;
+      white-space: normal !important;
+    }
+    .resume-card a.mail-link {
+      font-size: 0.95rem !important;
+      word-break: break-all !important;
+      overflow-wrap: anywhere !important;
+    }
+    .resume-card .btn {
+      width: 100% !important;
+      justify-content: center !important;
+      font-size: 0.95rem !important;
+      padding: 12px 20px !important;
+      border-radius: 999px !important;
+      margin-top: 2px !important;
+    }
+    .foot {
+      padding-top: 44px !important;
+    }
+    .foot-grid {
       grid-template-columns: repeat(2, 1fr) !important;
       row-gap: 32px !important;
       column-gap: 20px !important;
+      padding-inline: 16px !important;
+      padding-bottom: 24px !important;
       justify-items: center !important;
       text-align: center !important;
     }
-    .foot-brand{
+    .foot-brand {
       grid-column: 1 / -1 !important;
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
       text-align: center !important;
     }
-    .foot-brand p{
+    .foot-brand p {
       max-width: 32ch !important;
       margin: 12px auto 16px !important;
+      font-size: 0.84rem !important;
     }
-    .fcol{
+    .fcol {
       text-align: center !important;
       width: 100% !important;
     }
-    .fcol h4{
+    .fcol h4 {
       font-size: 0.92rem !important;
       font-weight: 800 !important;
       margin-bottom: 12px !important;
     }
-    .fcol a{
+    .fcol a {
       display: block !important;
       font-size: 0.85rem !important;
       padding: 6px 0 !important;
     }
-    .sub{
+    .sub {
       grid-column: 1 / -1 !important;
       width: 100% !important;
       max-width: 400px !important;
       margin: 0 auto !important;
       padding: 18px 16px !important;
+      border-radius: 16px !important;
     }
-    .foot-bar .wrap{
+    .foot-bar .wrap {
       flex-direction: column !important;
       text-align: center !important;
       gap: 12px !important;
+      padding-inline: 16px !important;
     }
-    .foot-bar .wrap > div{
+    .foot-bar .wrap > div {
       justify-content: center !important;
       gap: 16px !important;
     }
   }
+
+  @media (max-width: 480px){
+    .cr-hero {
+      padding: calc(68px + 24px) 14px 28px !important;
+    }
+    .cr-hero h1 {
+      font-size: 1.85rem !important;
+    }
+    .resume-card {
+      padding: 16px 14px !important;
+    }
+  }
+
 </style>
 </head>
 <body>
-
+ 
 <!-- ===================== ICON SPRITE ===================== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
 <defs>
@@ -277,173 +400,95 @@
   <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.6" width="18.4" height="14.8" rx="2.6"/><path d="m3.6 6.6 8.4 6 8.4-6"/></g></symbol>
 </defs>
 </svg>
-
+ 
 <!-- ===================== NAV ===================== -->
 <header class="nav" id="nav">
   <div class="nav-in">
     <a href="index.html" class="logo" aria-label="Paysonic — home">
       <img src="PaysonicTech-removebg-preview.png" alt="Paysonic Logo" style="height: 66px; width: auto;">
     </a>
-
+ 
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html#platform">Platform</a>
       <a href="index.html#journey">Solutions</a>
       <a href="index.html#products">Technology</a>
       <a href="about.html">About Us</a>
     </nav>
-
+ 
     <a href="#" class="btn nav-cta" id="openContactUs">Contact us <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-
+ 
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
   </div>
 </header>
-
+ 
 <div class="drawer" id="drawer">
   <a href="index.html#platform">Platform</a>
   <a href="index.html#journey">Solutions</a>
   <a href="index.html#products">Technology</a>
   <a href="about.html">About Us</a>
+  <a href="careers.html">Careers</a>
   <a href="#" class="btn nav-cta" id="openContactUsDrawer">Contact us <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
 </div>
-
-<!-- ============================================================ -->
-  <!-- PAGE HERO / TITLE                                             -->
-  <!-- ============================================================ -->
-  <section class="pp-hero" style="background: #F7F8FA; padding: calc(var(--nav-h) + 40px) 0 40px; border-bottom: 1px solid #E7EAEE; text-align: left;">
+ 
+<main>
+  <!-- ===================== HERO ===================== -->
+  <section class="cr-hero">
     <div class="container">
-      <p class="uppercase" style="text-transform: uppercase; letter-spacing: .08em; font-size: 13px; font-weight: 600; color: #8A94A6; margin-bottom: 14px; font-family: 'DM Sans', sans-serif;">Last updated: 04 March 2026</p>
-      <h1 style="font-size: 44px; font-weight: 700; color: #111214; font-family: 'Poppins', sans-serif;">Terms of Service</h1>
+      <p class="uppercase">Join Paysonic</p>
+      <h1>Careers</h1>
+      <p class="lede">At Paysonic, we turn ambition into impact — together.</p>
     </div>
   </section>
-
-  <!-- ============================================================ -->
-  <!-- CONTENT SECTION                                               -->
-  <!-- ============================================================ -->
-  <section class="pp-content-section" style="padding: 64px 0 40px;">
-    <div class="container">
-      <div class="terms-and-service-inner">
-        <div class="row">
-          <!-- Table of contents -->
-          <div class="col-md-4">
-            <div style="position: sticky; top: 100px;">
-              <h6 class="content-table-title" style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .06em; color: #0095FF; text-transform: uppercase; margin-bottom: 18px; font-family: 'Poppins', sans-serif;">
-                <img src="data:image/svg+xml,%3csvg%20width='20'%20height='17'%20viewBox='0%200%2020%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%201H19'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%206H10.47'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%2011H19'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M1%2016H10.47'%20stroke='%230095FF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="icon">
-                TABLE OF CONTENTS
-              </h6>
-              <ol class="terms-list" style="list-style: none; padding: 0;">
-                <li><a href="#one" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Use of Service</a></li>
-                <li><a href="#two" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Your account</a></li>
-                <li><a href="#three" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Payment and Subscription</a></li>
-                <li><a href="#four" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Limitation of Liability</a></li>
-                <li><a href="#five" class="list-group-item list-group-item-action" style="display: block; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: #4c5463; text-decoration: none;">Changes to Terms</a></li>
-              </ol>
-            </div>
-          </div>
-
-          <!-- Article content -->
-          <div class="col-md-8">
-            <div class="terms-and-service-content">
-              <div class="intro-block" style="margin-bottom: 20px;">
-                <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">Welcome to Paysonic ("<strong>Paysonic</strong>", "<strong>us</strong>", "<strong>we</strong>", or "<strong>our</strong>"). These Terms of Service ("<strong>Terms</strong>") govern your use of our website (the "<strong>Service</strong>") and any related products or services provided by us. By using the Service, you agree to be bound by these Terms. Some parts of the Service are billed on a subscription basis ("<strong>Subscription(s)</strong>"). You will be billed in advance on a recurring subscription that you choose.</p>
-              </div>
-              <div class="intro-block" style="margin-bottom: 20px;">
-                <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
-              </div>
-
-              <div id="one" style="margin-bottom: 38px;">
-                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">1. Use of Service</h4>
-                <div>
-                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">By accessing and using our platform, you agree to comply with these Terms and all applicable laws. You must use our services only for lawful purposes and in a manner that does not interfere with the operation or security of the platform.</p>
-                </div>
-              </div>
-
-              <div id="two" style="margin-bottom: 38px;">
-                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">2. Your account</h4>
-                <div>
-                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">You are responsible for maintaining the confidentiality of your account credentials and for all activities conducted through your account. Please notify us immediately if you suspect any unauthorized access or security breach.</p>
-                </div>
-              </div>
-
-              <div id="three" style="margin-bottom: 38px;">
-                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">3. Payment and Subscription</h4>
-                <div>
-                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">Certain services may require payment or an active subscription. By using paid services, you agree to pay all applicable fees. Payments are processed securely, and pricing or subscription plans may be updated with prior notice where applicable.</p>
-                </div>
-              </div>
-
-              <div id="four" style="margin-bottom: 38px;">
-                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">4. Limitation of Liability</h4>
-                <div>
-                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">While we strive to provide reliable and secure services, we do not guarantee uninterrupted or error-free operation. To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages arising from your use of the platform.</p>
-                </div>
-              </div>
-
-              <div id="five" style="margin-bottom: 38px;">
-                <h4 style="font-size: 22px; font-weight: 700; color: #173F4D; margin-bottom: 14px; font-family: 'Poppins', sans-serif;">5. Changes to Terms</h4>
-                <div>
-                  <p style="font-size: 16px; line-height: 1.75; color: #5B6470; margin-bottom: 14px;">We may update these Terms and Conditions from time to time to reflect changes in our services or legal requirements. Updated terms will be published on this page, and your continued use of the platform after such changes constitutes acceptance of the revised Terms.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
+ 
+  <!-- ===================== CONTENT ===================== -->
+  <section class="cr-content">
+    <div class="container inner">
+      <h2>Join Our Team</h2>
+      <p>At Paysonic, we're building innovative payment infrastructure that powers the future of digital mobility. We believe in a culture of ownership, collaboration, and continuous learning. If you're passionate about technology and want to be part of a fast-growing fintech company, let's connect! We're always on the lookout for talented individuals who thrive in dynamic environments. Explore exciting career opportunities and grow with us.</p>
+ 
+      <div class="resume-card">
+        <div class="resume-text">
+          <b>Send your resume to:</b>
+          <a href="mailto:connect@paysonictech.com" class="mail-link">
+            <svg width="18" height="18" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z" stroke="#2666F9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="224 56 128 144 32 56" stroke="#2666F9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            connect@paysonictech.com
+          </a>
         </div>
+        <a href="mailto:connect@paysonictech.com" class="btn">Email Us <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </section>
-
-  <!-- ============================================================ -->
-  <!-- REACH US CTA (We'd Love to Hear From You!)                    -->
-  <!-- ============================================================ -->
-  <section class="cvlYel" style="padding: 0 0 80px;">
-    <div class="container">
-      <div class="bg-black reach-us" style="background: #0B0B0C; border-radius: 28px; padding: 64px 40px;">
-        <div class="row justify-content-center">
-          <div class="col-lg-7 col-md-8">
-            <div class="building-content text-center">
-              <div class="section-title">
-                <h2 class="title text-white reach-title" style="font-size: 34px; font-weight: 700; margin-bottom: 10px; color: #fff; font-family: 'Poppins', sans-serif;">We'd Love to Hear From You!</h2>
-                <p class="text-white" style="font-size: 16px; color: #c7cbd3; margin-bottom: 0;">Have any questions, feedback, or partnership inquiries?</p>
-              </div>
-              <h4 class="fs-20 text-white" style="font-size: 20px; font-weight: 600; margin-top: 30px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; color: #fff;">
-                Reach us at :
-                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20256%20256'%3e%3crect%20width='256'%20height='256'%20fill='none'/%3e%3cpath%20d='M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z'%20fill='none'%20stroke='%23376BED'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'/%3e%3cpolyline%20points='224%2056%20128%20144%2032%2056'%20fill='none'%20stroke='%23376BED'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'/%3e%3c/svg%3e" alt="mail-icon" class="wd-35" style="width: 26px;">
-                <a href="mailto:connect@paysonictech.com" class="brand-blue" style="color: #7DA9FF; font-weight: 700; text-decoration: none;">connect@paysonictech.com</a>
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+</main>
+ 
 <!-- ===================== FOOTER ===================== -->
 <footer class="foot" id="footer">
   <div class="foot-grid">
-    <div class="foot-brand" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <div class="foot-brand">
       <a href="index.html" class="logo">
         <img src="PaysonicTech_Logo_with_Tagline-removebg-preview.png" alt="Paysonic Logo" style="height: 84px; width: auto;">
       </a>
-      <p style="margin-inline: auto;">India’s mobility payment infrastructure, engineered for scale, connectivity and seamless transactions.</p>
+      <p>India's mobility payment infrastructure, engineered for scale, connectivity and seamless transactions.</p>
       <div class="socials">
         <a href="mailto:connect@paysonictech.com" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-in"/></svg></a>
-        
       </div>
     </div>
-
+ 
     <div class="fcol">
       <h4>Products</h4>
       <a href="index.html#products">NETC Product</a>
       <a href="index.html#products">Mobility Platform</a>
       <a href="index.html#platform">One Platform</a>
     </div>
-
+ 
     <div class="fcol">
       <h4>Company</h4>
       <a href="about.html">About us</a>
       <a href="careers.html">Careers</a>
     </div>
-
+ 
     <div class="sub">
       <h4>Stay Connected</h4>
       <p>Monthly Mobility Intelligence</p>
@@ -454,7 +499,7 @@
       </form>
     </div>
   </div>
-
+ 
   <div class="foot-bar">
     <div class="wrap">
       <span>© 2026 Paysonic Technologies Pvt.Ltd. All rights reserved.</span>
@@ -466,20 +511,20 @@
     </div>
   </div>
 </footer>
-
+ 
 <script>
   (function () {
     var burger = document.getElementById('burger'),
         drawer = document.getElementById('drawer');
     if (!burger || !drawer) return;
-
+ 
     function closeDrawer() {
       drawer.classList.remove('is-open');
       burger.classList.remove('is-open');
       burger.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('is-locked');
     }
-
+ 
     burger.addEventListener('click', function () {
       var open = !drawer.classList.contains('is-open');
       drawer.classList.toggle('is-open', open);
@@ -487,11 +532,11 @@
       burger.setAttribute('aria-expanded', String(open));
       document.body.classList.toggle('is-locked', open);
     });
-
+ 
     drawer.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', closeDrawer);
     });
-
+ 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeDrawer();
     });
@@ -528,6 +573,21 @@
   .msuccess p{color:#6b7488;font-size:14px;margin:0;line-height:1.5;}
   .mdone-btn{margin-top:18px;padding:11px 28px;border-radius:10px;background:#fff;border:1.5px solid rgba(4,31,73,.12);color:#041f49;font-weight:700;font-size:14px;cursor:pointer;transition:background .15s;}
   .mdone-btn:hover{background:#f0f2f7;}
+
+  @media (max-width: 576px) {
+    .overlay { padding: 12px !important; }
+    .contact-modal {
+      padding: 22px 18px 18px !important;
+      border-radius: 16px !important;
+      max-height: calc(100vh - 24px) !important;
+    }
+    .contact-modal h2 { font-size: 20px !important; }
+    .contact-modal p.sub { font-size: 12.5px !important; margin-bottom: 14px !important; }
+    .mfield { margin-bottom: 10px !important; }
+    .mfield label { font-size: 12px !important; }
+    .mfield input, .mfield textarea { font-size: 13.5px !important; padding: 9px 11px !important; }
+    .modal-submit-btn { padding: 11px !important; font-size: 14px !important; }
+  }
 </style>
 
 <div class="overlay" id="overlay">

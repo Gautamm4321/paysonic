@@ -1,10 +1,21 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const nodemailer = require('nodemailer'); // <-- Nodemailer import kiya
 
 const PORT = process.env.PORT || 3000;
 const BASE_DIR = __dirname;
 const SUBMISSIONS_FILE = path.join(BASE_DIR, 'contact_submissions.json');
+
+// ── Nodemailer Transporter Configuration ────────────────────────────────────
+// Yahan apna email aur App Password daalna (Gmail ke liye App Password use hota hai)
+const transporter = nodemailer.createTransport({
+  service: 'gmail', // Ya apna SMTP host/port
+  auth: {
+    user: process.env.EMAIL_USER || 'your-email@gmail.com', // Apna email
+    pass: process.env.EMAIL_PASS || 'your-app-password',     // Gmail App Password
+  },
+});
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -34,6 +45,28 @@ function saveSubmission(data) {
   fs.writeFileSync(SUBMISSIONS_FILE, JSON.stringify(submissions, null, 2));
 }
 
+// ── Send Email Function ───────────────────────────────────────────────────
+async function sendContactEmail(data) {
+  const { name, number, email, message } = data;
+
+  const mailOptions = {
+    from: `"Paysonic Website" <${process.env.EMAIL_USER}>`,
+    to: 'anishbalkhi1@gmail.com', // <-- Yeh rahi aapki main email ID jahan mail aayega
+    subject: `New Contact Submission from ${name}`,
+    html: `
+      <h2>New Contact Form Enquiry</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Phone Number:</strong> ${number}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong><br/>${message || 'No message provided'}</p>
+      <hr/>
+      <p style="font-size: 12px; color: #666;">This email was sent from the Paysonic website contact form.</p>
+    `,
+  };
+
+  await transporter.sendMail(mailOptions);
+}
+
 function readBody(req) {
   return new Promise((resolve, reject) => {
     let body = '';
@@ -57,15 +90,19 @@ const server = http.createServer(async (req, res) => {
         return;
       }
 
+      // 1. Local JSON file mein save karo
       saveSubmission({ name, number, email, message });
-      console.log(`[Contact] New submission from ${name} <${email}>`);
+
+      // 2. anishbalkhi1@gmail.com par email dispatch karo
+      await sendContactEmail({ name, number, email, message });
+      console.log(`[Contact] Email successfully sent for ${name} <${email}>`);
 
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ ok: true }));
     } catch (err) {
       console.error('[Contact] Error:', err);
       res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ ok: false, error: 'Server error.' }));
+      res.end(JSON.stringify({ ok: false, error: 'Server error while sending email.' }));
     }
     return;
   }

@@ -1,0 +1,5 @@
+node_modules/
+contact_submissions.json
+.env
+.DS_Store
+Thumbs.db

@@ -2648,21 +2648,43 @@
         }
 
         .foot-grid {
-          grid-template-columns: 1fr;
-          text-align: center;
+          grid-template-columns: repeat(2, 1fr) !important;
+          row-gap: 32px !important;
+          column-gap: 20px !important;
+          justify-items: center !important;
+          text-align: center !important;
         }
         .foot-brand {
-          align-items: center;
-          text-align: center;
+          grid-column: 1 / -1 !important;
+          align-items: center !important;
+          text-align: center !important;
         }
         .foot-brand p {
-          margin-inline: auto;
+          max-width: 32ch !important;
+          margin-inline: auto !important;
         }
         .socials {
-          justify-content: center;
+          justify-content: center !important;
+        }
+        .fcol {
+          text-align: center !important;
+          width: 100% !important;
+        }
+        .fcol h4 {
+          font-size: 0.92rem !important;
+          font-weight: 800 !important;
+          margin-bottom: 12px !important;
         }
         .fcol a {
-          padding: 6px 0;
+          display: block !important;
+          font-size: 0.85rem !important;
+          padding: 6px 0 !important;
+        }
+        .sub {
+          grid-column: 1 / -1 !important;
+          width: 100% !important;
+          max-width: 400px !important;
+          margin: 0 auto !important;
         }
         .fcol a:hover {
           transform: none;
@@ -3471,19 +3493,7 @@
                 </div>
               </article>
 
-              <article class="st" data-st="5">
-                <div class="st-tag"><em>EV</em> Smart EV Charging</div>
-                <h3>Seamless EV Payments.<br />Plug &amp; Drive.</h3>
-                <p>
-                  Vehicle recognition happens before charging begins. Energy is
-                  metered live in kWh, with payment automatically settled when
-                  the session ends.
-                </p>
-                <div class="st-facts">
-                  <span>Smart Metering</span><span>Auto-Pay</span
-                  ><span>Universal Charging</span>
-                </div>
-              </article>
+              
             </div>
 
             <aside class="ledger" id="ledger" aria-live="polite">
@@ -3511,12 +3521,7 @@
                   ><span class="meta">FLEET LIMIT · NOZZLE 02</span
                   ><span class="ok">Settled</span>
                 </li>
-                <li class="lrow" data-row="4">
-                  <b>BBPS · E-Challan &amp; Tax</b
-                  ><span class="amt">₹1,240.00</span
-                  ><span class="meta">VAHAN · CHALLAN DL · 190 ms</span
-                  ><span class="ok">Settled</span>
-                </li>
+                
                 <li class="lrow" data-row="5">
                   <b>EV charging · 22.4 kWh</b><span class="amt">₹410.00</span
                   ><span class="meta">CCS2 · 60 kW DC · 34 min</span
@@ -3721,7 +3726,7 @@
               <h2>Build the Infrastructure for Tomorrow’s Mobility</h2>
               <p>Together, We Move India Towards Smarter, Cashless Mobility.</p>
             </div>
-            <a href="mailto:connect@paysonictech.com" class="btn btn-navy" data-magnet
+            <a href="#contactForm" class="btn btn-navy" id="openContactTeam" data-magnet
               >Connect to our team
               <svg width="16" height="16" aria-hidden="true">
                 <use href="#i-arrow" /></svg
@@ -3767,13 +3772,12 @@
           <h4>Products</h4>
           <a href="#products">NETC Product</a
           ><a href="#products">Mobility Platform</a
-          ><a href="#platform">EV Charging</a
           ><a href="#platform">One Platform</a>
         </div>
         <div class="fcol">
           <h4>Company</h4>
           <a href="about.html">About us</a><a href="careers.html">Careers</a
-          ><a href="news-media.html">News &amp; media</a>
+          >
         </div>
 
         <div class="sub">
@@ -3782,9 +3786,8 @@
           <form
             class="sub-field"
             id="subForm"
-            action="mailto:connect@paysonictech.com"
-            method="POST"
-            enctype="text/plain"
+            action="#"
+            method="GET"
           >
             <label
               for="subEmail"
@@ -5542,8 +5545,11 @@
         if (window.scrollY > 0) window.scrollTo(0, 0);
         Scroller.init();
 
-        // anchors
+        // anchors — skip modal-trigger buttons so the smooth scroller
+        // doesn't intercept openContactUs / openWalkthrough / openContactUsDrawer
+        var MODAL_TRIGGER_IDS = ['openContactUs', 'openContactUsDrawer', 'openWalkthrough'];
         $$('a[href^="#"]').forEach(function (a) {
+          if (MODAL_TRIGGER_IDS.indexOf(a.id) !== -1) return; // let modal script handle these
           a.addEventListener("click", function (e) {
             var id = a.getAttribute("href");
             if (!id || id === "#") return;
@@ -6349,12 +6355,32 @@
           subForm.addEventListener("submit", function (e) {
             e.preventDefault();
             var input = $("#subEmail");
-            if (!input.value) return;
-            input.value = "";
-            input.placeholder = "Subscribed — thank you";
-            setTimeout(function () {
-              input.placeholder = "Your email address";
-            }, 3200);
+            if (!input) return;
+            var email = input.value.trim();
+            if (!email) return;
+
+            var paysonicEmail = "connect@paysonictech.com";
+            var subject = "Stay Connected — Monthly Mobility Intelligence";
+            var body = "Hello Paysonic Team,\n\nI would like to stay connected and receive monthly mobility intelligence updates.\n\nMy Email: " + email;
+
+            var gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1"
+              + "&to=" + encodeURIComponent(paysonicEmail)
+              + "&su=" + encodeURIComponent(subject)
+              + "&body=" + encodeURIComponent(body);
+
+            var mailtoUrl = "mailto:" + encodeURIComponent(paysonicEmail)
+              + "?subject=" + encodeURIComponent(subject)
+              + "&body=" + encodeURIComponent(body);
+
+            var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+              window.location.href = mailtoUrl;
+            } else {
+              var win = window.open(gmailUrl, "_blank");
+              if (!win || win.closed || typeof win.closed === "undefined") {
+                window.location.href = mailtoUrl;
+              }
+            }
           });
         }
 
@@ -6502,19 +6528,21 @@
             openModal('walkthrough');
           });
         }
+        const openContactTeam = document.getElementById('openContactTeam');
+        if (openContactTeam) {
+          openContactTeam.addEventListener('click', function (e) {
+            e.preventDefault();
+            openModal('contact');
+          });
+        }
 
         if (ctaTab) {
           ctaTab.addEventListener('click', function (e) {
             e.preventDefault();
             openModal('contact');
           });
-          
-                    // Opens on hover/mouseenter instantly across screens and emulators
-          ctaTab.addEventListener('mouseenter', function (e) {
-            openModal('contact');
-          });
 
-          // Opens instantly on first tap on mobile/tablet (fixes double-tap delay on touch devices)
+          // Opens on first tap on mobile/tablet
           ctaTab.addEventListener('touchstart', function (e) {
             e.preventDefault();
             openModal('contact');
@@ -6592,17 +6620,60 @@
 
             if (!valid) return;
 
-            const subject = encodeURIComponent('Contact Enquiry from Paysonic Website');
-            const body = encodeURIComponent(
-              'Name: ' + name + '\n' +
-              'Phone: ' + number + '\n' +
-              'Email: ' + email + '\n' +
-              'Message: ' + message
-            );
-            window.location.href = 'mailto:anishbalhki1@gmail.com?subject=' + subject + '&body=' + body;
+            // Disable submit button and show loading state
+            const submitBtn = form.querySelector('[type="submit"]');
+            const originalText = submitBtn ? submitBtn.textContent : 'Submit';
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.textContent = 'Sending…';
+              submitBtn.style.opacity = '0.75';
+            }
 
-            if (formView) formView.style.display = 'none';
-            if (successView) successView.classList.add('open');
+            // Send to Formspree
+            fetch('https://formspree.io/f/mwlkrgnr', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                name: name,
+                phone: number,
+                email: email,
+                message: message
+              })
+            })
+            .then(function (res) {
+              if (res.ok) {
+                // Success — show thank-you view
+                if (formView) formView.style.display = 'none';
+                if (successView) successView.classList.add('open');
+                if (form) form.reset();
+              } else {
+                // Formspree returned an error
+                return res.json().then(function (data) {
+                  throw new Error((data && data.error) ? data.error : 'Submission failed. Please try again.');
+                });
+              }
+            })
+            .catch(function (err) {
+              // Show inline error message
+              let errEl = document.getElementById('formspree-error');
+              if (!errEl) {
+                errEl = document.createElement('p');
+                errEl.id = 'formspree-error';
+                errEl.style.cssText = 'color:#d64545;font-size:13px;margin:8px 0 0;text-align:center;';
+                form.appendChild(errEl);
+              }
+              errEl.textContent = err.message || 'Something went wrong. Please try again.';
+            })
+            .finally(function () {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                submitBtn.style.opacity = '';
+              }
+            });
           });
         }
       })();
