@@ -142,7 +142,7 @@
       }
 
       /* ---------- Sticky CTA tab ---------- */
-       .sticky-cta{
+  .sticky-cta{
     position:fixed;
     top:50%;
     left:0;
@@ -151,31 +151,31 @@
     z-index:9999;
     display:flex;
     align-items:center;
-    height:52px;
+    height:46px;
     background:var(--green);
     color:var(--white);
     border-radius:0 8px 8px 0;
     overflow:hidden;
     cursor:pointer;
-    box-shadow:-2px 2px 10px rgba(0,0,0,0.15);
-    width:14px;
-    transition:width 260ms cubic-bezier(.4,0,.2,1);
+    box-shadow:0 4px 14px rgba(2,181,78,0.3);
+    width:12px;
+    transition:width 240ms cubic-bezier(.4,0,.2,1);
     white-space:nowrap;
-    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-family:inherit;
   }
   .sticky-cta:hover,
   .sticky-cta:focus-visible{
-    width:158px;
+    width:142px;
   }
   .sticky-cta .cta-label{
     display:flex;
     align-items:center;
     gap:8px;
-    padding:0 16px;
-    font-size:14px;
+    padding:0 14px;
+    font-size:13.5px;
     font-weight:600;
     opacity:0;
-    transition:opacity 180ms ease 60ms;
+    transition:opacity 150ms ease 40ms;
   }
   .sticky-cta:hover .cta-label,
   .sticky-cta:focus-visible .cta-label{
@@ -185,41 +185,221 @@
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    font-size:16px;
+    font-size:15px;
     opacity:1;
-    transition:opacity 150ms ease;
+    transition:opacity 120ms ease;
   }
   .sticky-cta:hover .cta-icon,
   .sticky-cta:focus-visible .cta-icon{
     opacity:0;
   }
  
-  /* ---------- Modal ---------- */
+  /* ---------- Compact & Balanced Modal ---------- */
   .overlay{
     position:fixed;
     inset:0;
-    background:rgba(14,27,61,.55);
-    backdrop-filter:blur(3px);
-    -webkit-backdrop-filter:blur(3px);
+    background:rgba(10, 18, 35, 0.6);
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
     display:none;
     align-items:center;
     justify-content:center;
-    padding:20px;
+    padding:16px;
     z-index:10000;
   }
   .overlay.open{ display:flex; }
 
-  .modal{
+ .modal{
     background:var(--card, #fff);
     width:100%;
-    max-width:460px;
-    border-radius:18px;
-    padding:36px 36px 30px;
+    max-width:400px;
+    border-radius:20px;
+    padding:22px 24px 20px;
     position:relative;
-    box-shadow:0 24px 60px rgba(14,27,61,.35);
-    animation:pop .22s ease;
+    box-shadow:0 20px 45px rgba(4,31,73,0.25);
+    animation:pop .2s ease;
     font-family:var(--font-d);
   }
+  @keyframes pop{
+    from{ opacity:0; transform:translateY(8px) scale(.98); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+  .modal-close{
+    position:absolute;
+    top:16px;
+    right:16px;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:14px;
+    color:var(--navy-soft);
+    transition:background .15s ease;
+  }
+  .modal-close:hover{ background:#F0F2F7; }
+
+  .modal-eyebrow{
+    color:var(--green);
+    font-weight:700;
+    font-size:11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom:2px;
+  }
+  .modal h2{
+    margin:0 0 4px;
+    font-size:20px;
+    font-weight:800;
+    color:var(--navy);
+    line-height:1.2;
+  }
+  .modal p.sub{
+    color:#6B7488;
+    font-size:12.5px;
+    margin:0 0 12px;
+    line-height:1.4;
+  }
+
+  .field{
+    margin-bottom:10px;
+  }
+  .field label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:3px;
+  }
+  .field label .req{
+    color:var(--danger);
+    margin-left:3px;
+  }
+  .field input,
+  .field textarea{
+    width:100%;
+    border:1.5px solid var(--line);
+    border-radius:8px;
+    padding:8px 10px;
+    font-size:13.5px;
+    font-family:inherit;
+    color:var(--navy);
+    background:#FBFCFE;
+    transition:border-color .15s ease, box-shadow .15s ease;
+    box-sizing:border-box;
+  }
+  .field input:focus,
+  .field textarea:focus{
+    outline:none;
+    border-color:var(--green);
+    box-shadow:0 0 0 3px rgba(2,181,78,0.12);
+  }
+  .field textarea{ resize:vertical; min-height:54px; }
+
+  .field-error{
+    display:none;
+    color:var(--danger);
+    font-size:12px;
+    margin-top:3px;
+  }
+  .field.invalid input,
+  .field.invalid textarea{
+    border-color:var(--danger);
+  }
+  .field.invalid .field-error{ display:block; }
+
+  .modal-submit{
+    width:100%;
+    justify-content:center;
+    padding:11px 18px;
+    border-radius:10px;
+    font-size:14.5px;
+    margin-top:4px;
+  }
+
+  @keyframes pop{
+    from{ opacity:0; transform:translateY(8px) scale(.98); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+  .modal-close{
+    position:absolute;
+    top:16px;
+    right:16px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:14px;
+    color:var(--navy-soft);
+    transition:background .15s ease;
+  }
+  .modal-close:hover{ background:#F0F2F7; }
+
+  .modal-eyebrow{
+    color:var(--green);
+    font-weight:700;
+    font-size:12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom:4px;
+  }
+  .modal h2{
+    margin:0 0 4px;
+    font-size:21px;
+    font-weight:800;
+    color:var(--navy);
+    line-height:1.2;
+  }
+  .modal p.sub{
+    color:#6B7488;
+    font-size:13px;
+    margin:0 button 18px;
+    margin-bottom: 18px;
+    line-height:1.45;
+  }
+
+  
+  .field label{
+    display:block;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .field label .req{
+    color:var(--danger);
+    margin-left:3px;
+  }
+  .field input,
+  .field textarea{
+    width:100%;
+    border:1.5px solid var(--line);
+    border-radius:8px;
+    padding:10px 12px;
+    font-size:14px;
+    font-family:inherit;
+    color:var(--navy);
+    background:#FBFCFE;
+    transition:border-color .15s ease, box-shadow .15s ease;
+    box-sizing:border-box;
+  }
+  .field input:focus,
+  .field textarea:focus{
+    outline:none;
+    border-color:var(--green);
+    box-shadow:0 0 0 3px rgba(2,181,78,0.12);
+  }
+  .field textarea{ resize:vertical; min-height:68px; }
+
   @keyframes pop{
     from{ opacity:0; transform:translateY(10px) scale(.98); }
     to{ opacity:1; transform:translateY(0) scale(1); }
@@ -2086,38 +2266,46 @@
           width: 100%;
           max-width: var(--maxw);
           margin-inline: auto;
-          display: flex !important;
-          flex-wrap: wrap !important;
-          justify-content: flex-start;
-          align-items: stretch;
+          display: grid !important;
+          grid-template-columns: repeat(3, 1fr) !important;
           gap: 10px;
-          margin-top: clamp(24px, 3.5vw, 36px);
+          margin-top: 24px;
           padding: 0 var(--gutter);
           pointer-events: auto;
-          perspective: none;
           z-index: 2;
         }
 
-        .chip,
-        .chip[data-lob="mlff"],
-        .chip[data-lob="toll"],
-        .chip[data-lob="parking"],
-        .chip[data-lob="ev"],
-        .chip[data-lob="fuel"],
-        .chip[data-lob="bbps"] {
+        .chip {
           position: static !important;
           top: auto !important;
           right: auto !important;
           bottom: auto !important;
           left: auto !important;
-          flex: 1 1 calc(20% - 8px);
-          min-width: 100px;
-          max-width: 160px;
-          padding: 10px 10px 9px;
+          width: 100% !important;
+          max-width: none !important;
+          padding: 12px 8px !important;
           border-radius: 14px;
           opacity: 1 !important;
           transform: none !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
         }
+
+        .chip .ic {
+          width: 26px;
+          height: 26px;
+        }
+        .chip .ic svg {
+          width: 22px;
+          height: 22px;
+        }
+        .chip b {
+          font-size: 0.68rem;
+          line-height: 1.15;
+        }
+
         .chip .ic {
           width: 26px;
           height: 26px;
@@ -3533,7 +3721,7 @@
               <h2>Build the Infrastructure for Tomorrow’s Mobility</h2>
               <p>Together, We Move India Towards Smarter, Cashless Mobility.</p>
             </div>
-            <a href="https://paysonictech.com/careers" class="btn btn-navy" data-magnet
+            <a href="mailto:connect@paysonictech.com" class="btn btn-navy" data-magnet
               >Connect to our team
               <svg width="16" height="16" aria-hidden="true">
                 <use href="#i-arrow" /></svg
@@ -3571,15 +3759,7 @@
               aria-label="LinkedIn"
               ><svg aria-hidden="true"><use href="#i-in" /></svg
             ></a>
-            <a href="#footer" aria-label="X"
-              ><svg aria-hidden="true"><use href="#i-x" /></svg
-            ></a>
-            <a href="#footer" aria-label="YouTube"
-              ><svg aria-hidden="true"><use href="#i-yt" /></svg
-            ></a>
-            <a href="#footer" aria-label="Email"
-              ><svg aria-hidden="true"><use href="#i-mail" /></svg
-            ></a>
+            
           </div>
         </div>
 
@@ -6322,11 +6502,24 @@
             openModal('walkthrough');
           });
         }
+
         if (ctaTab) {
           ctaTab.addEventListener('click', function (e) {
             e.preventDefault();
             openModal('contact');
           });
+          
+                    // Opens on hover/mouseenter instantly across screens and emulators
+          ctaTab.addEventListener('mouseenter', function (e) {
+            openModal('contact');
+          });
+
+          // Opens instantly on first tap on mobile/tablet (fixes double-tap delay on touch devices)
+          ctaTab.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            openModal('contact');
+          }, { passive: false });
+
           ctaTab.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
@@ -6334,7 +6527,6 @@
             }
           });
         }
-
         // Also wire up any button with href="#cta" like "Talk to our team"
         document.querySelectorAll('a[href="#cta"]').forEach(function (el) {
           if (el !== openContactUs && el !== openContactUsDrawer && el !== openWalkthrough) {
@@ -6400,8 +6592,14 @@
 
             if (!valid) return;
 
-            const payload = { name, number, email, message };
-            console.log('Contact form submitted:', payload);
+            const subject = encodeURIComponent('Contact Enquiry from Paysonic Website');
+            const body = encodeURIComponent(
+              'Name: ' + name + '\n' +
+              'Phone: ' + number + '\n' +
+              'Email: ' + email + '\n' +
+              'Message: ' + message
+            );
+            window.location.href = 'mailto:anishbalhki1@gmail.com?subject=' + subject + '&body=' + body;
 
             if (formView) formView.style.display = 'none';
             if (successView) successView.classList.add('open');
